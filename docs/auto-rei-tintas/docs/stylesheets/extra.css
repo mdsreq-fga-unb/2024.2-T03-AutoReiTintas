@@ -1,28 +1,47 @@
 :root {
+  /* Primary colors */
+  --md-primary-bg-color: #bec7d6;  
+  --md-primary-fg-color: #e2e8f0;  
+  --md-primary-fg-color--light: #cbd5e0;  
+  --md-primary-fg-color--dark: #f7fafc;  
 
-    /* Primary color shades */
-    --md-primary-fg-color: #ffffff;
-    --md-primary-fg-color--light: #861f4194;
-    --md-primary-fg-color--dark: #ac325a;
-    --md-primary-bg-color: rgb(41, 41, 41);
-    --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
-    --md-text-link-color: hsla(231, 48%, 48%, 1);
+  --md-text-link-color: #4f46e5;  
 
-    /* Accent color shades */
-    --md-accent-fg-color: rgb(98, 18, 189);
-    --md-accent-fg-color--transparent: hsla(189, 100%, 37%, 0.1);
-    --md-accent-bg-color: hsla(0, 0%, 100%, 1);
-    --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
+  /* Accents */
+  --md-accent-fg-color: #6b7280;  
+  --md-accent-fg-color--transparent: rgba(107, 114, 128, 0.1);  
 
-    /* Code block color shades */
-    --md-code-bg-color: hsla(0, 0%, 96%, 1);
-    --md-code-fg-color: hsla(200, 18%, 26%, 1);
+  /* Code blocks */
+  --md-code-bg-color: #4a5568;  
+  --md-code-fg-color: #e2e8f0;  
 
-    /* Footer */
-    --md-footer-bg-color: #861f41;
-    --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
-    --md-footer-fg-color: hsla(0, 0%, 100%, 1);
-    --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
-    --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
+  /* footer */
+  --md-footer-bg-color: #2d3748;  
+  --md-footer-fg-color: #e2e8f0;  
+  --md-footer-fg-color--light: #cbd5e0;  
+}
+
+@media (prefers-color-scheme: dark) {
+  /* primary colors */
+  :root {
+      --md-primary-bg-color: #111827; 
+      --md-primary-fg-color: #d1d5db; 
+      --md-primary-fg-color--light: #6b7280;  
+      --md-primary-fg-color--dark: #e5e7eb;  
+
+      --md-text-link-color: #bb86fc;  
+
+      /* accents */
+      --md-accent-fg-color: #6b7280;  
+      --md-accent-fg-color--transparent: rgba(107, 114, 128, 0.1);  
+
+      /* Block code */
+      --md-code-bg-color: #2d3748;  
+      --md-code-fg-color: #f7fafc;  
+
+      /* footer */
+      --md-footer-bg-color: #1f2937;  
+      --md-footer-fg-color: #f7fafc;  
+      --md-footer-fg-color--light: #cbd5e0;  
   }
-  
+}
