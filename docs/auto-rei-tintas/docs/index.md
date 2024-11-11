@@ -1,4 +1,3 @@
-
 # Início
 
 ## Introdução
@@ -62,3 +61,10 @@ A **Auto Rei Tintas** é uma empresa que atua no setor de varejo e atacado de pr
     </div>
 </div>
 
+<<<<<<< HEAD
+=======
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files. -->
+>>>>>>> 211025cad3928a05c3d82d9d2cb521388f855560
