@@ -33,11 +33,11 @@ jobs:
           pip install mkdocs-material
       
       - name: Build Mkdocs
-        working-directory: ./docs
+        working-directory: ./docs/auto-rei-tintas
         run: |
           mkdocs build
           
       - name: Deploy Mkdocs to GitHub Pages
-        working-directory: ./docs
+        working-directory: ./docs/auto-rei-tintas
         run: |
           mkdocs gh-deploy --force
