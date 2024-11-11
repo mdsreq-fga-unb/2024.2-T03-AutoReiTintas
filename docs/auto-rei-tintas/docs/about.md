@@ -1,0 +1,1 @@
+Este projeto visa transformar o negócio da Auto Rei Tintas, permitindo que a empresa expanda sua atuação no mercado digital e alcance um público mais amplo.

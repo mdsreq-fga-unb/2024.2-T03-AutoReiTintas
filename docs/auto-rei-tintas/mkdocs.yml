@@ -1,0 +1,59 @@
+site_name: Auto-Rei
+
+repo_url: https://github.com/mdsreq-fga-unb/2024.2-T03-AutoReiTintas
+
+nav:
+  - Início: index.md
+  - Visão do Produto e Projeto: product_vision/product.md
+  - Backlog: backlog/backlog.md
+  - Apresentações: presentations/presentation_1.md
+  - Como contribuir:
+    - Ambiente de desenvolvimento: how_to_contribute/environment.md
+  - Sobre: about.md
+
+theme:
+  name: material
+  font:
+    text: Fira Sans
+  language: pt-BR
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      primary: custom
+      accent: custom
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+      primary: custom
+      accent: custom
+
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - content.code.copy
+    - toc.integrate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+plugins:
+  - search
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false
