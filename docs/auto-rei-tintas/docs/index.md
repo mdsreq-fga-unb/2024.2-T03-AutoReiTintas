@@ -5,6 +5,7 @@
 A **Auto Rei Tintas** é uma empresa que atua no setor de varejo e atacado de produtos para pintura automotiva e estética veicular, atendendo tanto empresas quanto consumidores finais. Embora possua um sistema ERP eficiente para gestão interna, a empresa ainda depende das vendas presenciais e carece de uma presença digital, o que limita seu alcance ao público online.
 
 **Desafios:** A Auto Rei Tintas enfrenta dificuldades em expandir sua visibilidade e alcançar novos clientes devido à ausência de um site de e-commerce e de estratégias de marketing digital. Além disso, a falta de integração do ERP com plataformas de e-commerce e de uma equipe especializada em marketing digital impacta diretamente seu crescimento no ambiente digital, onde a maioria dos concorrentes já possui uma presença consolidada.
+
 ## Histórico de Versão
 
 |  **Data**  | **Versão** |    **Descrição**     |        **Autor**        |
@@ -31,7 +32,7 @@ A **Auto Rei Tintas** é uma empresa que atua no setor de varejo e atacado de pr
 <div class="equipe" style="display: flex; flex-direction: row; gap: 50px; flex-wrap: wrap; justify-content: center; text-align: center;">
     <div>
         <a href="https://github.com/Brenofrds">
-            <img src="https://avatars.githubusercontent.com/u/68402547?v=4" />
+            <img src="https://avatars.githubusercontent.com/u/99679547?v=4" />
             <h5 class="text-center">Mariana Leticia</h5>
         </a>
     </div>
