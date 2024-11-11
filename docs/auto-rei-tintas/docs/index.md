@@ -31,41 +31,34 @@ A **Auto Rei Tintas** é uma empresa que atua no setor de varejo e atacado de pr
 
 <div class="equipe" style="display: flex; flex-direction: row; gap: 50px; flex-wrap: wrap; justify-content: center; text-align: center;">
     <div>
-        <a href="https://github.com/Brenofrds">
+        <a href="https://github.com/Marianannn">
             <img src="https://avatars.githubusercontent.com/u/99679547?v=4" />
             <h5 class="text-center">Mariana Leticia</h5>
         </a>
     </div>
     <div>
-        <a href="https://github.com/BrenoLUCO">
+        <a href="https://github.com/johan-rocha">
             <img src="https://avatars.githubusercontent.com/u/104279524?v=4" />
             <h5 class="text-center">Johan Marcos</h5>
         </a>
     </div>
     <div>
-        <a href="https://github.com/storch7">
+        <a href="https://github.com/Diogo-Barboza">
             <img src="https://avatars.githubusercontent.com/u/119085534?v=44" />
             <h5 class="text-center">Diogo Rodrigues</h5>
         </a>
     </div>
     <div>
-        <a href="https://github.com/jlucasiqueira">
+        <a href="https://github.com/mateuscavati">
             <img src="https://avatars.githubusercontent.com/u/117764744?v=4" />
             <h5 class="text-center">Mateus Cavalcante</h5>
         </a>
     </div>
     <div>
-        <a href="https://github.com/rmatuda">
+        <a href="https://github.com/Nanashii76">
             <img src="https://avatars.githubusercontent.com/u/53798700?v=4" />
             <h5 class="text-center">Paulo Lamounier</h5>
         </a>
     </div>
 </div>
 
-<<<<<<< HEAD
-=======
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files. -->
->>>>>>> 211025cad3928a05c3d82d9d2cb521388f855560
