@@ -61,8 +61,10 @@ Dentre as principais características que a solução se propõe a ter são:
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ![React](https://img.shields.io/badge/React-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB) | Biblioteca JavaScript para desenvolvimento da interface de usuário do site                                                                                       |
 | ![Node.js](https://img.shields.io/badge/Node.js-%23339933.svg?style=flat&logo=node.js&logoColor=%23ffffff) | Tecnologias para o backend, facilitando a integração de funcionalidades e transações                                                                               |
-| ![MongoDB](https://img.shields.io/badge/MongoDB-%2347A248.svg?style=flat&logo=mongodb&logoColor=%23ffffff) | Banco de dados para armazenar informações sobre produtos, clientes e transações                                                                                   |
-| ![Mercado Pago](https://img.shields.io/badge/Mercado_Pago-%23416C7C.svg?style=flat&logo=mercadopago&logoColor=%23ffffff) | Plataforma de pagamento online para processar transações financeiras de forma segura e eficiente                                                                  |
+| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23316192.svg?style=flat&logo=postgresql&logoColor=%23ffffff) | Banco de dados relacional para armazenar informações com o uso de SQL                                                                                             |
+| ![Supabase](https://img.shields.io/badge/Supabase-%234A7BEE.svg?style=flat&logo=supabase&logoColor=%23ffffff) | Plataforma backend como serviço que utiliza PostgreSQL para fornecer autenticação, banco de dados e funções em tempo real                                          |
+| ![Mercado Pago](https://img.shields.io/badge/Mercado_Pago-%23416C7C.svg?style=flat&logo=mercadopago&logoColor=%23ffffff) | Plataforma de pagamento online para processar transações financeiras de forma segura e eficiente     
+                                                             |
 
 ## 2.4 Pesquisa de Mercado e Análise Competitiva
 
@@ -85,7 +87,7 @@ Acredita-se que a solução desenvolvida quando analisada pelo ponto de vista t�
 
 ### Tecnologias
 
-Além disso, em relação aos recursos tecnológicos - React, Node, Express e MongoDB - eles são acessíveis para o uso.
+Além disso, em relação aos recursos tecnológicos - React, Node, Express, Postgres e Supabase - eles são acessíveis para o uso.
 
 ### Equipe
 
