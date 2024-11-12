@@ -108,9 +108,8 @@ O que esta solução de software propõe são os seguintes principais benefício
     
 4. Competitividade virtual: o consequente engajamento por conta de clientes promoverá a inserção da empresa na competitividade do mercado virtual de tintas, dando a oportunidade ao empresário de aprimorar constantemente seus produtos, serviços e estratégias.
 
-## Histórico de Versão
+## Histórico de Versões
 
-|  **Data**  | **Versão** |    **Descrição**     |        **Autor**        |
-| :--------: | :--------: | :------------------: | :---------------------: |
-| 10/11/2024 |    1.0     | Criação do Documento | Diogo, Mariana, Mateus, Johan, Paulo |
-
+| Versão |    Data    | Descrição                                 | Autor(es)                                       | Revisor(es)                                    |
+| ------ | :--------: | ----------------------------------------- | ----------------------------------------------- | ---------------------------------------------- |
+| `1.0`   | 11/11/2024 | Adição dos tópicos 1 e 2 de Visão do Produto                        | [Johan](https://github.com/johan-rocha) e [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza)      | 
