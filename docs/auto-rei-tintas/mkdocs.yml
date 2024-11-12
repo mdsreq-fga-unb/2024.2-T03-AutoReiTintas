@@ -5,8 +5,11 @@ repo_url: https://github.com/mdsreq-fga-unb/2024.2-T03-AutoReiTintas
 nav:
   - Início: index.md
   - Visão do Produto e Projeto: product_vision/product.md
+  - Sprints: sprints/sprint0.md
   - Backlog: backlog/backlog.md
-  - Apresentações: presentations/presentation_1.md
+  - Apresentações: 
+    - Entrega 1: presentations/presentation_1.md
+    - Lições Aprendidas 1: presentations/learned_lessons_1.md
   - Como contribuir:
     - Ambiente de desenvolvimento: how_to_contribute/environment.md
   - Sobre: about.md
