@@ -5,6 +5,7 @@ repo_url: https://github.com/mdsreq-fga-unb/2024.2-T03-AutoReiTintas
 nav:
   - Início: index.md
   - Visão do Produto e Projeto: product_vision/product.md
+  - Engenharia de Software: engenharia_de_software/software.md
   - Sprints:
     - Sprint 0: sprints/sprint0.md 
   - Backlog: backlog/backlog.md
