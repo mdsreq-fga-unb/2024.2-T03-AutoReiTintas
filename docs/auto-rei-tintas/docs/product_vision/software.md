@@ -2,9 +2,9 @@
 
 Utilizando o framework de Sommerville no contexto do projeto e equipe para escolher a abordagem a seguir
 
-### **Questões Técnicas**
+## Questões Técnicas
 
-### **Desafios Identificados**
+## Desafios Identificados
 
 1. **Integração com o ERP existente**:
     - A empresa já possui um ERP eficiente. É necessário garantir que as novas soluções digitais, como e-commerce, integrem-se ao sistema sem perda de funcionalidade ou redundância.
@@ -16,9 +16,9 @@ Utilizando o framework de Sommerville no contexto do projeto e equipe para escol
 4. **Acessibilidade e UX/UI**:
     - Criar um ambiente digital acessível para diferentes perfis de usuários, considerando dispositivos móveis e desktops.
 
-### **Questões Humanas**
+## Questões Humanas
 
-### **Desafios Identificados**
+## Desafios Identificados
 
 1. **Capacitação da Equipe**:
     - A equipe de vendas e suporte já possui pessoas treinadas para gerenciar a plataforma de e-commerce.
@@ -29,9 +29,9 @@ Utilizando o framework de Sommerville no contexto do projeto e equipe para escol
 4. **Experiência do Cliente**:
     - Implementar canais de suporte eficientes para manter a confiança dos clientes na transição para os canais digitais.
 
-### **Questões Organizacionais**
+## Questões Organizacionais
 
-### **Desafios Identificados**
+## Desafios Identificados
 
 1. **Mudança Cultural e Estratégica**:
     - A empresa precisa passar de uma estratégia tradicional para uma digital-first, sem perder sua identidade e qualidade.
@@ -40,7 +40,7 @@ Utilizando o framework de Sommerville no contexto do projeto e equipe para escol
 3. **Escalabilidade**:
     - Planejar o crescimento do sistema para comportar futuros aumentos de demanda.
 
-### **Escolha da Metodologia Ágil**
+## Escolha da Metodologia Ágil
 
 Após analisar os desafios, a **Scrum** parece ser a melhor abordagem para este projeto, considerando:
 
@@ -49,7 +49,7 @@ Após analisar os desafios, a **Scrum** parece ser a melhor abordagem para este 
 - **Colaboração entre equipes**: ScrumXP promove reuniões diárias que alinham equipes multidisciplinares, reduzindo a resistência à mudança e aumentando o engajamento.
 - **Flexibilidade**: A metodologia permite mudanças no escopo à medida que novas demandas ou desafios são identificados.
 
-## 3 ESTRATÉGIAS DE ENGENHARIA DE SOFTWARE
+## 3 Estratégias de Engenharia de Software
 
 ## 3.1 Estratégia Priorizada
 
@@ -77,11 +77,11 @@ Após analisar os desafios, a **Scrum** parece ser a melhor abordagem para este 
 
 No projeto Auto Rei Tintas, com a ajuda do framework GUPTA adaptado - incluindo o processo ScrumXP a fim de analisar mais processos possíveis a serem utilizados no projeto -, o ScrumXP e o Protótipo são os que mais se encaixam como metodologia, porém, a escolha do ScrumXP se deve aos seguintes fatores:
 
-1. Requisitos Dinâmicos e Complexos: Os requisitos do projeto podem mudar frequentemente e indicam a construção de um sistema complexo.
-2. Equipe com Experiência Variada: A equipe apresenta pouca experiência em projetos similares, o ScrumXp permite um aprendizado contínuo.
-3. Envolvimento dos Usuários: O envolvimento ativo dos usuários é fundamental em todas as fases do projeto.
-4. Projetos com Prazos Curtos: O cronograma da disciplina é apertado e temos recursos limitados, o que indica a necessidade de um ciclo iterativo.
-5. Alta Resiliência a Mudanças: O Scrum, possui revisões frequentes e replanejamento a cada sprint, é mais dinâmica para lidar com mudanças constantes.
+1. **Requisitos Dinâmicos e Complexos:** Os requisitos do projeto podem mudar frequentemente e indicam a construção de um sistema complexo.
+2. **Equipe com Experiência Variada:** A equipe apresenta pouca experiência em projetos similares, o ScrumXp permite um aprendizado contínuo.
+3. **Envolvimento dos Usuários:** O envolvimento ativo dos usuários é fundamental em todas as fases do projeto.
+4. **Projetos com Prazos Curtos:** O cronograma da disciplina é apertado e temos recursos limitados, o que indica a necessidade de um ciclo iterativo.
+5. **Alta Resiliência a Mudanças:** O Scrum, possui revisões frequentes e replanejamento a cada sprint, é mais dinâmica para lidar com mudanças constantes.
 
 | **Critérios** | **Waterfall** | **Protótipo** | **Processo Unificado** | **Evolucionário** | **Espiral** | **RAD** | **SCRUM/XP** | **PROJETO** |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -153,11 +153,11 @@ No projeto Auto Rei Tintas, com a ajuda do framework GUPTA adaptado - incluindo 
 
 ### Execução da Sprint
 
-- **Representação**
+- **Representação:**
     - prototipagem: As prototipagens serão utilizadas a fim de demonstrar ao cliente as funcionalidades e entender se estão de acordo com o desejado.
-- **Verificação e Validação**
+- **Verificação e Validação:**
     - revisão de requisitos: A revisão dos requisitos ocorrerá concomitantemente com a atividade de representação de modo a registrar e alterar as mudanças necessárias para o projeto vindas do cliente e da equipe em si.
-- **Organização e atualização**
+- **Organização e atualização:**
     - revisão do backlog: durante a execução da sprint, o backlog será constantemente atualizado de modo a identificar quais tarefas estão em andamento, finalizadas ou ainda presentes no backlog.
 
 ### Sprint Review
@@ -166,14 +166,14 @@ No projeto Auto Rei Tintas, com a ajuda do framework GUPTA adaptado - incluindo 
     - user story: As user’s storys serão demonstradas ao cliente a fim de comunicá-lo sobre a intuição da funcionalidade a ser representada
 - **Organização e atualização:**
     - feedback: o feedback da equipe será necessário para que consigamos nos informar sobre quais as tarefas que foram finalizadas com sucesso, e quais não foram, a fim de manter todos no mesmo caminhar.
-- Verificação e validação:
+- **Verificação e validação:**
     - DoR e DoD: Após a validação e verificação dos requisitos, se poderá ter uma noção maior das definições de pronto para iniciar o desenvolvimento e de finalizado
     - qualidade de requisitos: a qualidade dos requisitos será garantida após a verificação e validação deles.
 
 ### Retrospectiva
 
 - **organização e atualização:**
-    - **durante a retrospectiva, atualizaremos o backlog com fase no feedback da equipe dada o desempenho dela e de como foi a sprint em si.**
+    - durante a retrospectiva, atualizaremos o backlog com fase no feedback da equipe dada o desempenho dela e de como foi a sprint em si.
 
 ## 4.2 Engenharia de Requisitos e o ScrumXP
 
@@ -198,7 +198,7 @@ No projeto Auto Rei Tintas, com a ajuda do framework GUPTA adaptado - incluindo 
 |                         |                                |                                                                                                         |                                                                                                    |                                                                                                     |
 | Retrospectiva           | organização e atualização      | comunicar-se entre a equipe sobre o andamento das tarefas e atividades                                  | feedback                                                                                           | Backlog de Requisitos, Visão de Produto                                                             |
 
-## 5 CRONOGRAMA E ENTREGAS
+## 5 Cronograma e Entregas
 
 Com base nas estratégias apontadas pelos frameworks e decididas pelo grupo, a seguinte proposta de cronograma e entregas e feito:
 
@@ -214,7 +214,7 @@ Com base nas estratégias apontadas pelos frameworks e decididas pelo grupo, a s
 | Sprint 7 | 3/2/2024 | 8/2/2024 | Implementação da análise de dados | Funcionalidade de análise básica (quantidade de produtos vendidos por período) | Validação das funcionalidades iniciais de análise |
 | Sprint 8 | 8/2/2024 | 13/2/2024 | Expansão da análise de dados | Gráficos sobre as análises e relatórios detalhados | Validação de gráficos e relatórios |
 
-## 6 INTERAÇÃO ENTRE EQUIPE E CLIENTE
+## 6 Interação Entre Equipe E Cliente
 
 ## 6.1 Composição da Equipe
 
@@ -233,28 +233,27 @@ A equipe de desenvolvimento será composta por:
 
 ## 6.2 Comunicação
 
-Ferramentas de Comunicação
+### Ferramentas de Comunicação
 
-- Teams: Como ferramenta de comunicação com o cliente permitindo uma comunicação clara, com possibilidade de transmissão de tela e gravação da reunião.
-- Discord: Será utilizado como ferramenta de comunicação entre os membros da equipe facilitando o envio de documentos e links importantes e o compartilhamento de arquivos.
-- Whatsapp: Canal de mensagens com o PO, marcação de reuniões e validações assíncronas.
+- **Teams:** Como ferramenta de comunicação com o cliente permitindo uma comunicação clara, com possibilidade de transmissão de tela e gravação da reunião.
+- **Discord:** Será utilizado como ferramenta de comunicação entre os membros da equipe facilitando o envio de documentos e links importantes e o compartilhamento de arquivos.
+- **Whatsapp:** Canal de mensagens com o PO, marcação de reuniões e validações assíncronas.
 
-Métodos e Métodos e Frequência de Reuniões
+### Métodos e Métodos e Frequência de Reuniões
 
-- Duração da sprint: 1 semanas
-- Início/fechamento de sprint: Ao fim de cada sprint teremos uma reunião onde na metade dela o cliente estará presente e assim apresentamos os avanços realizados durante a sprint e revisaremos os requisitos do produto, a outra metade será uma reunião composta apenas pelos integrantes do grupo para realizar o planejamento da nova sprint.
-- Reuniões intermediárias: Durante o decorrer da sprint termos o total de 2 encontros online separados da seguinte maneira, visando fazer o acompanhamento das tarefas e entender em que estágio da sprint estamos.
-
-Reuniões presenciais: Durante o decorrer do projeto teremos também encontros presenciais toda terça e quinta após os horários das aulas visando uma curta reunião somente para dar um feedback geral para o grupo.
+- **Duração da sprint:** 1 semanas
+- **Início/fechamento de sprint:** Ao fim de cada sprint teremos uma reunião onde na metade dela o cliente estará presente e assim apresentamos os avanços realizados durante a sprint e revisaremos os requisitos do produto, a outra metade será uma reunião composta apenas pelos integrantes do grupo para realizar o planejamento da nova sprint.
+- **Reuniões intermediárias:** Durante o decorrer da sprint termos o total de 2 encontros online separados da seguinte maneira, visando fazer o acompanhamento das tarefas e entender em que estágio da sprint estamos.
+- **Reuniões presenciais:** Durante o decorrer do projeto teremos também encontros presenciais toda terça e quinta após os horários das aulas visando uma curta reunião somente para dar um feedback geral para o grupo.
 
 ## 6.3 Processo de Validação
 
 O processo de validação do produto se dará com as seguintes etapas:
 
-1. Definição de Pronto(DoR): será necessário validar o conteúdo dos requisitos está correto, claro, objetivo e se condiz com o proposto com o cliente e verificar se o requisito está escrito através do modelo padrão proposto pelo processo de software escolhido, ScrumXP.
-2. Definição de Concluído(DoD): Para ser considerado concluída, a funcionalidade deverá ser revisada pela equipe e aprovada pela equipe e o cliente, de modo cumprir totalmente os critérios de aceitação antes definidos.
+1. **Definição de Pronto(DoR):** será necessário validar o conteúdo dos requisitos está correto, claro, objetivo e se condiz com o proposto com o cliente e verificar se o requisito está escrito através do modelo padrão proposto pelo processo de software escolhido, ScrumXP.
+2. **Definição de Concluído(DoD):** Para ser considerado concluída, a funcionalidade deverá ser revisada pela equipe e aprovada pela equipe e o cliente, de modo cumprir totalmente os critérios de aceitação antes definidos.
 
-## 10 LIÇÕES APRENDIDAS
+## 10 Lições Aprendidas
 
 ## Unidade 10.1
 
@@ -277,3 +276,9 @@ Após conseguir compreender o problema enfrentado pelo cliente, foi necessário 
 ### Interação com equipe
 
 No início, a comunicação poderia ser mais efetiva entre os membros da equipe. Todavia, isso foi melhorando conforme nossas comunicações e avanços em relação ao projeto.
+
+## Histórico de Versões
+
+| Versão |    Data    | Descrição                                 | Autor(es)                                       | Revisor(es)                                    |
+| ------ | :--------: | ----------------------------------------- | ----------------------------------------------- | ---------------------------------------------- |
+| `1.0`   | 11/11/2024 | Criação do Documento                        | [Johan](https://github.com/johan-rocha) e [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza)      | 
