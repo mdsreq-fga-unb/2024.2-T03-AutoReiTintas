@@ -66,3 +66,9 @@ O que esta solução de software propõe são os seguintes principais benefício
 3. Aumento nas vendas: uma das principais consequências ao se aumentar os meios que se propagam a visibilidade da empresa é o aumento de lucro por parte dela.
     
 4. Competitividade virtual: o consequente engajamento por conta de clientes promoverá a inserção da empresa na competitividade do mercado virtual de tintas, dando a oportunidade ao empresário de aprimorar constantemente seus produtos, serviços e estratégias.
+
+## Histórico de Versões
+
+| Versão |    Data     | Descrição                                 | Autor(es)                                        | Revisor(es)                                        |
+| ------ | :---------: | ----------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `1.0`  | 26/11/2024  | Criação do Documento                      |  [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza)       |

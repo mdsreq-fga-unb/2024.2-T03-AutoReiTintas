@@ -11,7 +11,7 @@ nav:
     - Engenharia de Requisitos: sections/product_vision/4_requirements_engineering.md
     - Cronogramas e entregas: sections/product_vision/5_timeline.md
     - Interação entre equipe e cliente: sections/product_vision/6_interaction.md
-    - Lições Aprendidas Unidade 1: sections/presentations/learned_lessons_1.md
+    - Lições Aprendidas: sections/presentations/learned_lessons.md
   - Sprints:
     - Sprint 0: sections/sprints/sprint0.md
   - Backlog: sections/backlog/backlog.md
@@ -20,7 +20,6 @@ nav:
   - Como contribuir:
     - Ambiente de desenvolvimento: how_to_contribute/environment.md
   - Sobre: about.md
-  - Historico: sections/product_vision
 
 theme:
   name: material

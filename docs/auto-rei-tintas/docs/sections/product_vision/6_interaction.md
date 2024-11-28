@@ -36,3 +36,9 @@ O processo de validação do produto se dará com as seguintes etapas:
 
 1. **Definição de Pronto(DoR):** será necessário validar o conteúdo dos requisitos está correto, claro, objetivo e se condiz com o proposto com o cliente e verificar se o requisito está escrito através do modelo padrão proposto pelo processo de software escolhido, ScrumXP.
 2. **Definição de Concluído(DoD):** Para ser considerado concluída, a funcionalidade deverá ser revisada pela equipe e aprovada pela equipe e o cliente, de modo cumprir totalmente os critérios de aceitação antes definidos.
+
+## Histórico de Versões
+
+| Versão |    Data     | Descrição                                 | Autor(es)                                        | Revisor(es)                                        |
+| ------ | :---------: | ----------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `1.0`  | 26/11/2024  | Criação do Documento                      |  [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza)       |

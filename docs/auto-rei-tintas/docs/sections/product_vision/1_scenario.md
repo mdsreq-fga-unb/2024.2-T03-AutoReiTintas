@@ -20,7 +20,7 @@ Em relação às **medidas e políticas internas**, a Auto Rei Tintas não possu
 
 Por fim, a questão dos **materiais** e do portfólio de produtos da Auto Rei Tintas também contribui para essa dificuldade de captação. Sem um site, a empresa não consegue fornecer informações detalhadas e acessíveis sobre os produtos, o que limita o conhecimento que os clientes em potencial podem ter sobre a variedade de produtos disponíveis. A ampla linha de produtos da Auto Rei Tintas poderia ser explorada como uma vantagem competitiva, mas, sem um canal digital, essa variedade não chega ao conhecimento do público online.
 
-![Ishikawa](../assets/ISHIKAWA.png)
+![Ishikawa](../../assets/ISHIKAWA.png)
 
 ## 1.3 Desafios do Projeto
 
@@ -36,3 +36,9 @@ A loja de produtos para pintura automotiva e estética veicular atende a uma bas
 **Consumidores Individuais (Público Final):** Este grupo é composto por pessoas físicas, geralmente entusiastas de automóveis, que buscam produtos para personalização e manutenção estética de seus veículos. Esses clientes valorizam a aparência e a conservação de seus carros e desejam acesso a uma variedade de produtos de alta qualidade, como tintas e acessórios para acabamento.  
 **Pequenas e Médias Empresas (PMEs):** Empresas que oferecem serviços de pintura e manutenção automotiva, como oficinas e centros de estética veicular, também formam uma parcela importante da clientela. Essas empresas procuram produtos de qualidade com boa durabilidade e estão interessadas em benefícios como compras em maior quantidade e melhores condições de pagamento.  
 **Empresas de Grande Porte (Atacado):** Esta categoria inclui grandes empresas e redes de manutenção automotiva que compram em volumes elevados. Essas empresas buscam otimização de custo e confiabilidade, valorizando uma parceria com um fornecedor que possa oferecer condições comerciais vantajosas, suporte logístico eficiente e um sistema prático de gestão de pedidos. 
+
+## Histórico de Versões
+
+| Versão |    Data     | Descrição                                 | Autor(es)                                        | Revisor(es)                                        |
+| ------ | :---------: | ----------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `1.0`  | 26/11/2024  | Criação do Documento                      |  [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza)       |
