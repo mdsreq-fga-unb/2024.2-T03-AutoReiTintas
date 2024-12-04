@@ -5,14 +5,18 @@ repo_url: https://github.com/mdsreq-fga-unb/2024.2-T03-AutoReiTintas
 nav:
   - Início: index.md
   - Visão do Produto e Projeto: 
-    - Visão do Produto: product_vision/product.md
-    - Estratégias de Engenharia de Software: product_vision/software.md
+    - Cenário atual do cliente e do negócio: sections/product_vision/1_scenario.md
+    - Solução proposta: sections/product_vision/2_solution.md
+    - Estratégias de Engenharia de Software: sections/product_vision/3_strategy.md 
+    - Engenharia de Requisitos: sections/product_vision/4_requirements_engineering.md
+    - Cronogramas e entregas: sections/product_vision/5_timeline.md
+    - Interação entre equipe e cliente: sections/product_vision/6_interaction.md
+    - Lições Aprendidas: sections/presentations/learned_lessons.md
   - Sprints:
-    - Sprint 0: sprints/sprint0.md 
-  - Backlog: backlog/backlog.md
-  - Apresentações: 
-    - Entrega 1: presentations/presentation_1.md
-    - Lições Aprendidas 1: presentations/learned_lessons_1.md
+    - Sprint 0: sections/sprints/sprint0.md
+  - Backlog: sections/backlog/backlog.md
+  - Entregas: 
+    - Entrega Unidade 1: sections/presentations/presentation_1.md
   - Como contribuir:
     - Ambiente de desenvolvimento: how_to_contribute/environment.md
   - Sobre: about.md
@@ -53,6 +57,7 @@ theme:
     - content.code.copy
     - toc.integrate
     - content.tabs.link
+    - header.autohide
   icon:
     repo: fontawesome/brands/github
 plugins:
