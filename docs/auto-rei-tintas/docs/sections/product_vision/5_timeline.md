@@ -1,32 +1,37 @@
 ## 5 Cronograma e Entregas
 
+  
+
 Com base nas estratégias apontadas pelos frameworks e decididas pelo grupo, a seguinte proposta de cronograma e entregas e feito:
 
-| **Sprint** | **Início** | **Fim**    | **Objetivo**                                                 | **Entrega Prevista**                                                                                                                    | **Validação com os Stakeholders**                                       |
-| ---------- | ---------- | ---------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| Sprint 1   | 25/11/2024 | 08/12/2024 | Planejamento e configuração inicial                          | Definição do backlog, identificação das prioridades do MVP e configuração do ambiente de desenvolvimento                                | Revisão do backlog e do MVP                                             |
-| 12/11      |            |            | Realização da primeira entrega (unidade 1)                   |                                                                                                                                         |                                                                         |
-| Sprint 2   | 09/12/2024 | 05/01/2025 | Cadastro e autenticação de usuários                          | Implementar funcionalidades para cadastro de novos clientes, login de clientes e gestores, recuperação de senha, e exclusão de contas   | Validação das funcionalidades de login, cadastro e recuperação de conta |
-| 21/11      |            |            | Entrega de atividade (Engenharia de requisitos)              |                                                                                                                                         |                                                                         |
-| 25/11      |            |            | Apresentação da atividade (Engenharia de requisitos)         |                                                                                                                                         |                                                                         |
-| FÉRIAS     | 22/12/2024 | 30/12/2024 |                                                              |                                                                                                                                         |                                                                         |
-| Sprint 3   | 06/01/2025 | 13/01/2025 | Navegação básica no site                                     | Permitir que os usuários naveguem pelo catálogo e montem seus carrinhos sem a necessidade de login                                      | Validação do fluxo de navegação                                         |
-| Sprint 4   | 13/01/2025 | 20/01/2025 | Carrinho de compras                                          | Implementar funcionalidades de adicionar, remover e alterar quantidades de produtos no carrinho                                         | Validação do protótipo do carrinho                                      |
-| Sprint 5   | 20/01/2025 | 27/01/2025 | Fluxo de redirecionamento de compra                          | Permitir que o cliente finalize a compra sendo redirecionado para o atendimento via WhatsApp                                            | Testes do redirecionamento e feedback do fluxo                          |
-| 05/12      |            |            | Entrega de atividade (levantamento de requisitos funcionais) |                                                                                                                                         |                                                                         |
-| Sprint 6   | 27/01/2025 | 03/02/2025 | Administração de produtos e gestores                         | Criar funcionalidades para que gestores adicionem, atualizem e removam produtos, além de permitir a administração de permissões (roles) | Validação das funcionalidades de administração                          |
-| 17/12      |            |            | Realização da segunda entrega (unidade 2)                    |                                                                                                                                         |                                                                         |
-| Sprint 7   | 03/02/2025 | 08/02/2025 | Histórico de pedidos e avaliações                            | Permitir que clientes visualizem o histórico de pedidos realizados e avaliem produtos e vendas                                          | Validação das funcionalidades de histórico e avaliações                 |
-| Sprint 8   | 08/02/2025 | 13/02/2025 | Análise de dados                                             | Implementar relatórios sobre vendas, tendências de compra e monitoramento de carrinhos abandonados                                      | Validação de gráficos e relatórios                                      |
-| 21/01      |            |            | Realização da terceira entrega (unidade 3)                   |                                                                                                                                         |                                                                         |
-| 13/02      |            |            | Realização da quarta entrega (unidade 4)                     |                                                                                                                                         |                                                                         |
+  
+
+| **Sprint** | **Entrega(s)** | **Data Início** | **Data Fim** |
+| ---| ---| ---| --- |
+| Sprint 1 | Planejamento, elaboração dos requisitos, definição do backlog e MVP | 25/11/2024 | 08/12/2024 |
+|  | Entrega da unidade 1 | \---------- | 12/11/2024 |
+|  | Realização e Apresentação: Atividades de ER nas fases do ciclo de vida do projeto | 21/11/2024 | 25/11/2024 |
+|  | Apresentação: Atividade de levantamento de requisitos | \---------- | 05/12/2024 |
+| Sprint 2 | Implementação das funcionalidades de cadastro de usuário, autenticação, recuperação de conta e gerenciamento de roles pelos gestores | 09/12/2024 | 22/12/2024 |
+|  | Entrega da unidade 2 | \---------- | 17/12/2024 |
+| RECESSO | \----------------------------------------------- | 23/12/2024 | 05/01/2025 |
+| Sprint 3 | Navegação do catálogo, permitir que o usuário busque pelos produtos e que eles sejam exibidos a ele | 06/01/2025 | 13/01/2025 |
+| Sprint 4 | Adição do carrinho de compras, ação de adição, remoção e alteração da quantidade de itens no carrinho de compras | 13/01/2025 | 20/01/2025 |
+| Sprint 5 | Redirecionamento de compra, permitir que o cliente conclua sua compra sendo redirecionado para o atendimento pelo whatsapp | 20/01/2025 | 27/01/2025 |
+|  | Entrega da unidade 3 | \---------- | 21/01/2025 |
+| Sprint 6 | Administração de estoque, permitir que os gestores adicionem, atualizem e removam produtos; Permitir gerenciamento de permissões e criação de novos roles | 27/01/2025 | 03/02/2025 |
+| Sprint 7 | Histórico de compras avaliação, permitir que o usuário visualize suas compras passadas e possa avaliar um produto | 03/02/2025 | 10/02/2025 |
+| Sprint 8 | Análise de dados, gerar relatório de vendas, tendências de compras e monitoramento de abandono de carrinho | 10/02/2025 | 17/02/2025 |
+|  | Entrega da unidade 4 | \---------- | 13/02/2025 |
+
+  
 
 ## Histórico de Versões
 
-| Versão |    Data     | Descrição                                 | Autor(es)                                        | Revisor(es)                                        |
-| ------ | :---------: | ----------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `1.0`  | 26/11/2024  | Criação do Documento                      |  [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza)       |
+  
 
-| Versão |    Data     | Descrição                                 | Autor(es)                                        | Revisor(es)                                                                                                                                                                                                                                           |
-| ------ | :---------: | ----------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `1.1`  | 26/11/2024  | Ajuste do Cronograma                      |  [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza)       |
+| Versão |    Data | Descrição | Autor(es) | Revisor(es) |
+| ---| ---| ---| ---| --- |
+| `1.0` | 26/11/2024 | Criação do Documento |  [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+| `1.1` | 26/11/2024 | Ajuste do Cronograma |  [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+| `1.2` | 05/12/2024 | Ajuste do cronograma e visualização | [Paulo Henrique](https://github.com/Nanashii76) |  [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
