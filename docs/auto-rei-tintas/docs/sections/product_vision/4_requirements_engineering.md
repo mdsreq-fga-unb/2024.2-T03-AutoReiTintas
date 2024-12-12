@@ -1,3 +1,5 @@
+# 4 Engenharia de Requisitos
+
 **Engenharia de Requisitos** é o processo de identificar, analisar, documentar e gerenciar os requisitos de um sistema. Seu objetivo é garantir que as necessidades e expectativas dos stakeholders (como clientes e usuários) sejam corretamente compreendidas e transformadas em especificações claras para o desenvolvimento do software, com base em **técnicas e práticas**.
 
 **Técnicas** são métodos ou abordagens usadas para coletar, analisar e validar os requisitos. Exemplos incluem entrevistas, análise de personas, criação de cenários, entre outros. Essas técnicas ajudam a entender o que precisa ser desenvolvido.

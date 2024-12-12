@@ -1,4 +1,4 @@
-# 1 CENÁRIO ATUAL DO CLIENTE E DO NEGÓCIO
+# 1 Cenário Atual do Cliente e do Negócio
 
 ## 1.1 Introdução ao Negócio e Contexto
 
@@ -20,18 +20,18 @@ Em relação às **medidas e políticas internas**, a Auto Rei Tintas não possu
 
 Por fim, a questão dos **materiais** e do portfólio de produtos da Auto Rei Tintas também contribui para essa dificuldade de captação. Sem um site, a empresa não consegue fornecer informações detalhadas e acessíveis sobre os produtos, o que limita o conhecimento que os clientes em potencial podem ter sobre a variedade de produtos disponíveis. A ampla linha de produtos da Auto Rei Tintas poderia ser explorada como uma vantagem competitiva, mas, sem um canal digital, essa variedade não chega ao conhecimento do público online.
 
-![Ishikawa](../../assets/ISHIKAWA.png)
+![Ishikawa](https://mdsreq-fga-unb.github.io/2024.2-T03-AutoReiTintas/assets/ISHIKAWA.png)
 
 ## 1.3 Desafios do Projeto
 
-| Desafio                          | Descrição                                                                                                                                                           |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Integração com Mercado Pago**   | Necessidade de integração eficiente do serviço de pagamento Mercado Pago ao site                                                                                   |
-| **Segurança**                     | Implementação de estratégias de segurança para proteger o site contra invasões                                                                                     |
+| Desafio                                             | Descrição                                                                                                                                                   |
+| --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Integração com ERP e modelagem de um novo banco** | Possível desafio na integração do sistema ERP utilizado pela empresa ao catálogo e a modelagem de um banco de dados para armazenar informações dos usuários |
+| **Segurança**                                       | Implementação de estratégias de segurança para proteger o site contra invasões                                                                              |
 
 ## 1.4 Segmentação de Clientes
 
-A loja de produtos para pintura automotiva e estética veicular atende a uma base de clientes bastante diversificada, dividida em três principais perfis: 
+A loja de produtos para pintura automotiva e estética veicular atende a uma base de clientes bastante diversificada, dividida em três principais perfis:
 
 **Consumidores Individuais (Público Final):** Este grupo é composto por pessoas físicas, geralmente entusiastas de automóveis, que buscam produtos para personalização e manutenção estética de seus veículos. Esses clientes valorizam a aparência e a conservação de seus carros e desejam acesso a uma variedade de produtos de alta qualidade, como tintas e acessórios para acabamento.  
 **Pequenas e Médias Empresas (PMEs):** Empresas que oferecem serviços de pintura e manutenção automotiva, como oficinas e centros de estética veicular, também formam uma parcela importante da clientela. Essas empresas procuram produtos de qualidade com boa durabilidade e estão interessadas em benefícios como compras em maior quantidade e melhores condições de pagamento.  
@@ -39,6 +39,10 @@ A loja de produtos para pintura automotiva e estética veicular atende a uma bas
 
 ## Histórico de Versões
 
-| Versão |    Data     | Descrição                                 | Autor(es)                                        | Revisor(es)                                        |
-| ------ | :---------: | ----------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `1.0`  | 26/11/2024  | Criação do Documento                      |  [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza)       |
+| Versão | Data       | Descrição                                    | Autor(es)                                                                                 | Revisor(es)                                                                                                                                                                                                                                  |
+| ------ | ---------- | -------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `1.0`  | 11/11/2024 | Adição dos tópicos 1 e 2 de Visão do Produto | [Johan](https://github.com/johan-rocha) e [Paulo Henrique](https://github.com/Nanashii76) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+
+| Versão | Data       | Descrição                                   | Autor(es)                                                                                                                                                                                                                                    | Revisor(es)                                                                                                                                                                                                                                  |
+| ------ | ---------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `1.1`  | 04/12/2024 | Revisão dos tópicos 1.3, 2.1, 2.2, 2.4, 2.5 | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
