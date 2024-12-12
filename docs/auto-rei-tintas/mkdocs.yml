@@ -11,15 +11,22 @@ nav:
     - Engenharia de Requisitos: sections/product_vision/4_requirements_engineering.md
     - Cronogramas e entregas: sections/product_vision/5_timeline.md
     - Interação entre equipe e cliente: sections/product_vision/6_interaction.md
+    - Requisitos de Software: sections/product_vision/7_requirements.md
+    - DoR e DoD: sections/product_vision/8_dorAndDod.md
+    - Backlog: sections/product_vision/9_backlog.md
     - Lições Aprendidas: sections/presentations/learned_lessons.md
   - Sprints:
-    - Sprint 0: sections/sprints/sprint0.md
-  - Backlog: sections/backlog/backlog.md
+    - ATAS:
+      - ATA 01-11: sections/atas/ata01-11.md
+      - ATA 12-11: sections/atas/ata12-11.md
+      - ATA 14-11: sections/atas/ata14-11.md
+      - ATA 03-12: sections/atas/ata03-12.md
+      - ATA 12-12: sections/atas/ata12-12.md
+  - Backlog: sections/product_vision/9_backlog.md
   - Entregas: 
     - Entrega Unidade 1: sections/presentations/presentation_1.md
   - Como contribuir:
     - Ambiente de desenvolvimento: how_to_contribute/environment.md
-  - Sobre: about.md
 
 theme:
   name: material
