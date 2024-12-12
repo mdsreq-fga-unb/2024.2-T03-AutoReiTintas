@@ -1,6 +1,6 @@
-## 10 Lições Aprendidas 
+# 10 Lições Aprendidas 
 
-## Unidade 10.1
+## Unidade 1
 
 ### Escolha de projeto
 
@@ -22,7 +22,7 @@ Após conseguir compreender o problema enfrentado pelo cliente, foi necessário 
 
 No início, a comunicação poderia ser mais efetiva entre os membros da equipe. Todavia, isso foi melhorando conforme nossas comunicações e avanços em relação ao projeto.
 
-## Unidade 10.2
+## Unidade 2
 
 ...
 

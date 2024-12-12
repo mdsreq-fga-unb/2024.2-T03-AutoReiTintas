@@ -1,4 +1,4 @@
-## 5 Cronograma e Entregas
+# 5 Cronograma e Entregas
 
 Com base nas estratégias apontadas pelos frameworks e decididas pelo grupo, a seguinte proposta de cronograma e entregas e feito:
 

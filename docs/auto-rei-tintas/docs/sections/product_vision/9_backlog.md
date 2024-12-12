@@ -1,4 +1,6 @@
-# 9.1 Backlog Geral
+# 9 Backlog
+
+## 9.1 Backlog Geral
 
 A seguir, em tabela, mostra-se cada história de usuário que derivaram dos requisitos funcionais apresentados no tópico 7.1. Esta é uma lista preliminar e deverá sofrer ajustes sempre que necessário, durante o desenvolvimento do produto da Auto Rei Tintas.
 
