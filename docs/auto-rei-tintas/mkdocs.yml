@@ -22,7 +22,10 @@ nav:
       - ATA 14-11: sections/atas/ata14-11.md
       - ATA 03-12: sections/atas/ata03-12.md
       - ATA 12-12: sections/atas/ata12-12.md
-  - Backlog: sections/product_vision/9_backlog.md
+  - Backlog:
+    - Requisitos de Software: sections/product_vision/7_requirements.md
+    - DoR e DoD: sections/product_vision/8_dorAndDod.md
+    - Backlog: sections/product_vision/9_backlog.md
   - Entregas: 
     - Entrega Unidade 1: sections/presentations/presentation_1.md
   - Como contribuir:
