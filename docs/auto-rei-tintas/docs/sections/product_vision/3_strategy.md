@@ -1,6 +1,7 @@
 # 3 Estratégias de Engenharia de Software
 
 Utilizando o framework de Sommerville no contexto do projeto e equipe para escolher a abordagem a seguir
+
 ## Questões Técnicas
 
 ## Desafios Identificados
@@ -8,7 +9,7 @@ Utilizando o framework de Sommerville no contexto do projeto e equipe para escol
 1. **Integração com o ERP existente**:
     - A empresa já possui um ERP eficiente. É necessário garantir que as novas soluções digitais, como e-commerce, integrem-se ao sistema sem perda de funcionalidade ou redundância.
     - Caso não seja possível a integração com o ERP, será necessário modelar um novo banco do zero
-2. **Plataforma de Digital**:
+2. **Plataforma Digital**:
     - Escolha e desenvolvimento de uma plataforma que seja escalável, segura para atender ao público diversificado.
 3. **Infraestrutura Tecnológica**:
     - Avaliar a necessidade de servidores, cloud computing e segurança para armazenar dados de clientes, pedidos e produtos.
