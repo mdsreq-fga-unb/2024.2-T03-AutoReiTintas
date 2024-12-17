@@ -14,6 +14,8 @@ Dentre as principais características que a solução se propõe a ter são:
     
 - Ferramentas de busca e filtragem que permitam ao usuário encontrar o que precisa com a menor quantidade de ações possíveis e possam escolher o produto em detrimento da marca e do grão.
 
+- Capacidade do usuário fazer cadastro e login a fim de preservar seu histórico de compras.
+
 ## 2.3 Tecnologias a Serem Utilizadas
 
 | Tecnologia                                                                                                               | Descrição                                                                                                                 |

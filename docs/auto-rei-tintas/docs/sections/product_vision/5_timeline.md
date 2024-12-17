@@ -2,6 +2,8 @@
 
   
 
+  
+
 Com base nas estratégias apontadas pelos frameworks e decididas pelo grupo, a seguinte proposta de cronograma e entregas e feito:
 
   
@@ -36,3 +38,4 @@ Com base nas estratégias apontadas pelos frameworks e decididas pelo grupo, a s
 | `1.1` | 26/11/2024 | Ajuste do Cronograma |  [Paulo Henrique](https://github.com/Nanashii76) |    [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
 | `1.2` | 05/12/2024 | Ajuste do cronograma e visualização | [Paulo Henrique](https://github.com/Nanashii76) |  [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
 | `1.3` | 12/12/2024 | Mudança da ordem das sprints e detalhamento | [Paulo Henrique](https://github.com/Nanashii76) e  [Johan](https://github.com/johan-rocha) |  [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+
