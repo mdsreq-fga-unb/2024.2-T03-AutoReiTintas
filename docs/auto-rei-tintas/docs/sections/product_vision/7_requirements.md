@@ -1,11 +1,8 @@
 # 7 Requisitos de Software
 
-## 7 Requisitos de Software
-
 ## 7.1 Lista de Requisitos Funcionais
 
 Os Requisitos Funcionais especificam as funcionalidades e serviços que o sistema de catálogo da auto rei tintas deve fornecer
-
   
 
 | Código | Descrição |
@@ -66,3 +63,4 @@ Obs: Os tópicos marcados com o \* não estão no URPS+
 | ---| ---| ---| ---| --- |
 | `1.0` | 11/11/2024 | Criação do Documento | [Paulo Henrique](https://github.com/Nanashii76) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
 | `1.1` | 05/12/2024 | Atualização dos requisitos Não funcionais | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn) e [Diogo](https://github.com/Diogo-Barboza) |
+
