@@ -7,7 +7,7 @@ Utilizando o framework de Sommerville no contexto do projeto e equipe para escol
 ## Desafios Identificados
 
 1. **Integração com o ERP existente**:
-    - A empresa já possui um ERP eficiente. É necessário garantir que as novas soluções digitais, como e-commerce, integrem-se ao sistema sem perda de funcionalidade ou redundância.
+    - A empresa já possui um ERP eficiente. É necessário garantir que as novas soluções digitais, como plataforma digital, integrem-se ao sistema sem perda de funcionalidade ou redundância.
     - Caso não seja possível a integração com o ERP, será necessário modelar um novo banco do zero
 2. **Plataforma Digital**:
     - Escolha e desenvolvimento de uma plataforma que seja escalável, segura para atender ao público diversificado.
@@ -21,7 +21,7 @@ Utilizando o framework de Sommerville no contexto do projeto e equipe para escol
 ## Desafios Identificados
 
 1. **Capacitação da Equipe**:
-    - A equipe de vendas e suporte já possui pessoas treinadas para gerenciar a plataforma de e-commerce.
+    - A equipe de vendas e suporte já possui pessoas treinadas para gerenciar a plataforma de plataforma digital.
 2. **Resistência à Mudança**:
     - Parte dos colaboradores pode resistir à adoção de novos processos digitais.
 3. **Comunicação entre Setores**:
@@ -44,7 +44,7 @@ Utilizando o framework de Sommerville no contexto do projeto e equipe para escol
 
 Após analisar os desafios, a **Scrum** parece ser a melhor abordagem para este projeto, considerando:
 
-- **Complexidade técnica**: ScrumXP permite a divisão do trabalho em sprints iterativos, facilitando o desenvolvimento modular da plataforma de e-commerce e integração com o ERP, ou a modelagem de um novo banco.
+- **Complexidade técnica**: ScrumXP permite a divisão do trabalho em sprints iterativos, facilitando o desenvolvimento modular da plataforma de plataforma digital e integração com o ERP, ou a modelagem de um novo banco.
 - **Necessidade de feedback constante**: Sprint reviews permitem ajustes rápidos com base no retorno de stakeholders internos e externos.
 - **Colaboração entre equipes**: ScrumXP promove reuniões diárias que alinham equipes multidisciplinares, reduzindo a resistência à mudança e aumentando o engajamento.
 - **Flexibilidade**: A metodologia permite mudanças no escopo à medida que novas demandas ou desafios são identificados.
