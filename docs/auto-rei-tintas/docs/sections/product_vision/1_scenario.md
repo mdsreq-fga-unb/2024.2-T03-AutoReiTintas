@@ -1,10 +1,10 @@
-# 1 Cenário Atual do Cliente e do Negócio
+# **Cenário Atual do Cliente e do Negócio**
 
-## 1.1 Introdução ao Negócio e Contexto
+## Introdução ao Negócio e Contexto
 
 A empresa, Auto Rei Tintas, é uma loja que atua no setor de varejo e atacado, ou seja, vende para outras empresas ou para uma pessoa física. É especializada em produtos para pintura automotiva e serviços de estética veicular, como por exemplo, pintura completa ou parcial de veículos e de produtos para essas finalidades, como tintas automotivas, verniz automotivo, polidor de corte, maquiador de imperfeições, boinas de polimentos. Ela atende tanto empresas quanto consumidores individuais que buscam pintar e cuidar de seus veículos. O público é bastante diverso, atendendo qualquer pessoa com mais de 18 anos, ou seja, todos que têm interesse em manter a aparência, o valor do veículo e até diferenciá-lo de outros carros com seu próprio estilo. Um dos pontos fortes desta empresa é que ela já conta com um sistema atual de ERP (Planejamento de recursos empresariais), portanto, ela possui um sistema eficiente de gestão de recursos. Atualmente, a forma de vender está diferente, e é muito mais fácil vender de forma virtual. Contudo, a empresa Auto rei tintas não possui nenhum formato de venda digital, nem nenhum canal de venda na internet .
 
-## 1.2 Identificação da Oportunidade ou Problema
+## Identificação da Oportunidade ou Problema
 
 **Problema:** Dificuldade de Alcançar Novos Clientes
 
@@ -22,14 +22,14 @@ Por fim, a questão dos **materiais** e do portfólio de produtos da Auto Rei Ti
 
 ![Ishikawa](https://mdsreq-fga-unb.github.io/2024.2-T03-AutoReiTintas/assets/ISHIKAWA.png)
 
-## 1.3 Desafios do Projeto
+## Desafios do Projeto
 
 | Desafio                                             | Descrição                                                                                                                                                   |
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Integração com ERP e modelagem de um novo banco** | Possível desafio na integração do sistema ERP utilizado pela empresa ao catálogo e a modelagem de um banco de dados para armazenar informações dos usuários |
 | **Segurança**                                       | Implementação de estratégias de segurança para proteger o site contra invasões                                                                              |
 
-## 1.4 Segmentação de Clientes
+## Segmentação de Clientes
 
 A loja de produtos para pintura automotiva e estética veicular atende a uma base de clientes bastante diversificada, dividida em três principais perfis:
 
@@ -42,7 +42,4 @@ A loja de produtos para pintura automotiva e estética veicular atende a uma bas
 | Versão | Data       | Descrição                                    | Autor(es)                                                                                 | Revisor(es)                                                                                                                                                                                                                                  |
 | ------ | ---------- | -------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `1.0`  | 11/11/2024 | Adição dos tópicos 1 e 2 de Visão do Produto | [Johan](https://github.com/johan-rocha) e [Paulo Henrique](https://github.com/Nanashii76) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
-
-| Versão | Data       | Descrição                                   | Autor(es)                                                                                                                                                                                                                                    | Revisor(es)                                                                                                                                                                                                                                  |
-| ------ | ---------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `1.1`  | 04/12/2024 | Revisão dos tópicos 1.3, 2.1, 2.2, 2.4, 2.5 | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |

@@ -1,6 +1,6 @@
-# 9 Backlog
+# Backlog
 
-## 9.1 Backlog Geral
+## Backlog Geral
 
 ### Épicos
 
@@ -40,7 +40,7 @@ A seguir, em tabela, mostra-se cada história de usuário que derivaram dos requ
 
 ##   
 
-## 9.2 Priorização do Backlog
+## Priorização do Backlog
 
 #### 1. **Impacto no Objetivo de Negócio**
 

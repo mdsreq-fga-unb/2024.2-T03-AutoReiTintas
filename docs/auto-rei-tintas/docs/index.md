@@ -1,6 +1,4 @@
-# Início
-
-## Projeto Auto-Rei Tintas
+# **Projeto Auto-Rei Tintas**
 
 <center>
 

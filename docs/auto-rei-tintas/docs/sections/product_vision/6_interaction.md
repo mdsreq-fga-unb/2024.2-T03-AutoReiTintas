@@ -1,6 +1,6 @@
-# 6 Interação entre Equipe e Cliente
+# **Interação entre Equipe e Cliente**
 
-## 6.1 Composição da Equipe
+## Composição da Equipe
 
 A equipe de desenvolvimento será composta por:
 
@@ -15,7 +15,7 @@ A equipe de desenvolvimento será composta por:
 | DevOPS | Responsável pelo deploy da aplicação. | Johan Marcos | Não se Aplica |
 | Cliente | Auxiliar no levantamento de requisitos e feedback de produto. | Evandro | Não se Aplica |
 
-## 6.2 Comunicação
+## Comunicação
 
 Ferramentas de Comunicação
 
@@ -30,12 +30,12 @@ Métodos e Métodos e Frequência de Reuniões
 - **Reuniões intermediárias:** Durante o decorrer da sprint termos o total de 2 encontros online separados da seguinte maneira, visando fazer o acompanhamento das tarefas e entender em que estágio da sprint estamos.
 - **Reuniões presenciais:** Durante o decorrer do projeto teremos também encontros presenciais toda terça e quinta após os horários das aulas visando uma curta reunião somente para dar um feedback geral para o grupo.
 
-## 6.3 Processo de Validação
+## Processo de Validação
 
 O processo de validação do produto se dará com as seguintes etapas:
 
-1. **Definição de Pronto(DoR):** será necessário validar o conteúdo dos requisitos está correto, claro, objetivo e se condiz com o proposto com o cliente e verificar se o requisito está escrito através do modelo padrão proposto pelo processo de software escolhido, ScrumXP.
-2. **Definição de Concluído(DoD):** Para ser considerado concluída, a funcionalidade deverá ser revisada pela equipe e aprovada pela equipe e o cliente, de modo cumprir totalmente os critérios de aceitação antes definidos.
+1. **Definition of Ready(DoR):** [aqui se encontra o DoR detalhado](8_dorAndDod.md)
+2. **Definition of Done(DoD):** [aqui se encontra o DoD detalhado](8_dorAndDod.md)
 
 ## Histórico de Versões
 
