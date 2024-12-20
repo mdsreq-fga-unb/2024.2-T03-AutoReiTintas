@@ -1,6 +1,6 @@
-# 8 DoR e DoD
+# **DoR e DoD**
 
-## 8.1 Definition of Ready (DoR)
+## Definition of Ready (DoR)
 
 A definição de Ready será feita em relação backlog de forma que serão aplicadas para cada uma das Histórias de Usuário. Essas definições são:
 
@@ -12,7 +12,7 @@ A definição de Ready será feita em relação backlog de forma que serão apli
 6. A história de usuário não possui dependências blocantes (não é dependente de outras histórias de usuário para ser realizada)
 7. Todos os critérios técnicos para sua execução foram bem definidos
 
-## 8.2 Definition of Done (DoD)
+## Definition of Done (DoD)
 
 As definições de Done serão focadas no produto e no incremento, e serão dadas por:
 

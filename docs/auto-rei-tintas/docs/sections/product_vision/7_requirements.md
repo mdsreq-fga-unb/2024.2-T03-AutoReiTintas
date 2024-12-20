@@ -1,6 +1,6 @@
-# 7 Requisitos de Software
+# **Requisitos de Software**
 
-## 7.1 Lista de Requisitos Funcionais
+## Lista de Requisitos Funcionais
 
 Os Requisitos Funcionais especificam as funcionalidades e serviços que o sistema de catálogo da auto rei tintas deve fornecer
   
@@ -25,7 +25,7 @@ Os Requisitos Funcionais especificam as funcionalidades e serviços que o sistem
 
   
 
-## 7.2 Lista de Requisitos Não Funcionais
+## Lista de Requisitos Não Funcionais
 
 Os Requisitos Não Funcionais descrevem características ou qualidades do sistema, como desempenho, segurança ou confiabilidade, relacionando-se em como o sistema deve se comportar. A seguir, os requisitos não funcionais foram evidenciados através do **framework URPS+,** sendo complementado com o **Framework Sommerville,** mostrando outros tipos de requisitos não funcionais como segurança e requisito legislativo.
 

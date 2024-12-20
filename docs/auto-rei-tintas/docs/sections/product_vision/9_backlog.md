@@ -1,6 +1,6 @@
-# 9 Backlog
+# Backlog
 
-## 9.1 Backlog Geral
+## Backlog Geral
 
 ### Épicos
 
@@ -36,7 +36,9 @@ A seguir, em tabela, mostra-se cada história de usuário que derivaram dos requ
 | EP03 | **US15** | O sistema deve permitir a recuperação de senha por e-mail, para que clientes possam acessar suas contas mesmo após esquecerem a senha. |
 | EP06 | **US16** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. |
 
-## 9.2 Priorização do Backlog
+
+## Priorização do Backlog
+
 
 #### 1. **Impacto no Objetivo de Negócio**
 
