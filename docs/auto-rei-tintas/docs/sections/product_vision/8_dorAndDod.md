@@ -22,7 +22,7 @@ As definições de Done serão focadas no produto e no incremento, e serão dada
 4. a integração entre backend e front-end foi realizada
 5. todas as funcionalidades foram testadas
 6. há cobertura de ao menos 90% de testes nas funcionalidades
-7. a métrica de desempenho - a Mean Response Time (ISOIEC25026) - definida nos critérios de aceitação foi atendida
+7. a métrica de desempenho - a Mean Response Time (ISOIEC25026) foi atendida
 
 
 ## Histórico de Versões
