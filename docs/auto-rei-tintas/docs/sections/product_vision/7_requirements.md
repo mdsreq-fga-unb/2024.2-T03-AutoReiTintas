@@ -3,83 +3,64 @@
 ## Lista de Requisitos Funcionais
 
 Os Requisitos Funcionais especificam as funcionalidades e serviços que o sistema de catálogo da auto rei tintas deve fornecer
+  
 
-**RF01** - **Registrar usuários:** Permitir o cadastro de novos clientes.
+| Código | Descrição |
+| ---| --- |
+| RF01 | Registrar usuários: O sistema deve ser capaz de permitir o cadastro de novos clientes. |
+| RF02 | Atualizar usuários: O sistema deve ser capaz de permitir a atualização das informações dos perfis dos clientes. |
+| RF03 | Excluir usuário: O sistema deve ser capaz de ter a opção de exclusão de dados. |
+| RF04 | Fazer Login de usuário: O sistema deve ser capaz de permitir a autenticação para usuários. |
+| RF05 | Fazer Login de gestor: O sistema deve ser capaz de permitir a autenticação para gestores com cargos para edição do catálogo. |
+| RF06 | Atualizar produtos: O sistema deve ser capaz de permitir que os gestores criem, alterem e excluam produtos. |
+| RF07 | Administrar roles: O sistema deve permitir que o administrador crie, altere e exclua gestores para controle de estoque. |
+| RF08 | Gerenciar carrinho: O sistema deve permitir que clientes adicionem produtos ao carrinho, removam ou modifiquem as quantidades. |
+| RF09 | Redirecionar compra: O sistema deve permitir o redirecionamento da compra para o atendimento via WhatsApp. |
+| RF10 | Navegar sem o login: O sistema deve permitir que os usuários naveguem e montem seus carrinhos de compra sem a necessidade de login no site. |
+| RF11 | Avaliar venda e produto: O sistema deve permitir que o usuário avalie a venda e o produto pelo site. |
+| RF12 | Consultar pedidos: O sistema deve permitir que clientes logados consultem o histórico de pedidos realizados. |
+| RF13 | Gerar relatórios de vendas: O sistema deve permitir a geração de relatórios básicos sobre produtos vendidos e tendências de compra. |
+| RF14 | Analisar abandono de carrinho: O sistema deve monitorar produtos adicionados ao carrinho, mas não comprados, para identificar padrões de abandono. |
+| RF15 | Recuperar conta: O sistema deve realizar a recuperação de senha por e-mail. |
 
-**RF02** - **Atualizar usuários:** Permitir a atualização das informações dos perfis dos clientes.
-
-**RF03 - Exclusão de usuário:** O usuário deve ter a opção de exclusão de dados.
-
-**RF04** - **Login de usuário:** O sistema deve permitir a autenticação para usuários.
-
-**RF05** - **Login de gestor:** O sistema deve permitir a autenticação para gestores com cargos para edição do catálogo.
-
-**RF06** - **Atualizar produtos:** O sistema deve permitir que os gestores criem, alterem e excluam produtos.
-
-**RF07** - **Administração de roles**: O usuário administrador deve ter a opção de criar, alterar, e excluir gestores para controle de estoque.
-
-**RF08** - **Gerenciamento de carrinho:** Permitir que clientes adicionem produtos ao carrinho de compras e permitir a remoção ou modificação das 
-quantidades dos produtos no carrinho.
-
-**RF09** - **Redirecionamento de compra:** redirecionamento para o atendimento via WhatsApp
-
-**RF10** - **Navegação sem o login:** permitir com que os usuários naveguem e montem seus carrinhos de compra nem a necessidade de login no site.
-
-**RF11** - **Avaliação da venda e produto:** o usuário poderá avaliar como foi a venda e o produto por meio do site.
-
-**RF12** - **Consultar pedidos:** Permitir que os clientes _logados_ consultem o histórico de pedidos realizados.
-
-**RF13** - **Gerar relatórios de vendas:** Permitir a geração de relatórios básicos sobre produtos vendidos e tendências de compra.
-
-**RF14** - **Analisar abandono de carrinho:** Monitorar produtos adicionados ao carrinho, mas não comprados, para identificar padrões de abandono de compra.
-
-**RF15** - **Recuperação de conta:** recuperação de senha por e-mail.
+  
 
 ## Lista de Requisitos Não Funcionais
 
-Os Requisitos Não Funcionais descrevem características ou qualidades do sistema, como desempenho, segurança ou confiabilidade, relacionando-se em como o sistema deve se comportar:
+Os Requisitos Não Funcionais descrevem características ou qualidades do sistema, como desempenho, segurança ou confiabilidade, relacionando-se em como o sistema deve se comportar. A seguir, os requisitos não funcionais foram evidenciados através do **framework URPS+,** sendo complementado com o **Framework Sommerville,** mostrando outros tipos de requisitos não funcionais como segurança e requisito legislativo.
 
-- **Usabilidade (Usability)**
-    - Documentação de ajuda para o usuário.
+  
 
-- **Confiabilidade (Reliability)**
-    - Garantir disponibilidade do sistema acima de 99%, com suporte a falhas mínimas.
+| Categoria | Código | Descrição |
+| ---| ---| --- |
+| **Usabilidade (Usability)** | RNF01 | Documentação de ajuda para o usuário. |
+| **Confiabilidade (Reliability)** | RNF02 | Garantir disponibilidade do sistema acima de 99%, com suporte a falhas mínimas. |
+| **Desempenho (Performance)** | RNF03 | Tempo médio de carregamento de página precisa ser de > 1 segundo e < 5 segundos. |
+| **Suportabilidade (Supportability)** | RNF04 | O sistema deve ser compatível com os principais navegadores web (Chrome, Firefox, Safari, Edge). |
+|  | RNF05 | O sistema deve conseguir funcionar em sistemas operacionais baseados em Linux e no Windows 10 e 11. |
+| **Restrições de Design** | RNF06 | Desenvolver código modular para facilitar futuras atualizações e manutenções. |
+| **Requisitos de Implementação** | RNF07 | Como front-end será utilizado React JS. |
+|  | RNF08 | Como back-end será utilizado Node JS. |
+|  | RNF09 | Como banco de dados, será utilizado PostgreSQL. |
+|  | RNF10 | Supabase como uma plataforma backend como serviço que utiliza PostgreSQL para fornecer autenticação, banco de dados e funções em tempo real. |
+|  | RNF11 | Realizar backups diários automáticos dos dados armazenados no PostgreSQL. |
+|  | RNF12 | Cobertura de testes de 99%. |
+| **Requisitos de Interface** | RNF13 | A interface deve seguir o manual de design da empresa Auto Rei Tintas (como cores, fontes de texto e padrões como um todo). |
+|  | RNF14 | As telas precisam ser responsivas tanto para dispositivos desktop quanto para mobile. |
+| **Requisitos Físicos** | RNF15 | Os dados de usuário e de gestor estarão armazenados no banco de dados PostgreSQL, com uma interface no Supabase. |
+| **Segurança\*** | RNF16 | Proteger informações sensíveis com criptografia e conformidade com LGPD. |
+| **Requisito Legislativo\*** | RNF17 | O usuário deve ter a opção de exclusão de dados, conforme a LGPD. |
 
-- **Desempenho (Performance)**
-    - Tempo médio de carregamento de página precisa ser de > 1 segundo e < 5 segundos.
+  
 
-- **Suportabilidade (Supportability)**
-    - O sistema deve ser compatível com os principais navegadores web (Chrome, Firefox, Safari, Edge).
-    - O sistema deve conseguir ser capaz de funcionar em sistemas operacionais baseados em Linux e no Windows 10 e 11.
+Obs: Os tópicos marcados com o \* não estão no URPS+
 
-- **Restrições de Design**
-    - Desenvolver código modular para facilitar futuras atualizações e manutenções.
-
-- **Requisitos de Implementação**
-    - Como front-end será utilizado React JS.
-    - Como back-end será utilizado Node JS.
-    - Como banco de dados, será utilizado PostgreSQL.
-    - Supabase como uma plataforma backend como serviço que utiliza PostgreSQL para fornecer autenticação, banco de dados e funções em tempo real.
-    - Realizar backups diários automáticos dos dados armazenados no PostgreSQL.
-    - Cobertura de testes de 99%.
-
-- **Requisitos de Interface**
-    - A interface deve seguir o manual de design da empresa Auto Rei Tintas (como cores, fontes de texto e padrões como um todo).
-    - as telas precisam de ser responsivas tanto para dispositivos desktop quanto para mobile.
-
-- **Requisitos Físicos**
-    - Os dados de usuário e de gestor estarão armazenados no banco de dados postgres, com uma interface no supabase.
-
-- **Segurança** *
-    - Proteger informações sensíveis com criptografia e conformidade com LGPD.
-
-- **Requisito Legislativo** *
-    - O usuário deve ter a opção de exclusão de dados, conforme a LGPD.
-
-Obs: Os tópicos marcados com o * não está no framework
+  
 
 ## Histórico de Versões
 
-| Versão | Data       | Descrição                                   | Autor(es)                                                                                                                                                                                                                                    | Revisor(es)                                                                                                                                                                                                                                  |
-| ------ | ---------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `1.0`  | 04/12/2024 | Criação do Documento | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+| Versão | Data | Descrição | Autor(es) | Revisor(es) |
+| ---| ---| ---| ---| --- |
+| `1.0` | 11/11/2024 | Criação do Documento | [Paulo Henrique](https://github.com/Nanashii76) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+| `1.1` | 05/12/2024 | Atualização dos requisitos Não funcionais | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn) e [Diogo](https://github.com/Diogo-Barboza) |
+

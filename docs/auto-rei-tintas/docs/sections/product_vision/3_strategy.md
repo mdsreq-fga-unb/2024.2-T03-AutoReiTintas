@@ -116,7 +116,6 @@ No projeto Auto Rei Tintas, com a ajuda do framework GUPTA adaptado - incluindo 
 |**Total Geral**|4|12|7|7|8|10|12||
 
 
-
 ## Histórico de Versões
 
 | Versão |    Data     | Descrição                                 | Autor(es)                                        | Revisor(es)                                                                                                                                                                                                                                           |

@@ -17,8 +17,6 @@
 
 A seguir, em tabela, mostra-se cada história de usuário que derivaram dos requisitos funcionais apresentados no tópico 7.1. Esta é uma lista preliminar e deverá sofrer ajustes sempre que necessário, durante o desenvolvimento do produto da auto reis tintas.
 
-  
-
 | Código(EP) | **Código(US)** | **Descrição** |
 | ---| ---| --- |
 | EP07 | **US01** | O sistema deve permitir o cadastro de novos clientes, para que eles possam acessar informações e realizar compras. |
@@ -38,9 +36,9 @@ A seguir, em tabela, mostra-se cada história de usuário que derivaram dos requ
 | EP03 | **US15** | O sistema deve permitir a recuperação de senha por e-mail, para que clientes possam acessar suas contas mesmo após esquecerem a senha. |
 | EP06 | **US16** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. |
 
-##   
 
 ## Priorização do Backlog
+
 
 #### 1. **Impacto no Objetivo de Negócio**
 
@@ -77,11 +75,12 @@ Define o quão rapidamente a funcionalidade deve ser entregue para atender às e
 | **US15** | O sistema deve permitir a recuperação de senha por e-mail, para que usuários possam acessar suas contas mesmo após esquecerem a senha. | 5 | 4 | 4 | 13 |
 | **US16** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. | 4 | 4 | 3 | 11 |
 
+
 ### Pontos da tabela
 
 | total | média de pontos |
 | ---| --- |
-| 167 | 11.125 |
+| 178 | 11.125 |
 
 Com base no método **MoSCoW** (Must Have, Should Have, Could Have, Won't Have), as histórias de usuário podem ser priorizadas de acordo com sua relevância e impacto no MVP.
 
@@ -91,7 +90,6 @@ Com base no método **MoSCoW** (Must Have, Should Have, Could Have, Won't Have),
 2. **Should Have (S)**: Funcionalidades importantes, mas não críticas, que podem ser implementadas após o lançamento inicial. (Funcionalidades entre 8 e 11)
 3. **Could Have (C)**: Funcionalidades desejáveis, mas opcionais e que podem ser adiadas. (Funcionalidades **abaixo de 8**)
 4. **Won’t Have (W)**: Funcionalidades que não serão incluídas na versão atual (fora do escopo do MVP). (Funcionalidades com **urgência** **abaixo de 2**)
-
   
 
 | **Código** | **Descrição** | **Categoria MoSCoW** |
@@ -120,6 +118,7 @@ Com base no método **MoSCoW** (Must Have, Should Have, Could Have, Won't Have),
 ### **Histórias que não entrarão para o MVP (Could + Won't have)**
 
 *   **US11**, **US13**, **US14**.
+
 
 ### **Resumindo a Prioridade por MoSCoW**
 
