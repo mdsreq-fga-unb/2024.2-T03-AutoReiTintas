@@ -5,11 +5,11 @@ repo_url: https://github.com/mdsreq-fga-unb/2024.2-T03-AutoReiTintas
 nav:
   - Início: index.md
   - Visão do Produto e Projeto: 
-    - Visão do Projeto:
+    - Visão do Produto:
       - Cenário atual do cliente e do negócio: sections/product_vision/1_scenario.md
       - Solução proposta: sections/product_vision/2_solution.md
       - Estratégias de Engenharia de Software: sections/product_vision/3_strategy.md 
-    - Visão do Produto:
+    - Visão do Projeto:
       - Engenharia de Requisitos: sections/product_vision/4_requirements_engineering.md
       - Interação entre equipe e cliente: sections/product_vision/6_interaction.md
       - Cronograma: sections/product_vision/5_timeline.md
