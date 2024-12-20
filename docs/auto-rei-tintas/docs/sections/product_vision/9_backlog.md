@@ -1,6 +1,6 @@
-# 9 Backlog
+# Backlog
 
-## 9.1 Backlog Geral
+## Backlog Geral
 
 ### Épicos
 
@@ -36,7 +36,9 @@ A seguir, em tabela, mostra-se cada história de usuário que derivaram dos requ
 | EP06 | **US12** | O sistema deve permitir que clientes logados consultem o histórico de pedidos, para que eles possam acompanhar e revisar suas compras. |
 | EP07 | **US01** | O sistema deve permitir o cadastro de novos clientes, para que eles possam acessar informações e realizar compras. |
 
-## 9.2 Priorização do Backlog
+
+## Priorização do Backlog
+
 
 #### 1. **Impacto no Objetivo de Negócio**
 

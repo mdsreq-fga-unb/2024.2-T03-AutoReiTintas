@@ -1,4 +1,4 @@
-# 4 Engenharia de Requisitos
+# **Engenharia de Requisitos**
 
 **Engenharia de Requisitos** é o processo de identificar, analisar, documentar e gerenciar os requisitos de um sistema. Seu objetivo é garantir que as necessidades e expectativas dos stakeholders (como clientes e usuários) sejam corretamente compreendidas e transformadas em especificações claras para o desenvolvimento do software, com base em **técnicas e práticas**.
 
@@ -12,7 +12,7 @@
 
   
 
-## 4.1 Atividades e Técnicas de ER
+## Atividades e Técnicas de ER
 
   
 
@@ -88,7 +88,7 @@ Nenhuma atividade de requisitos foi identificada na retrospectiva. Contudo, outr
 
   
 
-## 4.2 Engenharia de Requisitos e o ScrumXP
+## Engenharia de Requisitos e o ScrumXP
 
   
 

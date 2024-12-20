@@ -25,8 +25,8 @@
   /* primary colors */
   :root {
       --md-primary-bg-color: #111827; 
-      --md-primary-fg-color: #d1d5db; 
-      --md-primary-fg-color--light: #6b7280;  
+      --md-primary-fg-color: #1caace; 
+      --md-primary-fg-color--light: #168f5c;  
       --md-primary-fg-color--dark: #e5e7eb;  
 
       --md-text-link-color: #bb86fc;  

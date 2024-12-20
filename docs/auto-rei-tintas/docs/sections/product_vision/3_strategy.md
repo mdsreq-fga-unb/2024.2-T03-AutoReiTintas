@@ -1,10 +1,10 @@
-# 3 Estratégias de Engenharia de Software
+# **Estratégias de Engenharia de Software**
 
-Utilizando o framework de Sommerville no contexto do projeto e equipe para escolher a abordagem a seguir
+Utilizando o framework de Sommerville no contexto do projeto e equipe para escolher a abordagem a seguir:
 
 ## Questões Técnicas
 
-## Desafios Identificados
+### Desafios Identificados
 
 1. **Integração com o ERP existente**:
     - A empresa já possui um ERP eficiente. É necessário garantir que as novas soluções digitais, como plataforma digital, integrem-se ao sistema sem perda de funcionalidade ou redundância.
@@ -18,7 +18,7 @@ Utilizando o framework de Sommerville no contexto do projeto e equipe para escol
 
 ## Questões Humanas
 
-## Desafios Identificados
+### Desafios Identificados
 
 1. **Capacitação da Equipe**:
     - A equipe de vendas e suporte já possui pessoas treinadas para gerenciar a plataforma de plataforma digital.
@@ -31,7 +31,7 @@ Utilizando o framework de Sommerville no contexto do projeto e equipe para escol
 
 ## Questões Organizacionais
 
-## Desafios Identificados
+### Desafios Identificados
 
 1. **Mudança Cultural e Estratégica**:
     - A empresa precisa passar de uma estratégia tradicional para uma digital-first, sem perder sua identidade e qualidade.
@@ -49,13 +49,15 @@ Após analisar os desafios, a **Scrum** parece ser a melhor abordagem para este 
 - **Colaboração entre equipes**: ScrumXP promove reuniões diárias que alinham equipes multidisciplinares, reduzindo a resistência à mudança e aumentando o engajamento.
 - **Flexibilidade**: A metodologia permite mudanças no escopo à medida que novas demandas ou desafios são identificados.
 
-## 3 Estratégias de Engenharia de Software
+## Estratégias de Engenharia de Software
 
-## 3.1 Estratégia Priorizada
+### Estratégia Priorizada
 
-**Abordagem:** Ágil **Ciclo de Vida:** Iterativo **Processo:** ScrumXP
+- **Abordagem:** Ágil
+- **Ciclo de Vida:** Iterativo 
+- **Processo:** ScrumXP
 
-## 3.2 Quadro Comparativo
+### Quadro Comparativo
 
 |**Características**|**RAD**|**Scrum/XP**|**Protótipo**|
 |---|---|---|---|
@@ -73,7 +75,7 @@ Após analisar os desafios, a **Scrum** parece ser a melhor abordagem para este 
 |**Escalabilidade**|Limitada; mais adequado para projetos pequenos ou médios com fácil interação cliente-equipe.|Moderada; pode ser aplicado a projetos maiores com boa coordenação e práticas técnicas consistentes.|Limitada; mais eficaz em projetos pequenos e médios devido à dependência de interações rápidas e frequentes.|
 |**Suporte a Equipes**|Moderado; exige equipes ágeis, colaborativas e com comunicação constante, mas com papéis menos definidos.|Moderado; equipes autônomas e colaborativas, com práticas técnicas que exigem comprometimento e coordenação.|Moderado; favorece equipes pequenas e flexíveis, com foco na comunicação direta e ajustes iterativos.|
 
-## 3.3 Justificativa
+### Justificativa
 
 No projeto Auto Rei Tintas, com a ajuda do framework GUPTA adaptado - incluindo o processo ScrumXP a fim de analisar mais processos possíveis a serem utilizados no projeto -, o ScrumXP e o Protótipo são os que mais se encaixam como metodologia, porém, a escolha do ScrumXP se deve aos seguintes fatores:
 
@@ -113,6 +115,7 @@ No projeto Auto Rei Tintas, com a ajuda do framework GUPTA adaptado - incluindo 
 |Os recursos (tempo, dinheiro, pessoas, etc.) são escassos?|Não ❌|Sim ✅|Não ❌|Não ❌|Sim ✅|Não ❌|Sim ✅|Sim ✅|
 |**Total**|1|4|1|1|3|3|4||
 |**Total Geral**|4|12|7|7|8|10|12||
+
 
 ## Histórico de Versões
 
