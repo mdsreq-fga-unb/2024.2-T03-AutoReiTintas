@@ -13,3 +13,9 @@ Repositório de projeto da disciplina de REQ-T3.
 
   </tr>
 </table>
+
+## Documentação
+
+- [GitPage](https://mdsreq-fga-unb.github.io/2024.2-T03-AutoReiTintas/)
+- [Arquitetura do projeto](docs/arquitetura.md)
+- [Política de Branch e Commits](docs/politica_branch.md)
