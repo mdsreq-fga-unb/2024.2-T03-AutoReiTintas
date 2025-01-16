@@ -30,6 +30,8 @@ nav:
       - ATA 14-11: sections/atas/ata14-11.md
       - ATA 03-12: sections/atas/ata03-12.md
       - ATA 12-12: sections/atas/ata12-12.md
+  - Arquitetura de Software: sections/architecture/arquitetura.md
+  - Política de Branchs: sections/branch_policy/politica_branch.md
   - Como contribuir:
     - Ambiente de desenvolvimento: how_to_contribute/environment.md
 

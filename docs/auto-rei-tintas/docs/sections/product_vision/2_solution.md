@@ -16,15 +16,13 @@ Dentre as principais características que a solução se propõe a ter são:
 
 - Capacidade do usuário fazer cadastro e login a fim de preservar seu histórico de compras.
 
-
-
 ## Tecnologias a Serem Utilizadas
-
 
 | Tecnologia                                                                                                               | Descrição                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
 | ![React](https://img.shields.io/badge/React-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)                     | Biblioteca JavaScript para desenvolvimento da interface de usuário do site                                                |
-| ![Node.js](https://img.shields.io/badge/Node.js-%23339933.svg?style=flat&logo=node.js&logoColor=%23ffffff)               | Tecnologias para o backend, facilitando a integração de funcionalidades e transações                                      |
+| ![FastAPI](https://img.shields.io/badge/FastAPI-%23009688.svg?style=flat&logo=fastapi&logoColor=%23ffffff)               | Framework Python moderno e rápido para desenvolvimento do backend e APIs REST                                             |
+| ![Python](https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=%23ffffff)                  | Linguagem de programação utilizada no backend                                                                             |
 | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23316192.svg?style=flat&logo=postgresql&logoColor=%23ffffff)      | Banco de dados relacional para armazenar informações com o uso de SQL                                                     |
 | ![Supabase](https://img.shields.io/badge/Supabase-%234A7BEE.svg?style=flat&logo=supabase&logoColor=%23ffffff)            | Plataforma backend como serviço que utiliza PostgreSQL para fornecer autenticação, banco de dados e funções em tempo real |
 
@@ -78,3 +76,4 @@ O que esta solução de software propõe são os seguintes principais benefício
 | ------ | ---------- | -------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `1.0`  | 11/11/2024 | Adição dos tópicos 1 e 2 de Visão do Produto | [Johan](https://github.com/johan-rocha) e [Paulo Henrique](https://github.com/Nanashii76) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
 | `1.1`  | 04/12/2024 | Revisão dos tópicos 1.3, 2.1, 2.2, 2.4, 2.5 | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+| `2.0`  | 16/01/2025 | Revisão das tecnologias utilizadas | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
