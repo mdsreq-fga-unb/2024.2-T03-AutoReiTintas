@@ -58,22 +58,22 @@ Define o quão rapidamente a funcionalidade deve ser entregue para atender às e
 
 | **Código** | **Descrição** | valor de negócio | Complexidade de Implementação | Urgência | Total |
 | ---| ---| ---| ---| ---| --- |
-| **US01** | O sistema deve permitir o cadastro de novos clientes, para que eles possam acessar informações e realizar compras. | 3 | 3 | 3 | 9 |
-| **US02** | O sistema deve permitir a atualização das informações dos perfis dos clientes, para que seus dados estejam sempre corretos e atualizados. | 3 | 3 | 2 | 8 |
-| **US03** | O sistema deve permitir a exclusão de contas de clientes, para que eles possam encerrar seu vínculo com o sistema, se desejarem. | 3 | 2 | 3 | 8 |
-| **US04** | O sistema deve permitir que clientes façam login, para que eles possam acessar funcionalidades exclusivas, como consulta de pedidos e histórico de compra. | 3 | 3 | 2 | 8 |
-| **US05** | O sistema deve permitir que gestores façam login, para que eles possam acessar funcionalidades administrativas, como a edição de produtos no catálogo. | 5 | 5 | 5 | 15 |
-| **US06** | O sistema deve permitir que gestores criem, alterem e excluam produtos, para que o catálogo esteja sempre atualizado. | 5 | 5 | 5 | 15 |
-| **US07** | O sistema deve permitir que administradores criem, alterem e excluam contas de gestores, para que eles possam delegar responsabilidades no controle de estoque. | 5 | 5 | 5 | 15 |
-| **US08** | O sistema deve permitir que clientes adicionem, removam ou modifiquem produtos no carrinho, para que eles possam preparar suas compras conforme suas necessidades. | 5 | 4 | 5 | 14 |
-| **US09** | O sistema deve permitir o redirecionamento para o WhatsApp ao finalizar a compra, para que o cliente possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. | 5 | 4 | 5 | 14 |
-| **US10** | O sistema deve permitir que usuários naveguem pelo site e montem carrinhos de compras sem realizar login, para que eles possam explorar os produtos antes de criar uma conta. | 5 | 3 | 5 | 13 |
-| **US11** | O sistema deve permitir que clientes avaliem os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. | 2 | 4 | 1 | 7 |
-| **US12** | O sistema deve permitir que clientes logados consultem o histórico de pedidos, para que eles possam acompanhar e revisar suas compras. | 3 | 3 | 3 | 9 |
-| **US13** | O sistema deve permitir a geração de relatórios de vendas e tendências de compra, para que gestores possam tomar decisões estratégicas para o negócio. | 4 | 5 | 1 | 10 |
-| **US14** | O sistema deve permitir o monitoramento de produtos adicionados ao carrinho mas não comprados, para que gestores possam identificar padrões de abandono e melhorar a conversão. | 4 | 4 | 1 | 9 |
-| **US15** | O sistema deve permitir a recuperação de senha por e-mail, para que usuários possam acessar suas contas mesmo após esquecerem a senha. | 5 | 4 | 4 | 13 |
-| **US16** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. | 4 | 4 | 3 | 11 |
+| **US01** | Eu, como novo cliente, desejo realizar meu cadastro, para que eu possa acessar informações e efetuar compras. | 3 | 3 | 3 | 9 |
+| **US02** | Eu, como cliente, desejo atualizar as informações do meu perfil, para que meus dados estejam sempre corretos e atualizados. | 3 | 3 | 2 | 8 |
+| **US03** | Eu, como cliente, desejo excluir minha conta, para que eu possa encerrar meu vínculo com o sistema, se desejar. | 3 | 2 | 3 | 8 |
+| **US04** | Eu, como cliente, desejo fazer login, para que eu possa acessar funcionalidades exclusivas, como consulta de pedidos e histórico de compra. | 3 | 3 | 2 | 8 |
+| **US05** | Eu, como gestor, desejo fazer login, para que eu possa acessar funcionalidades administrativas, como a edição de produtos no catálogo. | 5 | 5 | 5 | 15 |
+| **US06** | Eu, como gestor, desejo criar, alterar e excluir produtos, para que o catálogo esteja sempre atualizado. | 5 | 5 | 5 | 15 |
+| **US07** | Eu, como administrador, desejo criar, alterar e excluir contas de gestores, para que eu possa delegar responsabilidades no controle de estoque. | 5 | 5 | 5 | 15 |
+| **US08** | Eu, como cliente, desejo adicionar, remover ou modificar produtos no carrinho, para que eu possa preparar minhas compras conforme minhas necessidades. | 5 | 4 | 5 | 14 |
+| **US09** | Eu, como cliente, desejo ser redirecionado para o WhatsApp ao finalizar a compra, para que eu possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. | 5 | 4 | 5 | 14 |
+| **US10** | Eu, como usuário, desejo navegar pelo site e montar carrinhos de compras sem realizar login, para que eu possa explorar os produtos antes de criar uma conta. | 5 | 3 | 5 | 13 |
+| **US11** | Eu, como cliente, desejo avaliar produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. | 2 | 4 | 1 | 7 |
+| **US12** | Eu, como cliente logado, desejo consultar o histórico de pedidos, para que eu possa acompanhar e revisar minhas compras. | 3 | 3 | 3 | 9 |
+| **US13** | Eu, como gestor, desejo gerar relatórios de vendas e tendências de compra, para que eu possa tomar decisões estratégicas para o negócio. | 4 | 5 | 1 | 10 |
+| **US14** | Eu, como gestor, desejo monitorar produtos adicionados ao carrinho mas não comprados, para que eu possa identificar padrões de abandono e melhorar a conversão. | 4 | 4 | 1 | 9 |
+| **US15** | Eu, como cliente, desejo recuperar minha senha por e-mail, para que eu possa acessar minha conta mesmo após esquecê-la. | 5 | 4 | 4 | 13 |
+| **US16** | Eu, como usuário, desejo pesquisar por produtos, para que haja praticidade na busca de itens e minha experiência no site seja melhorada. | 4 | 4 | 3 | 11 |
 
 
 ### Pontos da tabela
