@@ -94,6 +94,13 @@ A EduConnect é uma plataforma digital que facilita a criação, gestão e avali
 3. Acompanhamento e geração de relatórios detalhados
 4. Organização de apresentações finais
 
+### **Alunos**
+- Participação em projetos interdisciplinares.  
+- Colaboração em atividades.  
+- Recebimento de feedback construtivo.  
+- Participação em eventos e feiras.  
+
+
 
 
 
