@@ -19,6 +19,7 @@ nav:
     - Backlog: sections/product_vision/9_backlog.md
   - Sprints:
     - Sprint: sections/sprints/sprints.md
+    - Sprint 2: sections/sprints/sprint2.md
   - Estudos de Caso:
     - Estudo de Caso TechFix: sections/study_cases/study_case_PBB.md
     - Estudo de Caso EduConnect: sections/study_cases/study_case_USM.md
