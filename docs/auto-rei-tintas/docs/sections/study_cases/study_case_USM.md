@@ -1,4 +1,11 @@
-# EduConnect: Transformando a Gestão de Projetos Educacionais
+## **USM**
+
+User Story Mapping é uma técnica usada para organizar e visualizar as funcionalidades de um produto a partir da perspectiva do usuário, com o objetivo de entender melhor como as diversas partes do sistema se conectam para entregar valor ao usuário.
+A ideia central é mapear histórias de usuários em um formato visual que facilita a compreensão do fluxo de trabalho, das prioridades e das interações dentro de um produto
+
+## **Board Iterativo**
+
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVLsm-guI=/?moveToViewport=-1562,-692,7895,3469&embedId=810002321233" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
 
 ## **Contexto**
 A EduConnect busca transformar a forma como instituições educacionais gerenciam projetos interdisciplinares e atividades extracurriculares, promovendo uma integração eficiente e colaborativa entre todos os envolvidos no processo educacional.
@@ -100,10 +107,93 @@ A EduConnect é uma plataforma digital que facilita a criação, gestão e avali
 - Recebimento de feedback construtivo.  
 - Participação em eventos e feiras.  
 
+### **Especialistas Externos**
+- Colaboração efetiva com conteúdos.  
+- Utilização de linguagem pedagógica acessível.  
+- Recebimento de feedback sobre o impacto de sua colaboração.  
 
+### **Pais/Responsáveis**
+- Recebimento de informações detalhadas sobre o projeto.  
+- Acompanhamento regular do progresso dos filhos.  
+- Participação em eventos e reuniões.  
+- Contribuição com experiências e conhecimentos.  
 
+---
+
+## **Histórias de Usuário**
+
+### **Professores Coordenadores**
+1. **Planejamento do Projeto**
+   - **Como um professor coordenador**, quero definir os objetivos pedagógicos, o cronograma, o escopo e os recursos necessários para o projeto, para garantir que as atividades sejam bem organizadas e alinhadas aos resultados esperados.
+2. **Acompanhamento do Progresso**
+   - **Como um professor coordenador**, quero acompanhar o progresso das equipes e gerar relatórios detalhados, para monitorar o desempenho e identificar possíveis áreas de melhoria.
+3. **Avaliação Final**
+   - **Como um professor coordenador**, quero criar critérios de avaliação e rubricas claras, para garantir que a avaliação dos alunos seja justa e transparente.
+
+---
+
+### **Professor Pedagógico**
+1. **Acompanhamento Individual**
+   - **Como um professor pedagógico**, quero ter acesso constante às informações do projeto, para acompanhar o progresso dos alunos em minha disciplina.
+2. **Comunicação com a Equipe**
+   - **Como um professor pedagógico**, quero utilizar canais de comunicação eficientes com outros professores e coordenadores, para alinhar estratégias e compartilhar insights sobre os alunos.
+
+---
+
+### **Alunos**
+1. **Participação em Projetos**
+   - **Como aluno**, quero visualizar e participar de projetos interdisciplinares, para me engajar em atividades que ampliem meu aprendizado e me preparem para desafios do mundo real.
+2. **Receber Feedback**
+   - **Como aluno**, quero receber feedback construtivo sobre minhas atividades, para melhorar meu desempenho e crescer academicamente.
+3. **Apresentação em Eventos**
+   - **Como aluno**, quero participar de eventos e feiras para demonstrar o que aprendi, ajudando a valorizar meu trabalho e desenvolver habilidades de apresentação.
+
+---
+
+### **Especialistas Externos**
+1. **Contribuição Colaborativa**
+   - **Como especialista externo**, quero colaborar com conteúdos de minha área de conhecimento, para agregar valor pedagógico aos projetos desenvolvidos.
+2. **Feedback sobre Impacto**
+   - **Como especialista externo**, quero receber feedback sobre como minha contribuição impactou o projeto, para entender como posso melhorar em futuras colaborações.
+3. **Entendimento do Contexto**
+   - **Como especialista externo**, quero compreender o contexto pedagógico do projeto, para adequar minha linguagem e abordagem às necessidades educacionais.
+
+---
+
+### **Coordenador Pedagógico**
+1. **Supervisão de Projetos**
+   - **Como coordenador pedagógico**, quero supervisionar múltiplos projetos educacionais, para garantir que estejam alinhados aos objetivos institucionais.
+2. **Impacto Pedagógico**
+   - **Como coordenador pedagógico**, quero avaliar o impacto pedagógico de cada projeto, para assegurar que os alunos estão desenvolvendo as competências necessárias.
+3. **Orientação da Equipe**
+   - **Como coordenador pedagógico**, quero orientar professores, alunos e colaboradores, para alinhar expectativas e manter a integridade curricular.
+
+---
+
+### **Pais/Responsáveis**
+1. **Acompanhamento do Progresso**
+   - **Como pai ou responsável**, quero receber atualizações periódicas sobre o progresso do meu filho, para me sentir informado e apoiar suas atividades educacionais.
+2. **Participação em Reuniões**
+   - **Como pai ou responsável**, quero participar de reuniões informativas, para entender os objetivos e recursos do projeto e como posso contribuir.
+3. **Contribuição com Experiência**
+   - **Como pai ou responsável**, quero poder compartilhar minhas experiências e conhecimentos, para agregar valor aos projetos desenvolvidos.
+
+---
+
+### **História Principal Integrada**
+**Como uma plataforma educacional (EduConnect),** queremos oferecer uma solução integrada e colaborativa que facilite:  
+- O planejamento e acompanhamento de projetos pelos professores coordenadores.  
+- O suporte ao aprendizado e engajamento dos alunos.  
+- A comunicação eficiente entre professores pedagógicos, coordenadores, pais e especialistas externos.  
+- A participação ativa de pais e responsáveis na educação dos alunos.  
+
+---
+
+## **Ambiente de Colaboração**
+A EduConnect é um ambiente de colaboração mútua entre professores, alunos, pais, coordenadores pedagógicos e especialistas externos. Seu objetivo principal é promover projetos interdisciplinares que auxiliem na aprendizagem e engajamento dos alunos, enquanto coordenam de maneira eficiente todos os stakeholders envolvidos no processo educacional.
 
 
 | Versão | Data | Descrição | Autor(es) | Revisor(es) |
 | ---| ---| ---| ---| --- |
-| `1.0` | 20/01/2025 | Criação do Documento | [Mariana Letícia](https://github.com/Marianannn)| |
+| `1.0` | 20/01/2025 | Criação do Documento | [Mariana Letícia](https://github.com/Marianannn)| [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+| `1.1` | 12/12/2024 | Preenchimento do documento | [Paulo Henrique](https://github.com/Nanashii76) |  [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |

@@ -1,4 +1,4 @@
-# Documentação da Modelagem do Banco de Dados
+## Documentação da Modelagem do Banco de Dados
 
 ## Introdução
 
@@ -7,7 +7,9 @@ gerenciamento do usuário, pedidos, produtos, estoque, status e histórico do pe
 
 ## Versões Iniciais
 
-Para acessar às primeiras versões do modelo entidade relacionamento (MER) do banco e sua ideia de modelo relacional (MR): [link](https://app.diagrams.net/#G1uuyOgxtCFUpujv6f5A_hLrWncBwQjZEC#%7B%22pageId%22%3A%227oW0I3TyjF0ssKiXA1OV%22%7D)
+Para acessar às primeiras versões do modelo entidade relacionamento (MER) do banco e sua ideia de modelo relacional (MR):
+
+![modelo1](https://i.ibb.co/RpZc05r/banco1.png)
 
 ---
 
