@@ -5,7 +5,7 @@ A ideia central é mapear histórias de usuários em um formato visual que facil
 
 ## **Board Iterativo**
 
-<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVLsm-guI=/?moveToViewport=-1562,-692,7895,3469&embedId=810002321233" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVLsm-guI=/?moveToViewport=-3720,-4725,22768,11313&embedId=593892070896" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
 
 ## **Contexto**
 A EduConnect busca transformar a forma como instituições educacionais gerenciam projetos interdisciplinares e atividades extracurriculares, promovendo uma integração eficiente e colaborativa entre todos os envolvidos no processo educacional.
