@@ -31,7 +31,7 @@
     *   Negociação: Uma troca de opiniões entre a equipe e o stakeholder da AutoRei Tintas para resolver conflitos ou diferenças em relação aos requisitos e a viabilidade dos mesmos.
     *   Resolução de conflito: Parte do processo de negociação, mas com foco específico em lidar com desacordos ou incompatibilidades, já existentes ou que podem vir a surgir, entre os interesses das partes envolvidas.
 *   **Verificação e Validação:**
-    *   Confirmação de requisitos: Conferir se os requisitos foram bem definidos e implementáveis.
+    *   Confirmação de requisitos: Conferir se os requisitos foram bem definidos e implementáveis usando Definition of Done (DoD) e Definition of Ready (DoR).
 *   **Organização e atualização:**
     *   MoSCoW: (Must Have, Should Have, Could Have, Won't Have), as histórias de usuário são priorizadas de acordo com sua relevância e impacto no MVP com base na avaliação, de cada funcionalidade, feita pelos integrantes.
 
@@ -48,14 +48,12 @@
 *   **Verificação e Validação:**
     *   Checklist de Validação: Criar os critérios de aceitação junto ao cliente, para melhor desenvolvimento.
 *   **Organização e atualização**
-    *   User Story Mapping: Utilizar histórias de usuários para criar e organizar o backlog
+    *   Brainstorm: é uma técnica de criatividade usada para gerar uma grande quantidade de ideias de forma espontânea e sem julgamentos. O objetivo é explorar soluções para um problema ou desenvolver novos conceitos, sem restrições iniciais.
 
-  
 
 ### Execução da Sprint
 
   
-
 *   **Representação:**
     *   Prototipagem: As prototipagens serão utilizadas a fim de demonstrar ao cliente as funcionalidades e entender se estão de acordo com o desejado.
 *   **Verificação e Validação:**
@@ -64,11 +62,9 @@
     *   Revisão do backlog: Durante a execução da sprint, o backlog será constantemente atualizado de modo a identificar quais tarefas estão em andamento, finalizadas ou ainda presentes no backlog.
 
   
-
 ### Sprint Review
 
   
-
 *   **Verificação e atualização:**
     *   Qualidade de requisitos: A qualidade dos requisitos será garantida através de um roteiro de validação e um roteiro de verificação.
 *   **Declaração:**
@@ -96,12 +92,12 @@ Nenhuma atividade de requisitos foi identificada na retrospectiva. Contudo, outr
 | ---| ---| ---| ---| --- |
 | Planejamento da Release | Elicitação e<br>Descoberta | Levantamento<br>de Requisitos | Entrevistas, Brainstorming, Análise de Domínio de Negócio | Requisitos de alto nível<br>identificados e<br>Objetivos da release<br>bem definidos |
 |  | Declaração | Registro dos<br>Requisitos | Temas, Épicos e User<br>Stories | Histórias de usuário documentadas que descrevem os requisitos da versão de maneira clara e objetiva |
-|  | Análise e consenso | Priorização dos Requisitos | User Story Mapping | histórias de usuário priorizadas |
+|  | Análise e consenso | Priorização dos Requisitos | Brainstorm | histórias de usuário priorizadas |
 |  | Verificação e Validação | Verificar e validar os requisitos levantados | Definition of Done (DoD) e Definition of Ready (DoR) | Definições de Ready e Done das histórias de usuário no geral da release |
 |  | Organização e atualização | Elencar os requisitos levantados de acordo com os critérios de prioridade | MoSCoW, User Story | Lista de requisitos organizada com o grau de prioridade |
-| Planejamento da Sprint | Análise e consenso | Reunião de Planejamento | Análise de Personas, Histórias e Cenários | Lista de Personas, Histórias priorizadas |
-|  | Verificação e Validação | Entrevistas com Stakeholders, Revisão de documento | Checklist de Validação, Entrevista | Resultados do Checklist, Critérios de aceitação definidos |
-|  | Organização e atualização | Organização e priorização de requisitos | User Story Mapping | backlog organizado |
+| Planejamento da Sprint | Análise e consenso | Reunião de Planejamento | Análise de Personas | Lista de Personas |
+|  | Declaração | Reunião de planejamento | Histórias e cenários| Histórias priorizadas || Verificação e Validação | Entrevistas com Stakeholders, Revisão de documento | Checklist de Validação, Entrevista | Resultados do Checklist, Critérios de aceitação definidos |
+|  | Organização e atualização | Organização e priorização de requisitos | Brainstorm | backlog organizado |
 | Execução da Sprint | representação | Prototipação (criação de uma representação visual) | Protótipo com uso de frameworks como figma | Uma visualização que oriente a equipe de desenvolvimento na implementação |
 |  | Verificação e<br>Validação | Validar requisitos | Revisar os requisitos com base nos critérios de aceitação | Garantir que requisitos estão de acordo com os critérios de aceitação e qualidade |
 |  | Organização e<br>Atualização | Revisão do<br>Backlog | Revisão do Backlog da<br>Sprint | Backlog atualizado e<br>alinhado com os<br>objetivos da sprint em<br>andamento |

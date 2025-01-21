@@ -24,8 +24,8 @@
 @media (prefers-color-scheme: dark) {
   /* primary colors */
   :root {
-      --md-primary-bg-color: #111827; 
-      --md-primary-fg-color: #1caace; 
+      --md-primary-bg-color: #ffffff; 
+      --md-primary-fg-color: #1e2f63; 
       --md-primary-fg-color--light: #168f5c;  
       --md-primary-fg-color--dark: #e5e7eb;  
 

@@ -10,18 +10,17 @@ Os Requisitos Funcionais especificam as funcionalidades e serviços que o sistem
 | RF01 | Registrar usuários: O sistema deve ser capaz de permitir o cadastro de novos clientes. |
 | RF02 | Atualizar usuários: O sistema deve ser capaz de permitir a atualização das informações dos perfis dos clientes. |
 | RF03 | Excluir usuário: O sistema deve ser capaz de ter a opção de exclusão de dados. |
-| RF04 | Fazer Login de usuário: O sistema deve ser capaz de permitir a autenticação para usuários. |
-| RF05 | Fazer Login de gestor: O sistema deve ser capaz de permitir a autenticação para gestores com cargos para edição do catálogo. |
-| RF06 | Atualizar produtos: O sistema deve ser capaz de permitir que os gestores criem, alterem e excluam produtos. |
-| RF07 | Administrar roles: O sistema deve permitir que o administrador crie, altere e exclua gestores para controle de estoque. |
-| RF08 | Gerenciar carrinho: O sistema deve permitir que clientes adicionem produtos ao carrinho, removam ou modifiquem as quantidades. |
-| RF09 | Redirecionar compra: O sistema deve permitir o redirecionamento da compra para o atendimento via WhatsApp. |
-| RF10 | Navegar sem o login: O sistema deve permitir que os usuários naveguem e montem seus carrinhos de compra sem a necessidade de login no site. |
-| RF11 | Avaliar venda e produto: O sistema deve permitir que o usuário avalie a venda e o produto pelo site. |
-| RF12 | Consultar pedidos: O sistema deve permitir que clientes logados consultem o histórico de pedidos realizados. |
-| RF13 | Gerar relatórios de vendas: O sistema deve permitir a geração de relatórios básicos sobre produtos vendidos e tendências de compra. |
-| RF14 | Analisar abandono de carrinho: O sistema deve monitorar produtos adicionados ao carrinho, mas não comprados, para identificar padrões de abandono. |
-| RF15 | Recuperar conta: O sistema deve realizar a recuperação de senha por e-mail. |
+| RF04 | Fazer Login de usuário: O sistema deve ser capaz de permitir a autenticação para usuários clientes e gestores do sistema. |
+| RF05 | Atualizar produtos: O sistema deve ser capaz de permitir que os gestores criem, alterem e excluam produtos. |
+| RF06 | Administrar roles: O sistema deve permitir que o administrador crie, altere e exclua gestores para controle de estoque. |
+| RF07 | Gerenciar carrinho: O sistema deve permitir que clientes adicionem produtos ao carrinho, removam ou modifiquem as quantidades. |
+| RF08 | Redirecionar compra: O sistema deve permitir o redirecionamento da compra para o atendimento via WhatsApp. |
+| RF09 | Navegar sem o login: O sistema deve permitir que os usuários naveguem e montem seus carrinhos de compra sem a necessidade de login no site. |
+| RF10 | Avaliar venda e produto: O sistema deve permitir que o usuário avalie a venda e o produto pelo site. |
+| RF11 | Consultar pedidos: O sistema deve permitir que clientes logados consultem o histórico de pedidos realizados. |
+| RF12 | Gerar relatórios de vendas: O sistema deve permitir a geração de relatórios básicos sobre produtos vendidos e tendências de compra. |
+| RF13 | Analisar abandono de carrinho: O sistema deve monitorar produtos adicionados ao carrinho, mas não comprados, para identificar padrões de abandono. |
+| RF14 | Recuperar conta: O sistema deve realizar a recuperação de senha por e-mail. |
 
   
 
