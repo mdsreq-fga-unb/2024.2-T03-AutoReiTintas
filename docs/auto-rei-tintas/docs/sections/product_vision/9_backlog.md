@@ -61,19 +61,18 @@ Define o quão rapidamente a funcionalidade deve ser entregue para atender às e
 | **US01** | O sistema deve permitir o cadastro de novos clientes, para que eles possam acessar informações e realizar compras. | 3 | 3 | 3 | 9 |
 | **US02** | O sistema deve permitir a atualização das informações dos perfis dos clientes, para que seus dados estejam sempre corretos e atualizados. | 3 | 3 | 2 | 8 |
 | **US03** | O sistema deve permitir a exclusão de contas de clientes, para que eles possam encerrar seu vínculo com o sistema, se desejarem. | 3 | 2 | 3 | 8 |
-| **US04** | O sistema deve permitir que clientes façam login, para que eles possam acessar funcionalidades exclusivas, como consulta de pedidos e histórico de compra. | 3 | 3 | 2 | 8 |
-| **US05** | O sistema deve permitir que gestores façam login, para que eles possam acessar funcionalidades administrativas, como a edição de produtos no catálogo. | 5 | 5 | 5 | 15 |
-| **US06** | O sistema deve permitir que gestores criem, alterem e excluam produtos, para que o catálogo esteja sempre atualizado. | 5 | 5 | 5 | 15 |
-| **US07** | O sistema deve permitir que administradores criem, alterem e excluam contas de gestores, para que eles possam delegar responsabilidades no controle de estoque. | 5 | 5 | 5 | 15 |
-| **US08** | O sistema deve permitir que clientes adicionem, removam ou modifiquem produtos no carrinho, para que eles possam preparar suas compras conforme suas necessidades. | 5 | 4 | 5 | 14 |
-| **US09** | O sistema deve permitir o redirecionamento para o WhatsApp ao finalizar a compra, para que o cliente possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. | 5 | 4 | 5 | 14 |
-| **US10** | O sistema deve permitir que usuários naveguem pelo site e montem carrinhos de compras sem realizar login, para que eles possam explorar os produtos antes de criar uma conta. | 5 | 3 | 5 | 13 |
-| **US11** | O sistema deve permitir que clientes avaliem os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. | 2 | 4 | 1 | 7 |
-| **US12** | O sistema deve permitir que clientes logados consultem o histórico de pedidos, para que eles possam acompanhar e revisar suas compras. | 3 | 3 | 3 | 9 |
-| **US13** | O sistema deve permitir a geração de relatórios de vendas e tendências de compra, para que gestores possam tomar decisões estratégicas para o negócio. | 4 | 5 | 1 | 10 |
-| **US14** | O sistema deve permitir o monitoramento de produtos adicionados ao carrinho mas não comprados, para que gestores possam identificar padrões de abandono e melhorar a conversão. | 4 | 4 | 1 | 9 |
-| **US15** | O sistema deve permitir a recuperação de senha por e-mail, para que usuários possam acessar suas contas mesmo após esquecerem a senha. | 5 | 4 | 4 | 13 |
-| **US16** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. | 4 | 4 | 3 | 11 |
+| **US04** | O sistema deve permitir que clientes e gestores façam login, para que eles possam acessar funcionalidades exclusivas, como consulta de pedidos, histórico de compra e gerenciamento de itens. | 3 | 3 | 2 | 8 |
+| **US05** | O sistema deve permitir que gestores criem, alterem e excluam produtos, para que o catálogo esteja sempre atualizado. | 5 | 5 | 5 | 15 |
+| **US06** | O sistema deve permitir que administradores criem, alterem e excluam contas de gestores, para que eles possam delegar responsabilidades no controle de estoque. | 5 | 5 | 5 | 15 |
+| **US07** | O sistema deve permitir que clientes adicionem, removam ou modifiquem produtos no carrinho, para que eles possam preparar suas compras conforme suas necessidades. | 5 | 4 | 5 | 14 |
+| **US08** | O sistema deve permitir o redirecionamento para o WhatsApp ao finalizar a compra, para que o cliente possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. | 5 | 4 | 5 | 14 |
+| **US09** | O sistema deve permitir que usuários naveguem pelo site e montem carrinhos de compras sem realizar login, para que eles possam explorar os produtos antes de criar uma conta. | 5 | 3 | 5 | 13 |
+| **US10** | O sistema deve permitir que clientes avaliem os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. | 2 | 4 | 1 | 7 |
+| **US11** | O sistema deve permitir que clientes logados consultem o histórico de pedidos, para que eles possam acompanhar e revisar suas compras. | 3 | 3 | 3 | 9 |
+| **US12** | O sistema deve permitir a geração de relatórios de vendas e tendências de compra, para que gestores possam tomar decisões estratégicas para o negócio. | 4 | 5 | 1 | 10 |
+| **US13** | O sistema deve permitir o monitoramento de produtos adicionados ao carrinho mas não comprados, para que gestores possam identificar padrões de abandono e melhorar a conversão. | 4 | 4 | 1 | 9 |
+| **US14** | O sistema deve permitir a recuperação de senha por e-mail, para que usuários possam acessar suas contas mesmo após esquecerem a senha. | 5 | 4 | 4 | 13 |
+| **US15** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. | 4 | 4 | 3 | 11 |
 
 
 ### Pontos da tabela
@@ -97,27 +96,26 @@ Com base no método **MoSCoW** (Must Have, Should Have, Could Have, Won't Have),
 | **US01** | O sistema deve permitir o cadastro de novos clientes, para que eles possam acessar informações e realizar compras. | **Should Have (S)** |
 | **US02** | O sistema deve permitir a atualização das informações dos perfis dos clientes, para que seus dados estejam sempre corretos e atualizados. | **Should Have (S)** |
 | **US03** | O sistema deve permitir a exclusão de contas de clientes, para que eles possam encerrar seu vínculo com o sistema, se desejarem. | **Should Have (S)** |
-| **US04** | O sistema deve permitir que clientes façam login, para que eles possam acessar funcionalidades ex''clusivas, como consulta de pedidos e histórico de compra. | **Should Have (S)** |
-| **US05** | O sistema deve permitir que gestores façam login, para que eles possam acessar funcionalidades administrativas, como a edição de produtos no catálogo. | **Must Have (M)** |
-| **US06** | O sistema deve permitir que gestores criem, alterem e excluam produtos, para que o catálogo esteja sempre atualizado. | **Must Have (M)** |
-| **US07** | O sistema deve permitir que administradores criem, alterem e excluam contas de gestores, para que eles possam delegar responsabilidades no controle de estoque. | **Must Have (M)** |
-| **US08** | O sistema deve permitir que clientes adicionem, removam ou modifiquem produtos no carrinho, para que eles possam preparar suas compras conforme suas necessidades. | **Must Have (M)** |
-| **US09** | O sistema deve permitir o redirecionamento para o WhatsApp ao finalizar a compra, para que o cliente possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. | **Must Have (M)** |
-| **US10** | O sistema deve permitir que usuários naveguem pelo site e montem carrinhos de compras sem realizar login, para que eles possam explorar os produtos antes de criar uma conta. | **Must Have (M)** |
-| **US11** | O sistema deve permitir que clientes avaliem os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. | **Won’t Have (W)** |
-| **US12** | O sistema deve permitir que clientes logados consultem o histórico de pedidos, para que eles possam acompanhar e revisar suas compras. | **Should Have (S)** |
-| **US13** | O sistema deve permitir a geração de relatórios de vendas e tendências de compra, para que gestores possam tomar decisões estratégicas para o negócio. | **Won’t Have (W)** |
-| **US14** | O sistema deve permitir o monitoramento de produtos adicionados ao carrinho mas não comprados, para que gestores possam identificar padrões de abandono e melhorar a conversão. | **Won’t Have (W)** |
-| **US15** | O sistema deve permitir a recuperação de senha por e-mail, para que usuários possam acessar suas contas mesmo após esquecerem a senha. | **Should Have (S)** |
-| **US16** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. | **Should Have (S)** |
+| **US04** | O sistema deve permitir que usuários façam login, para que eles possam acessar funcionalidades ex''clusivas, como consulta de pedidos e histórico de compra. | **Must Have (M)** |
+| **US05** | O sistema deve permitir que gestores criem, alterem e excluam produtos, para que o catálogo esteja sempre atualizado. | **Must Have (M)** |
+| **US06** | O sistema deve permitir que administradores criem, alterem e excluam contas de gestores, para que eles possam delegar responsabilidades no controle de estoque. | **Must Have (M)** |
+| **US07** | O sistema deve permitir que clientes adicionem, removam ou modifiquem produtos no carrinho, para que eles possam preparar suas compras conforme suas necessidades. | **Must Have (M)** |
+| **US08** | O sistema deve permitir o redirecionamento para o WhatsApp ao finalizar a compra, para que o cliente possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. | **Must Have (M)** |
+| **US09** | O sistema deve permitir que usuários naveguem pelo site e montem carrinhos de compras sem realizar login, para que eles possam explorar os produtos antes de criar uma conta. | **Must Have (M)** |
+| **US10** | O sistema deve permitir que clientes avaliem os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. | **Won’t Have (W)** |
+| **US11** | O sistema deve permitir que clientes logados consultem o histórico de pedidos, para que eles possam acompanhar e revisar suas compras. | **Should Have (S)** |
+| **US12** | O sistema deve permitir a geração de relatórios de vendas e tendências de compra, para que gestores possam tomar decisões estratégicas para o negócio. | **Won’t Have (W)** |
+| **US13** | O sistema deve permitir o monitoramento de produtos adicionados ao carrinho mas não comprados, para que gestores possam identificar padrões de abandono e melhorar a conversão. | **Won’t Have (W)** |
+| **US14** | O sistema deve permitir a recuperação de senha por e-mail, para que usuários possam acessar suas contas mesmo após esquecerem a senha. | **Should Have (S)** |
+| **US15** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. | **Should Have (S)** |
 
 ### **Histórias Selecionadas para o MVP (Should + Must have)**
 
-*   **US01**, **US02**, **US03**, **US04**, **US05**, **US06**, **US07**, **US08**, **US09**, **US10**, **US12**, **US15, US16**
+*   **US01**, **US02**, **US03**, **US04**, **US05**, **US06**, **US07**, **US08**, **US09**, **US10**, **US12**, **US15**
 
 ### **Histórias que não entrarão para o MVP (Could + Won't have)**
 
-*   **US11**, **US13**, **US14**.
+*   **US10**, **US12**, **US13**.
 
 
 ### **Resumindo a Prioridade por MoSCoW**
@@ -125,7 +123,7 @@ Com base no método **MoSCoW** (Must Have, Should Have, Could Have, Won't Have),
 | **MoSCoW** | **Quantidade de Histórias** | **Incluídas no MVP?** |
 | ---| ---| --- |
 | **Must Have** | 6 | Sim |
-| **Should Have** | 7 | Sim |
+| **Should Have** | 6 | Sim |
 | **Could Have** | 0 | Não |
 | **Won’t Have** | 3 | Não |
 
