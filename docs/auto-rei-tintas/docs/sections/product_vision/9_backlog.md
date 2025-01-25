@@ -19,22 +19,22 @@ A seguir, em tabela, mostra-se cada história de usuário que derivaram dos requ
 
 | Código(EP) | **Código(US)** | **Descrição** |
 | ---| ---| --- |
-| EP07 | **US01** | O sistema deve permitir o cadastro de novos clientes, para que eles possam acessar informações e realizar compras. |
-| EP03 | **US02** | O sistema deve permitir a atualização das informações dos perfis dos clientes, para que seus dados estejam sempre corretos e atualizados. |
-| EP03 | **US03** | O sistema deve permitir a exclusão de contas de clientes, para que eles possam encerrar seu vínculo com o sistema, se desejarem. |
-| EP03 | **US04** | O sistema deve permitir que clientes façam login, para que eles possam acessar funcionalidades exclusivas, como consulta de pedidos e histórico de compra. |
-| EP02 | **US05** | O sistema deve permitir que gestores façam login, para que eles possam acessar funcionalidades administrativas, como a edição de produtos no catálogo. |
-| EP02 | **US06** | O sistema deve permitir que gestores criem, alterem e excluam produtos, para que o catálogo esteja sempre atualizado. |
-| EP02 | **US07** | O sistema deve permitir que administradores criem, alterem e excluam contas de gestores, para que eles possam delegar responsabilidades no controle de estoque. |
-| EP01 | **US08** | O sistema deve permitir que clientes adicionem, removam ou modifiquem produtos no carrinho, para que eles possam preparar suas compras conforme suas necessidades. |
-| EP01 | **US09** | O sistema deve permitir o redirecionamento para o WhatsApp ao finalizar a compra, para que o cliente possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. |
-| EP01 | **US10** | O sistema deve permitir que usuários naveguem pelo site e montem carrinhos de compras sem realizar login, para que eles possam explorar os produtos antes de criar uma conta. |
-| EP05 | **US11** | O sistema deve permitir que clientes avaliem os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. |
-|  | **US12** | O sistema deve permitir que clientes logados consultem o histórico de pedidos, para que eles possam acompanhar e revisar suas compras. |
-| EP04 | **US13** | O sistema deve permitir a geração de relatórios de vendas e tendências de compra, para que gestores possam tomar decisões estratégicas para o negócio. |
-| EP01 | **US14** | O sistema deve permitir o monitoramento de produtos adicionados ao carrinho mas não comprados, para que gestores possam identificar padrões de abandono e melhorar a conversão. |
-| EP03 | **US15** | O sistema deve permitir a recuperação de senha por e-mail, para que clientes possam acessar suas contas mesmo após esquecerem a senha. |
-| EP06 | **US16** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. |
+| EP07 | **US01** | Como um usuário, eu quero me cadastrar no sistema, para que eu possa acessar informações e realizar compras. |
+| EP03 | **US02** | Como um usuário, eu quero atualizar as informações do meu perfil, para que meus dados estejam sempre corretos e atualizados. |
+| EP03 | **US03** | Como um usuário, eu quero excluir minha conta, para que eu possa encerrar meu vínculo com o sistema, se desejar. |
+| EP03 | **US04** | Como cliente ou gestor, eu quero fazer login no sistema, para que eu possa acessar funcionalidades exclusivas, como consulta de pedidos e histórico de compras. |
+| EP02 | **US05** | Como gestor, eu quero criar, alterar e excluir produtos no sistema, para que o catálogo esteja sempre atualizado. |
+| EP02 | **US06** | Como administrador, eu quero criar, alterar e excluir contas de gestores, para que eu possa delegar responsabilidades no controle de estoque. |
+| EP01 | **US07** | Como cliente, eu quero adicionar, remover ou modificar produtos no carrinho, para que eu possa preparar minhas compras conforme minhas necessidades. |
+| EP01 | **US08** | Como cliente, eu quero ser redirecionado para o WhatsApp ao finalizar a compra, para que eu possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. |
+| EP01 | **US09** | Como um usuário, eu quero navegar pelo site e montar carrinhos de compras sem realizar login, para que eu possa explorar os produtos antes de criar uma conta. |
+| EP05 | **US10** | Como cliente, eu quero avaliar os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. |
+|  | **US11** | Como cliente logado, eu quero consultar o histórico de pedidos, para que eu possa acompanhar e revisar minhas compras. |
+| EP04 | **US12** | Como gestor, eu quero gerar relatórios de vendas e tendências de compra, para que eu possa tomar decisões estratégicas para o negócio. |
+| EP01 | **US13** | Como gestor, eu quero monitorar produtos adicionados ao carrinho mas não comprados, para que eu possa identificar padrões de abandono e melhorar a conversão. |
+| EP03 | **US14** | Como usuário, eu quero recuperar minha senha por e-mail, para que eu possa acessar minha conta mesmo após esquecer a senha. |
+| EP06 | **US15** | Como usuário, eu quero pesquisar por produtos, para que eu possa encontrar itens de forma prática e melhorar minha experiência no site. |
+
 
 
 ## Priorização do Backlog
@@ -58,21 +58,22 @@ Define o quão rapidamente a funcionalidade deve ser entregue para atender às e
 
 | **Código** | **Descrição** | valor de negócio | Complexidade de Implementação | Urgência | Total |
 | ---| ---| ---| ---| ---| --- |
-| **US01** | O sistema deve permitir o cadastro de novos clientes, para que eles possam acessar informações e realizar compras. | 3 | 3 | 3 | 9 |
-| **US02** | O sistema deve permitir a atualização das informações dos perfis dos clientes, para que seus dados estejam sempre corretos e atualizados. | 3 | 3 | 2 | 8 |
-| **US03** | O sistema deve permitir a exclusão de contas de clientes, para que eles possam encerrar seu vínculo com o sistema, se desejarem. | 3 | 2 | 3 | 8 |
-| **US04** | O sistema deve permitir que clientes e gestores façam login, para que eles possam acessar funcionalidades exclusivas, como consulta de pedidos, histórico de compra e gerenciamento de itens. | 3 | 3 | 2 | 8 |
-| **US05** | O sistema deve permitir que gestores criem, alterem e excluam produtos, para que o catálogo esteja sempre atualizado. | 5 | 5 | 5 | 15 |
-| **US06** | O sistema deve permitir que administradores criem, alterem e excluam contas de gestores, para que eles possam delegar responsabilidades no controle de estoque. | 5 | 5 | 5 | 15 |
-| **US07** | O sistema deve permitir que clientes adicionem, removam ou modifiquem produtos no carrinho, para que eles possam preparar suas compras conforme suas necessidades. | 5 | 4 | 5 | 14 |
-| **US08** | O sistema deve permitir o redirecionamento para o WhatsApp ao finalizar a compra, para que o cliente possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. | 5 | 4 | 5 | 14 |
-| **US09** | O sistema deve permitir que usuários naveguem pelo site e montem carrinhos de compras sem realizar login, para que eles possam explorar os produtos antes de criar uma conta. | 5 | 3 | 5 | 13 |
-| **US10** | O sistema deve permitir que clientes avaliem os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. | 2 | 4 | 1 | 7 |
-| **US11** | O sistema deve permitir que clientes logados consultem o histórico de pedidos, para que eles possam acompanhar e revisar suas compras. | 3 | 3 | 3 | 9 |
-| **US12** | O sistema deve permitir a geração de relatórios de vendas e tendências de compra, para que gestores possam tomar decisões estratégicas para o negócio. | 4 | 5 | 1 | 10 |
-| **US13** | O sistema deve permitir o monitoramento de produtos adicionados ao carrinho mas não comprados, para que gestores possam identificar padrões de abandono e melhorar a conversão. | 4 | 4 | 1 | 9 |
-| **US14** | O sistema deve permitir a recuperação de senha por e-mail, para que usuários possam acessar suas contas mesmo após esquecerem a senha. | 5 | 4 | 4 | 13 |
-| **US15** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. | 4 | 4 | 3 | 11 |
+| **US01** | Como um usuário, eu quero me cadastrar no sistema, para que eu possa acessar informações e realizar compras. | 3 | 3 | 3 | 9 |
+| **US02** | Como um usuário, eu quero atualizar as informações do meu perfil, para que meus dados estejam sempre corretos e atualizados. | 3 | 3 | 2 | 8 |
+| **US03** | Como um usuário, eu quero excluir minha conta, para que eu possa encerrar meu vínculo com o sistema, se desejar. | 3 | 2 | 3 | 8 |
+| **US04** | Como cliente ou gestor, eu quero fazer login no sistema, para que eu possa acessar funcionalidades exclusivas, como consulta de pedidos, histórico de compras e gerenciamento de itens. | 3 | 3 | 2 | 8 |
+| **US05** | Como gestor, eu quero criar, alterar e excluir produtos no sistema, para que o catálogo esteja sempre atualizado. | 5 | 5 | 5 | 15 |
+| **US06** | Como administrador, eu quero criar, alterar e excluir contas de gestores, para que eu possa delegar responsabilidades no controle de estoque. | 5 | 5 | 5 | 15 |
+| **US07** | Como cliente, eu quero adicionar, remover ou modificar produtos no carrinho, para que eu possa preparar minhas compras conforme minhas necessidades. | 5 | 4 | 5 | 14 |
+| **US08** | Como cliente, eu quero ser redirecionado para o WhatsApp ao finalizar a compra, para que eu possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. | 5 | 4 | 5 | 14 |
+| **US09** | Como um usuário, eu quero navegar pelo site e montar carrinhos de compras sem realizar login, para que eu possa explorar os produtos antes de criar uma conta. | 5 | 3 | 5 | 13 |
+| **US10** | Como cliente, eu quero avaliar os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. | 2 | 4 | 1 | 7 |
+| **US11** | Como cliente logado, eu quero consultar o histórico de pedidos, para que eu possa acompanhar e revisar minhas compras. | 3 | 3 | 3 | 9 |
+| **US12** | Como gestor, eu quero gerar relatórios de vendas e tendências de compra, para que eu possa tomar decisões estratégicas para o negócio. | 4 | 5 | 1 | 10 |
+| **US13** | Como gestor, eu quero monitorar produtos adicionados ao carrinho mas não comprados, para que eu possa identificar padrões de abandono e melhorar a conversão. | 4 | 4 | 1 | 9 |
+| **US14** | Como usuário, eu quero recuperar minha senha por e-mail, para que eu possa acessar minha conta mesmo após esquecer a senha. | 5 | 4 | 4 | 13 |
+| **US15** | Como usuário, eu quero pesquisar por produtos, para que eu possa encontrar itens de forma prática e melhorar minha experiência no site. | 4 | 4 | 3 | 11 |
+
 
 
 ### Pontos da tabela
@@ -93,21 +94,22 @@ Com base no método **MoSCoW** (Must Have, Should Have, Could Have, Won't Have),
 
 | **Código** | **Descrição** | **Categoria MoSCoW** |
 | ---| ---| --- |
-| **US01** | O sistema deve permitir o cadastro de novos clientes, para que eles possam acessar informações e realizar compras. | **Should Have (S)** |
-| **US02** | O sistema deve permitir a atualização das informações dos perfis dos clientes, para que seus dados estejam sempre corretos e atualizados. | **Should Have (S)** |
-| **US03** | O sistema deve permitir a exclusão de contas de clientes, para que eles possam encerrar seu vínculo com o sistema, se desejarem. | **Should Have (S)** |
-| **US04** | O sistema deve permitir que usuários façam login, para que eles possam acessar funcionalidades ex''clusivas, como consulta de pedidos e histórico de compra. | **Must Have (M)** |
-| **US05** | O sistema deve permitir que gestores criem, alterem e excluam produtos, para que o catálogo esteja sempre atualizado. | **Must Have (M)** |
-| **US06** | O sistema deve permitir que administradores criem, alterem e excluam contas de gestores, para que eles possam delegar responsabilidades no controle de estoque. | **Must Have (M)** |
-| **US07** | O sistema deve permitir que clientes adicionem, removam ou modifiquem produtos no carrinho, para que eles possam preparar suas compras conforme suas necessidades. | **Must Have (M)** |
-| **US08** | O sistema deve permitir o redirecionamento para o WhatsApp ao finalizar a compra, para que o cliente possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. | **Must Have (M)** |
-| **US09** | O sistema deve permitir que usuários naveguem pelo site e montem carrinhos de compras sem realizar login, para que eles possam explorar os produtos antes de criar uma conta. | **Must Have (M)** |
-| **US10** | O sistema deve permitir que clientes avaliem os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. | **Won’t Have (W)** |
-| **US11** | O sistema deve permitir que clientes logados consultem o histórico de pedidos, para que eles possam acompanhar e revisar suas compras. | **Should Have (S)** |
-| **US12** | O sistema deve permitir a geração de relatórios de vendas e tendências de compra, para que gestores possam tomar decisões estratégicas para o negócio. | **Won’t Have (W)** |
-| **US13** | O sistema deve permitir o monitoramento de produtos adicionados ao carrinho mas não comprados, para que gestores possam identificar padrões de abandono e melhorar a conversão. | **Won’t Have (W)** |
-| **US14** | O sistema deve permitir a recuperação de senha por e-mail, para que usuários possam acessar suas contas mesmo após esquecerem a senha. | **Should Have (S)** |
-| **US15** | O sistema deve permitir que o usuário consiga pesquisar por produtos, para que haja praticidade na busca de itens de modo a melhorar sua experiência de usuário no site. | **Should Have (S)** |
+| **US01** | Como um usuário, eu quero me cadastrar no sistema, para que eu possa acessar informações e realizar compras. | **Should Have (S)** |
+| **US02** | Como um usuário, eu quero atualizar as informações do meu perfil, para que meus dados estejam sempre corretos e atualizados. | **Should Have (S)** |
+| **US03** | Como um usuário, eu quero excluir minha conta, para que eu possa encerrar meu vínculo com o sistema, se desejar. | **Should Have (S)** |
+| **US04** | Como cliente ou gestor, eu quero fazer login no sistema, para que eu possa acessar funcionalidades exclusivas, como consulta de pedidos e histórico de compras. | **Must Have (M)** |
+| **US05** | Como gestor, eu quero criar, alterar e excluir produtos no sistema, para que o catálogo esteja sempre atualizado. | **Must Have (M)** |
+| **US06** | Como administrador, eu quero criar, alterar e excluir contas de gestores, para que eu possa delegar responsabilidades no controle de estoque. | **Must Have (M)** |
+| **US07** | Como cliente, eu quero adicionar, remover ou modificar produtos no carrinho, para que eu possa preparar minhas compras conforme minhas necessidades. | **Must Have (M)** |
+| **US08** | Como cliente, eu quero ser redirecionado para o WhatsApp ao finalizar a compra, para que eu possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. | **Must Have (M)** |
+| **US09** | Como um usuário, eu quero navegar pelo site e montar carrinhos de compras sem realizar login, para que eu possa explorar os produtos antes de criar uma conta. | **Must Have (M)** |
+| **US10** | Como cliente, eu quero avaliar os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. | **Won’t Have (W)** |
+| **US11** | Como cliente logado, eu quero consultar o histórico de pedidos, para que eu possa acompanhar e revisar minhas compras. | **Should Have (S)** |
+| **US12** | Como gestor, eu quero gerar relatórios de vendas e tendências de compra, para que eu possa tomar decisões estratégicas para o negócio. | **Won’t Have (W)** |
+| **US13** | Como gestor, eu quero monitorar produtos adicionados ao carrinho mas não comprados, para que eu possa identificar padrões de abandono e melhorar a conversão. | **Won’t Have (W)** |
+| **US14** | Como usuário, eu quero recuperar minha senha por e-mail, para que eu possa acessar minha conta mesmo após esquecer a senha. | **Should Have (S)** |
+| **US15** | Como usuário, eu quero pesquisar por produtos, para que eu possa encontrar itens de forma prática e melhorar minha experiência no site. | **Should Have (S)** |
+
 
 ### **Histórias Selecionadas para o MVP (Should + Must have)**
 
@@ -135,3 +137,4 @@ Com base no método **MoSCoW** (Must Have, Should Have, Could Have, Won't Have),
 | `1.1` | 09/12/2024 | levantamento do backlog do produto | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn) e [Diogo](https://github.com/Diogo-Barboza) |
 | `1.2` | 12/12/2024 | tabela MoSCoW<br> | [Paulo Henrique](https://github.com/Nanashii76) | [Johan](https://github.com/johan-rocha) |
 | `1.3` | 16/12/2024 | Adição dos épicos | [Paulo Henrique](https://github.com/Nanashii76), [Johan](https://github.com/johan-rocha), [Mariana Letícia](https://github.com/Marianannn) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+| `2.0` | 25/01/2025 | Alterando declaração de histórias de usuário | [Mariana Letícia](https://github.com/Marianannn) | [Johan](https://github.com/johan-rocha) |
