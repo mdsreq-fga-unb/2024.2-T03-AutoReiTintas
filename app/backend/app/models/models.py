@@ -3,7 +3,6 @@ from sqlalchemy.orm import relationship
 from app.database import Base
 import datetime
 from passlib.hash import bcrypt
-
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func

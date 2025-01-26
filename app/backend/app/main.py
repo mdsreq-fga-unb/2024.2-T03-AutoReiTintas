@@ -4,6 +4,7 @@ from app.routers import (
     produto_categoria, estoque, movimentacao_estoque, pedidos,
     itens_pedido, auth
 )
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi_jwt_auth import AuthJWT
 from pydantic import BaseModel
 import os 
@@ -15,8 +16,15 @@ class configJWT(BaseModel):
 def get_config():
     return configJWT()
 
-
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
 
 app.include_router(auth.router)
 app.include_router(usuarios.router, prefix="/api", tags=["Usuários"])
@@ -32,5 +40,5 @@ app.include_router(itens_pedido.router, prefix="/api", tags=["Itens Pedido"])
 
 @app.get("/")
 def root():
-    return {"message": "Hello World! It's working!"}
+    return {"message": "API Working!"}
 
