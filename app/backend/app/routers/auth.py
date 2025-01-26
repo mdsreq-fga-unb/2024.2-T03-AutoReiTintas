@@ -13,7 +13,7 @@ def login(
     db: Session = Depends(get_db), 
     Authorize: AuthJWT = Depends()
 ):
-    #verify if user exist
+    # verify if user exist
     usuario = db.query(Usuario).filter(Usuario.email == credenciais.email).first()
     if not usuario or not usuario.verify_password(credenciais.senha):
         raise HTTPException(status_code=401, detail="Invalid email or password")
