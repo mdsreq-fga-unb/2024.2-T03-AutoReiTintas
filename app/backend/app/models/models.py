@@ -2,18 +2,34 @@ from sqlalchemy import Column, Integer, String, ForeignKey, Numeric, TIMESTAMP, 
 from sqlalchemy.orm import relationship
 from app.database import Base
 import datetime
+from passlib.hash import bcrypt
+
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
+from sqlalchemy.sql import func
+from passlib.hash import bcrypt
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 class Usuario(Base):
     __tablename__ = "usuarios"
+
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(255), nullable=False)
-    email = Column(String(255), unique=True, nullable=False)
+    email = Column(String(255), unique=True, index=True, nullable=False)
     senha_hash = Column(String(255), nullable=False)
     telefone = Column(String(15), nullable=False)
-    criado_em = Column(TIMESTAMP, default=datetime.datetime.utcnow)
-    atualizado_em = Column(TIMESTAMP, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
+    criado_em = Column(DateTime(timezone=True), server_default=func.now())
+    atualizado_em = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
     roles = relationship("UsuarioRole", back_populates="usuario")
+
+    def verify_password(self, senha: str) -> bool:
+        return bcrypt.verify(senha, self.senha_hash)
+
+    def set_password(self, senha: str):
+        self.senha_hash = bcrypt.hash(senha)
 
 class Role(Base):
     __tablename__ = "roles"
