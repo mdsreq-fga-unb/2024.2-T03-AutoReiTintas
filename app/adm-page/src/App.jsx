@@ -1,11 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import AdminPage from './components/AdminPage';
+import EstoquePage from './components/EstoquePage';
 
 const App = () => {
   return (
-    <div>
-      <AdminPage />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AdminPage />} />
+        <Route path="/estoque" element={<EstoquePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

@@ -23,13 +23,18 @@ export const loginUsuario = async (email, senha) => {
   try {
     const response = await api.post('/auth/login', { email, senha });
 
-    const token = response.data.token;  
-    localStorage.setItem('authToken', token);  // Store token in localStorage
-    api.defaults.headers['Authorization'] = `Bearer ${token}`;  // Add token to body requisitions
+    console.log(response);  
+
+    const token = response.data.access_token; 
+    
+    localStorage.setItem('authToken', token);  
+    
+    api.defaults.headers['Authorization'] = `Bearer ${token}`;
 
     return response.data;
   } catch (error) {
     console.error("Login Error: ", error);
-    throw error;
+    throw error; 
   }
 };
+
