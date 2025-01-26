@@ -4,7 +4,7 @@ import '../styles/registerStyle.css'
 const RegisterPage = () =>{
     return (
     <div className="container">
-        <div className="heading">Sign Up</div>
+        <div className="heading">Cadastro</div>
         <form action="" className="form">
           <input required="" className="input" type="nome" name="nome" id="email" placeholder="nome " />
           <input required="" className="input" type="email" name="email" id="password" placeholder="email" />

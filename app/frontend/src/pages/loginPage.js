@@ -4,7 +4,7 @@ import '../styles/loginStyle.css';
 const LoginPage = () => {
   return (
       <div className="container">
-        <div className="heading">Cadastre-se</div>
+        <div className="heading">Login</div>
         <form action="" className="form">
           <input
             required=""
