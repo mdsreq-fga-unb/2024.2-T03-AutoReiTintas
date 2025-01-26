@@ -10,7 +10,7 @@ const AdminPage = () => {
   const handleLogin = async () => {
     try {
       const data = await loginUsuario(email, senha);
-      navigate('/estoque');  // Redireciona para a página de estoque
+      navigate('/estoque');  
     } catch (error) {
       alert('Email ou senha inválidos');
     }
