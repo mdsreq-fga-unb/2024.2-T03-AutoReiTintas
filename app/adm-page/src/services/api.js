@@ -65,9 +65,15 @@ export const addProduto = async (produto) => {
 // function to tremove a product
 export const removeProduto = async (id, produto) => {
   try {
-    await api.delete(`api/produtos/${id}`, produto);
+    const response = await api.delete(`api/produtos/${id}`, produto);
+
+    if (response.status === 204) {
+      console.log("Produto excluído com sucesso");
+    } else {
+      throw new Error("Erro ao excluir produto");
+    }
   } catch (error) {
-    console.error("Error to remove product:", error);
+    console.error("Error to remove product:", error.response || error.message);
     throw error;
   }
 };
@@ -76,7 +82,7 @@ export const removeProduto = async (id, produto) => {
 export const updateProduto = async (id, produto) => {
   try {
     const response = await api.put(`api/produtos/${id}`, produto);
-    return response.data; // Retorna o produto atualizado
+    return response.data; 
   } catch (error) {
     console.error("Error to update product:", error);
     throw error;
