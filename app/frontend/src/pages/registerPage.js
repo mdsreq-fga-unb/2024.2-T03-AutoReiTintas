@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/registerStyle.css";
 import Header from "../components/header.js";
-import { registerUser } from "../services/api"; // Importa o serviço de registro
+import { registerUser } from "../services/api"; 
 
 const RegisterPage = () => {
   const [form, setForm] = useState({
@@ -21,7 +21,7 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await registerUser(form); // Usa o serviço de registro
+      const response = await registerUser(form); 
       setMessage("Usuário registrado com sucesso!");
       setForm({
         nome: "",
@@ -29,7 +29,7 @@ const RegisterPage = () => {
         senha: "",
         telefone: "",
       });
-      console.log(response); // Para depuração
+      console.log(response); 
     } catch (error) {
       setMessage(error.response?.data?.detail || "Erro ao registrar.");
     }

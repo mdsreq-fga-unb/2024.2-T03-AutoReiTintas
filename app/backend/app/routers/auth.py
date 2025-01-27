@@ -24,14 +24,6 @@ def login(
     access_token = Authorize.create_access_token(subject=usuario.id)
     return {"access_token": access_token, "usuario_id": usuario.id}
 
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
-from app.database import get_db
-from app.schemas.usuario_schemas import UsuarioCreate, UsuarioResponse
-from app.routers.usuarios import create_usuario
-
-router = APIRouter()
-
 @router.post("/auth/register", response_model=UsuarioResponse)
 def register_usuario(usuario: UsuarioCreate, db: Session = Depends(get_db)):
     try:
