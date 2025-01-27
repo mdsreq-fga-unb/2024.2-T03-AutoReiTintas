@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, HashRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import RegisterPage from "../pages/registerPage";
 import LoginPage from "../pages/loginPage";
@@ -9,9 +9,9 @@ export const RoutesConfig = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} exact/>
         <Route path="/cadastro" element={<RegisterPage />} />
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
   );
