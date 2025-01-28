@@ -35,6 +35,7 @@ nav:
       - ATA 14-11: sections/atas/ata14-11.md
       - ATA 03-12: sections/atas/ata03-12.md
       - ATA 12-12: sections/atas/ata12-12.md
+      - ATA 27-01: sections/atas/ata27-01.md
   - Como contribuir:
     - Ambiente de desenvolvimento: how_to_contribute/environment.md
 
