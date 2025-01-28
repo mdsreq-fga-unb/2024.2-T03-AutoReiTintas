@@ -24,10 +24,10 @@ const LoginPage = () => {
               type="password"
               name="password"
               id="password"
-              placeholder="Password"
+              placeholder="Senha"
             />
             <span className="forgot-password">
-              <a href="#">Forgot Password ?</a>
+              <a href="#">Esqueceu a senha ?</a>
             </span>
             <input className="login-button" type="submit" value="Sign In" />
           </form>
