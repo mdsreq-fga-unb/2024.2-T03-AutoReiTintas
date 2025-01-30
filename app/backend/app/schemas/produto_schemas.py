@@ -8,7 +8,7 @@ class ProdutoBase(BaseModel):
     preco: float
 
 class ProdutoCreate(ProdutoBase):
-    pass
+    quantidade_inicial: int
 
 class ProdutoResponse(ProdutoBase):
     id: int
