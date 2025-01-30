@@ -9,6 +9,7 @@ class ProdutoBase(BaseModel):
 
 class ProdutoCreate(ProdutoBase):
     quantidade_inicial: int
+    categoria_id: int
 
 class ProdutoResponse(ProdutoBase):
     id: int
