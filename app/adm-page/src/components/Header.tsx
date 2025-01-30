@@ -15,8 +15,13 @@ const Header = () => {
             <img src={logo} alt="logo" className="logo" />
           </a>
         </div>
-        <div>
-          <h1 className="titulo">AUTO REI TINTAS</h1>
+        <div className="nome-marca">
+          <div>
+            <h1 className="titulo">AUTO REI</h1>
+          </div>
+          <div>
+            <h3 className="subtitulo">TINTAS AUTOMOTIVAS</h3>
+          </div>
         </div>
       </div>
       <div>
