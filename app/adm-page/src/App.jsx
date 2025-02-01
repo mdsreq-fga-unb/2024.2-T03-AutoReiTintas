@@ -21,9 +21,9 @@ const App = () => {
         <Route 
           path='/menu'
           element={
-            <ProtectedRoute>
+            // <ProtectedRoute>
               <MenuPage />
-            </ProtectedRoute>
+            // </ProtectedRoute>
           }
         />
       </Routes>

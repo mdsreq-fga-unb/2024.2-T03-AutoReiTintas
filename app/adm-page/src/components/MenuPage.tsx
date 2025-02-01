@@ -1,14 +1,20 @@
 import React from 'react';
-import Header from '../components/Header';
-import SideBar from '../components/SideBar';
+import Header from '../components/Header';  
+import SideBarState from './SideBarState';
 
 const MenuPage = () => {
     return(
         <div>
             <Header></Header>
-            <SideBar></SideBar>
+            <div>
+                <SideBarState/>
+            </div>
+            <div>
+                <div>
+                    
+                </div>
+            </div>
         </div>
-
     );
 }
 
