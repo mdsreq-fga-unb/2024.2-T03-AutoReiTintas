@@ -6,6 +6,7 @@ class LoginSchema(BaseModel):
 
 class LoginResponse(BaseModel):
     access_token: str
+    token_type: str
     usuario_id: int
 
     class Config:

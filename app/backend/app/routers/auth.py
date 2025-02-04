@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from fastapi_jwt_auth import AuthJWT
 from app.models.models import Usuario
@@ -13,11 +13,18 @@ def login(
     db: Session = Depends(get_db), 
     Authorize: AuthJWT = Depends()
 ):
-    # verify if user exist
     usuario = db.query(Usuario).filter(Usuario.email == credenciais.email).first()
+    
     if not usuario or not usuario.verify_password(credenciais.senha):
-        raise HTTPException(status_code=401, detail="Invalid email or password")
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Credenciais inválidas",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
 
-    # creating access token
-    access_token = Authorize.create_access_token(subject=usuario.id)
-    return {"access_token": access_token, "usuario_id": usuario.id}
+    access_token = Authorize.create_access_token(subject=usuario.id, expires_time=3600)
+    return {
+        "access_token": access_token,
+        "token_type": "bearer", 
+        "usuario_id": usuario.id
+    }

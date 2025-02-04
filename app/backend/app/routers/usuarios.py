@@ -8,20 +8,16 @@ router = APIRouter()
 
 @router.post("/usuarios/", response_model=UsuarioResponse)
 def create_usuario(usuario: UsuarioCreate, db: Session = Depends(get_db)):
-    # verify if email already exists
     db_usuario = db.query(Usuario).filter(Usuario.email == usuario.email).first()
     if db_usuario:
         raise HTTPException(status_code=400, detail="Email already exists")
 
-    # Create a new user instance
     novo_usuario = Usuario(nome=usuario.nome, 
                            email=usuario.email, 
                            telefone=usuario.telefone)
     
-    # Apply password hashing
     novo_usuario.set_password(usuario.senha)
 
-    # Add the new user to the database
     db.add(novo_usuario)
     db.commit()
     db.refresh(novo_usuario)

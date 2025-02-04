@@ -9,12 +9,15 @@ const AdminPage = () => {
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  const handleLogin = async (event) => {
+    event.preventDefault(); 
+  
     try {
-      const data = await loginUsuario(email, senha);
-      navigate('/estoque');  
+      const data = await loginUsuario(email, senha); 
+      localStorage.setItem("token", data.access_token); 
+      navigate("/estoque"); 
     } catch (error) {
-      alert('Email ou senha inválidos');
+      alert("Email ou senha inválidos");
     }
   };
 

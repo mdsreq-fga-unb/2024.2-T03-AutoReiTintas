@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from app.routers import (
     usuarios, roles, usuario_roles, produtos, categorias, 
     produto_categoria, estoque, movimentacao_estoque, pedidos,
-    itens_pedido, auth
+    itens_pedido, auth, produto_imagens
 )
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi_jwt_auth import AuthJWT
@@ -27,9 +27,9 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  
+    allow_origins=["*"],  
     allow_credentials=True,
-     allow_methods=["GET", "POST", "PUT", "DELETE"],
+     allow_methods=["*"],
     allow_headers=["*"],  
 )
 
@@ -44,6 +44,7 @@ app.include_router(estoque.router, prefix="/api", tags=["Estoque"])
 app.include_router(movimentacao_estoque.router, prefix="/api", tags=["Movimentação Estoque"])
 app.include_router(pedidos.router, prefix="/api", tags=["Pedidos"])
 app.include_router(itens_pedido.router, prefix="/api", tags=["Itens Pedido"])
+app.include_router(produto_imagens.router, prefix="/api", tags=["Pedidos Imagens"])
 
 @app.get("/")
 def root():
