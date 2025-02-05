@@ -44,8 +44,8 @@ nav:
 
 theme:
   name: material
-  font:
-    text: Fira Sans
+  #font:
+  #  text: Fira Sans
   language: pt-BR
   palette:
     # Palette toggle for light mode
@@ -81,8 +81,45 @@ theme:
     - header.autohide
   icon:
     repo: fontawesome/brands/github
+
+markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.keys
+  - footnotes
+  - admonition
+  - markdown.extensions.attr_list
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
+
 plugins:
   - search
+
+fonts:
+  icon: material/format-font
+  preferences:
+    - text: Default
+    - text: Roboto
+      code: Roboto Mono
+    - text: OpenDyslexic
+      code: OpenDyslexicMono
+      src: https://fonts.cdnfonts.com/css/opendyslexic
 
 extra_css:
   - stylesheets/extra.css
