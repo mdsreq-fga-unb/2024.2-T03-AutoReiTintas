@@ -1,16 +1,16 @@
-# Casos de Uso
+## **Casos de Uso**
 
 Um caso de uso é uma descrição de como um usuário (ator) interage com um sistema para alcançar um objetivo específico. Ele define o comportamento esperado do sistema em diferentes cenários, incluindo fluxos principais e alternativos.
 
-# ConnectCare
+## **ConnectCare**
 
-## 1. Breve descrição
+### 1. Breve descrição
 
 O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de fazer com que pessoas e comunidades em situação de vulnerabilidade tenham um acesso maior à saúde, podendo marcar consultas, localizar serviços. Garantindo que comunidades vulneráveis tenham acesso facilitado e eficiente a serviços de saúde, a fim de promover o bem-estar social.
 
 ---
 
-## 1.1 Atores
+### 1.1 Atores
 
 - Paciente: representa as pessoas que estão consumindo o produto a fim de realizar consultas.
 - Médico: a pessoa na qual irá consultar os pacientes.
@@ -22,9 +22,9 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 
 ---
 
-## 2. Fluxo Básico de Eventos
+### 2. Fluxo Básico de Eventos
 
-### 2.1 Cadastrar Perfil de Pacientes
+#### 2.1 Cadastrar Perfil de Pacientes
 
 1. O paciente seleciona "Cadastrar perfil" no aplicativo.
 2. O sistema exibe um formulário com campos brigatórios como: `nome`, `idade`, `endereço` e `condições de saúde ...`
@@ -32,48 +32,48 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 4. O sisteema verifica a completude dos dados
 5. O sistema salva o perfil e exibe uma mensagem de sucesso: "Perfil cadastrado com sucesso!"
 
-### 2.2 Agendar Consulta
+#### 2.2 Agendar Consulta
 
 1. O paciente abre o aplicativo e seleciona a opção `agendar consulta`
 2. O sistema exibe opções de filtragem (localização de postos de saúde próximos, especialidade, data)
 3. O paciente escolhe o local mais conveniente e algum horário disponível e confirma
 4. O sistema envia uma notificação com detalhes da consulta (local, documentos necessários)
 
-### 2.3 Acessar Notificação
+#### 2.3 Acessar Notificação
 
 ...
 
-### 2.4 Visualizar Histórico de Consulta
+#### 2.4 Visualizar Histórico de Consulta
 
 ...
 
-### 2.5 Realizar Login
+#### 2.5 Realizar Login
 
 ...
 
-### 2.6 Visualizar Agenda de Consulta
+#### 2.6 Visualizar Agenda de Consulta
 
 ...
 
-### 2.7 Gerar Relatório de Paciente
+#### 2.7 Gerar Relatório de Paciente
 
 ...
 
-### 2.8 Cadastrar Perfil Profissional
+#### 2.8 Cadastrar Perfil Profissional
 
 ...
 
-### 2.9 Disponibilizar Canal de Comunicação com o Paciente
+#### 2.9 Disponibilizar Canal de Comunicação com o Paciente
 
 ...
 
-### 2.10 Cadastrar Campanha Comunitária
+#### 2.10 Cadastrar Campanha Comunitária
 
 ...
 
 ---
 
-## 3. Fluxos Alternativos
+### 3. Fluxos Alternativos
 
 #### **3.1.1 Atualizar Perfil de Pacientes (2.1)**
 | Área de Funcionalidade (A1)       | Área de Funcionalidade (A2)       | Área de Funcionalidade (A3)       |
@@ -127,38 +127,38 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 
 ---
 
-## 4. Fluxos de Exceção
+### 4. Fluxos de Exceção
 
-### Fluxo de Exceção (FE1)
+#### Fluxo de Exceção (FE1)
 
-### Fluxo de Exceção (FE2)
+#### Fluxo de Exceção (FE2)
 
-### Fluxo de Exceção (FE3)
-
----
-
-## 5. Pré-Condições
-
-### ...
+#### Fluxo de Exceção (FE3)
 
 ---
 
-## 6. Pós-Condições
+### 5. Pré-Condições
 
-### ...
-
----
-
-## 7. Pontos de Extensão
-
-### ...
+#### ...
 
 ---
 
-## 8. Requisitos Especiais
+### 6. Pós-Condições
 
-### ...
+#### ...
 
 ---
 
-## 9. Informações Adicionais
+### 7. Pontos de Extensão
+
+#### ...
+
+---
+
+### 8. Requisitos Especiais
+
+#### ...
+
+---
+
+### 9. Informações Adicionais
