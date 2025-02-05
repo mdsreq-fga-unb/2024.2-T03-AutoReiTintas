@@ -18,13 +18,13 @@ nav:
     - DoR e DoD: sections/product_vision/8_dorAndDod.md
     - Backlog: sections/product_vision/9_backlog.md
   - Sprints:
-    - Sprint: sections/sprints/sprints.md
+    - Sprint 1: sections/sprints/sprint1.md
     - Sprint 2: sections/sprints/sprint2.md
   - Estudos de Caso:
     - Estudo de Caso TechFix: sections/study_cases/study_case_PBB.md
     - Estudo de Caso EduConnect: sections/study_cases/study_case_USM.md
     - Estudo de Caso ConnectCare: sections/study_cases/study_case_UC.md
-  - Entregas: 
+  - Apresentações e Entregas: 
     - Entrega Unidade 1: sections/presentations/presentation_1.md
     - Entrega Unidade 2: sections/presentations/presentation_2.md
     - Entrega Unidade 3: sections/presentations/presentation_3.md
@@ -37,10 +37,10 @@ nav:
       - ATA 03-12: sections/atas/ata03-12.md
       - ATA 12-12: sections/atas/ata12-12.md
       - ATA 27-01: sections/atas/ata27-01.md
-  - Arquitetura de Software: sections/architecture/arquitetura.md
-  - Política de Branchs: sections/branch_policy/politica_branch.md
   - Como contribuir:
     - Ambiente de desenvolvimento: how_to_contribute/environment.md
+    - Arquitetura de Software: sections/architecture/arquitetura.md
+    - Política de Branchs: sections/branch_policy/politica_branch.md
 
 theme:
   name: material
