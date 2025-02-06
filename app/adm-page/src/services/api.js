@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as jwtDecode from 'jwt-decode';
 
 const api = axios.create({
   baseURL: 'http://localhost:8000', 
@@ -149,3 +150,57 @@ export const getCategoriaProduto = async (produtoId) => {
     throw error;
   }
 }
+
+// function to update information form a user
+export const atualizarUsuario = async (id, usuario) => {
+  try {
+    const response = await api.put(`/api/usuarios/${id}`, usuario);
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao atualizar usuário:", error);
+    throw new Error("Não foi possível atualizar os dados do usuário. Verifique as informações e tente novamente.");
+  }
+};
+
+// function to get current user
+export const getUsuarioAtual = async () => {
+  try {
+    const token = localStorage.getItem('token');
+    
+    // Decodificando o token para obter o ID do usuário
+    const decodedToken = jwtDecode(token);  // Agora usamos a função diretamente
+    const usuarioId = decodedToken.sub;  // Aqui você pega o id do usuário (supondo que esteja em 'sub')
+
+    const response = await api.get(`/api/usuarios/${usuarioId}`);  // Agora você usa o ID diretamente na URL
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao buscar usuário atual:", error);
+    throw new Error("Não foi possível recuperar os dados do usuário atual.");
+  }
+};
+
+// function to delete a user
+export const deletarUsuario = async (id) => {
+  try {
+    await api.delete(`/api/usuarios/${id}`);
+    return { message: "Usuário deletado com sucesso!" };
+  } catch (error) {
+    console.error("Erro ao deletar usuário:", error);
+    throw new Error("Não foi possível deletar o usuário. Tente novamente mais tarde.");
+  }
+};
+
+
+// function to promove user to adm
+export const tornarAdmin = async (usuarioId) => {
+  try {
+    const response = await api.post('/api/usuario_roles/', {
+      usuario_id: usuarioId,
+      role_id: 1
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao tornar usuário admin:", error);
+    throw error;
+  }
+};

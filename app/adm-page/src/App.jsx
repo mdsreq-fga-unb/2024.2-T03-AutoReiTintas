@@ -1,9 +1,12 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import AdminPage from './components/AdminPage';
-import EstoquePage from './components/EstoquePage';
-import MenuPage from './components/MenuPage';
-import ProtectedRoute from './components/ProtectedRoute'; 
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AdminPage from "./pages/AdminPage";
+import EstoquePage from "./pages/EstoquePage";
+import DashboardPage from "./pages/DashboardPage";
+import AdministrarContasPage from "./pages/AdministrarContasPage";
+import MinhaContaPage from "./pages/MinhaContaPage"; 
+import DashboardLayout from "./components/DashboardLayout";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
   return (
@@ -11,19 +14,18 @@ const App = () => {
       <Routes>
         <Route path="/" element={<AdminPage />} />
         <Route
-          path="/estoque"
+          path="/dashboard/*"
           element={
             <ProtectedRoute>
-              <EstoquePage /> 
+              <DashboardLayout>
+                <Routes>
+                  <Route path="estoque" element={<EstoquePage />} />
+                  <Route path="administrar-contas" element={<AdministrarContasPage />} />
+                  <Route path="minha-conta" element={<MinhaContaPage />} />
+                  <Route path="dashboards" element={<DashboardPage />} />
+                </Routes>
+              </DashboardLayout>
             </ProtectedRoute>
-          }
-        />
-        <Route 
-          path='/menu'
-          element={
-            // <ProtectedRoute>
-              <MenuPage />
-            // </ProtectedRoute>
           }
         />
       </Routes>

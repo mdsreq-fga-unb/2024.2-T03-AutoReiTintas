@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { getProdutos, removeProduto, getCategorias, updateEstoqueProduto, getCategoriaProduto, getEstoqueProduto, addCategoria } from "../services/api"; 
-import ProdutoForm from "./ProdutoForm";
+import ProdutoForm from "../components/ProdutoForm";
 import { ProdutoResponse } from '../types/produtos';
 
 const EstoquePage = () => {
