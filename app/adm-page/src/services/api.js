@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as jwtDecode from 'jwt-decode';
+import jwtDecode from 'jwt-decode';
 
 const api = axios.create({
   baseURL: 'http://localhost:8000', 
@@ -47,8 +47,11 @@ export const loginUsuario = async (email, senha) => {
     throw new Error("Falha no login");
   }
 
-  return response.json();
+  const data = await response.json();
+  localStorage.setItem('token', data.access_token);
+  return data;
 };
+
 
 // function to get all products
 export const getProdutos = async () => {
@@ -167,15 +170,23 @@ export const getUsuarioAtual = async () => {
   try {
     const token = localStorage.getItem('token');
     
-    // Decodificando o token para obter o ID do usuário
-    const decodedToken = jwtDecode(token);  // Agora usamos a função diretamente
-    const usuarioId = decodedToken.sub;  // Aqui você pega o id do usuário (supondo que esteja em 'sub')
+    if (!token) {
+      throw new Error("Token não encontrado");
+    }
 
-    const response = await api.get(`/api/usuarios/${usuarioId}`);  // Agora você usa o ID diretamente na URL
+    const decodedToken = jwtDecode(token);
+    const usuarioId = decodedToken.sub;
+
+    const response = await api.get(`/api/usuarios/${usuarioId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
     return response.data;
   } catch (error) {
     console.error("Erro ao buscar usuário atual:", error);
-    throw new Error("Não foi possível recuperar os dados do usuário atual.");
+    throw error;
   }
 };
 
