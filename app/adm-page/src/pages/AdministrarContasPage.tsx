@@ -7,25 +7,33 @@ import { getUsuarios, deletarUsuario, tornarAdmin } from '../services/api';
 const AdministrarContasPage = () => {
   const [usuarios, setUsuarios] = useState([]);
 
-  useEffect(() => {
-    const carregarUsuarios = async () => {
-      try {
-        const dadosUsuarios = await getUsuarios();
-        setUsuarios(dadosUsuarios);
-      } catch (error) {
-        console.error("Erro ao carregar usuários:", error);
-      }
-    };
+  const carregarUsuarios = async () => {
+    try {
+      const dadosUsuarios = await getUsuarios();
+      setUsuarios(dadosUsuarios);
+    } catch (error) {
+      console.error("Erro ao carregar usuários:", error);
+      alert('Erro ao carregar usuários');
+    }
+  };
 
+  useEffect(() => {
     carregarUsuarios();
   }, []);
 
   const handleDelete = async (id: number) => {
     try {
-      await deletarUsuario(id);
-      setUsuarios(usuarios.filter((u: any) => u.id !== id));
+      const confirmacao = window.confirm('Tem certeza que deseja excluir este usuário?');
+      if (!confirmacao) return;
+
+      const sucesso = await deletarUsuario(id);
+      
+      if (sucesso) {
+        await carregarUsuarios(); // Recarrega a lista atualizada
+        alert('Usuário excluído com sucesso!');
+      }
     } catch (error) {
-      console.error("Erro ao deletar usuário:", error);
+      alert(error.message || 'Erro ao excluir usuário');
     }
   };
 

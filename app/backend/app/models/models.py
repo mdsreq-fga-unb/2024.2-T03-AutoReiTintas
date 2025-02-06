@@ -22,7 +22,12 @@ class Usuario(Base):
     criado_em = Column(DateTime(timezone=True), server_default=func.now())
     atualizado_em = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
-    roles = relationship("UsuarioRole", back_populates="usuario")
+    roles = relationship(
+        "UsuarioRole",
+        back_populates="usuario",
+        cascade="all, delete-orphan",
+        passive_deletes=True
+    )
 
     def verify_password(self, senha: str) -> bool:
         return bcrypt.verify(senha, self.senha_hash)
