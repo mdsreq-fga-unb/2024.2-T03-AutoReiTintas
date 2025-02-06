@@ -13,9 +13,9 @@ const AdminPage = () => {
     event.preventDefault(); 
   
     try {
-      const data = await loginUsuario(email, senha); 
-      localStorage.setItem("token", data.access_token); 
-      navigate("/estoque"); 
+      const data = await loginUsuario(email, senha);
+      localStorage.setItem("access_token", data.access_token); 
+      navigate("/dashboard"); 
     } catch (error) {
       alert("Email ou senha inválidos");
     }
