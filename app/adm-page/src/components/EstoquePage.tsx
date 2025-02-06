@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { getProdutos, removeProduto, getCategorias, updateEstoqueProduto } from "../services/api"; // Certifique-se de importar a função de atualização de estoque
-import ProdutoForm from "./ProdutoForm"; 
+import ProdutoForm from "./ProdutoForm";
 import { ProdutoResponse } from '../types/produtos';
 
 const EstoquePage = () => {
@@ -14,9 +14,31 @@ const EstoquePage = () => {
 
   // Função para buscar os produtos do estoque
   const fetchProdutos = async () => {
-    const produtosData = await getProdutos();
-    setProdutos(produtosData);
+    try {
+      const produtosData = await getProdutos();
+
+      console.log("Produtos recebidos:", produtosData); // Debug para ver o retorno da API
+
+      const produtosFormatados = produtosData.map((produto: any) => ({
+        ...produto,
+        imagens: produto.imagens.map((img: any) => ({
+          id: img.id,
+          url_imagem: img.url_imagem,
+          ordem: img.ordem
+        })),
+        quantidade_estoque: produto.quantidade_estoque || 0, // Garantindo que não seja undefined
+        categorias: produto.categorias || [] // Garantindo que não seja undefined
+      }));
+
+      console.log("Produtos formatados:", produtosFormatados); // Debug para ver os dados finais
+
+      setProdutos(produtosFormatados);
+    } catch (error) {
+      console.error("Erro ao buscar produtos:", error);
+    }
   };
+
+
 
   // Função para buscar as categorias
   const fetchCategorias = async () => {
@@ -40,8 +62,12 @@ const EstoquePage = () => {
   };
 
   const handleDeleteProduto = async (id: number) => {
-    await removeProduto(id);
-    setProdutos(produtos.filter(produto => produto.id !== id));
+    try {
+      await removeProduto(id);
+      setProdutos((prevProdutos) => prevProdutos.filter(produto => produto.id !== id));
+    } catch (error) {
+      console.error("Erro ao remover produto:", error);
+    }
   };
 
   const handleCloseForm = () => {
@@ -54,7 +80,7 @@ const EstoquePage = () => {
       <Button variant="contained" color="primary" onClick={handleAddProduto}>
         Adicionar Produto
       </Button>
-      
+
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -84,8 +110,15 @@ const EstoquePage = () => {
                 <TableCell>{produto.descricao}</TableCell>
                 <TableCell>R$ {produto.preco.toFixed(2)}</TableCell>
                 <TableCell>{produto.quantidade_estoque}</TableCell>
+                <TableCell>{produto.quantidade_estoque ?? "N/A"}</TableCell>
                 <TableCell>
-                  {produto.categorias.map((categoria) => categoria.nome).join(", ")}
+                  {produto.categorias.length > 0 ? (
+                    produto.categorias.map((categoria: any) => (
+                      <div key={categoria.id}>{categoria.nome}</div>
+                    ))
+                  ) : (
+                    <p>Sem categoria</p>
+                  )}
                 </TableCell>
                 <TableCell>
                   <Button onClick={() => handleEditProduto(produto)} variant="contained" color="primary">

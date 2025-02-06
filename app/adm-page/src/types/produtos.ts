@@ -1,19 +1,20 @@
+export interface ProdutoImagem {
+  id: number;
+  url_imagem: string;
+  ordem: number;
+}
+
 export interface ProdutoResponse {
   id: number;
   nome: string;
   descricao: string;
   preco: number;
-  quantidade_estoque: number; 
-  imagens: string[]; 
-  categorias: { categoria_id: number, nome: string }[];
+  imagens: ProdutoImagem[];
+  categorias: CategoriaResponse[];
+  quantidade_estoque: number;
 }
 
-  
-export interface ProdutoCreate {
-    id?: number;
-    nome: string;
-    descricao: string;
-    preco: number;
-    categorias: { produto_id?: number; categoria_id: number }[];
+export interface CategoriaResponse {
+  id: number;
+  nome: string;
 }
-  

@@ -61,15 +61,20 @@ export const getProdutos = async () => {
   }
 };
 
+export const updateProduto = async (id, produto) => {
+  try {
+    const response = await api.put(`api/produtos/${id}`, produto);
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao atualizar produto:", error);
+    throw error;
+  }
+};
+
 export const removeProduto = async (id) => {
   try {
-    const response = await api.delete(`/api/produtos/${id}`);
-
-    if (response.status === 204) {
-      console.log("Produto excluído com sucesso");
-    } else {
-      throw new Error("Erro ao excluir produto");
-    }
+    await api.delete(`api/produtos/${id}`);
+    console.log("Produto excluído com sucesso");
   } catch (error) {
     console.error("Erro ao remover produto:", error.response || error.message);
     throw error;
@@ -77,23 +82,26 @@ export const removeProduto = async (id) => {
 };
 
 
-// function to add a new product
+// function to add a new product (corrigir URL e headers)
 export const addProduto = async (produto) => {
   try {
-    const response = await axios.post('/api/produtos', produto);
-    console.log('Produto adicionado com sucesso:', response);
+    const response = await api.post('/api/produtos', produto);
+    return response.data;
   } catch (error) {
-    console.error('Erro ao adicionar produto:', error.response?.data || error.message);
+    console.error("Erro ao adicionar produto:", error);
+    throw error;
   }
 };
 
-// function to update a product
-export const updateProduto = async (id, produto) => {
+// function to update storage (ajustar endpoint)
+export const updateEstoqueProduto = async (produtoId, quantidade) => {
   try {
-    const response = await api.put(`api/produtos/${id}`, produto);
-    return response.data; 
+    const response = await api.patch(`/api/estoque/produto/${produtoId}`, { 
+      quantidade_atual: quantidade 
+    });
+    return response.data;
   } catch (error) {
-    console.error("Error to update product:", error);
+    console.error("Erro ao atualizar estoque:", error);
     throw error;
   }
 };
@@ -109,13 +117,3 @@ export const getCategorias = async () => {
   }
 };
 
-// function to update storage
-export const updateEstoqueProduto = async (id, quantidade) => {
-  try {
-    const response = await api.patch(`/api/estoque/${id}`, { quantidade_atual: quantidade });
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao atualizar estoque:", error);
-    throw error;
-  }
-};

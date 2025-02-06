@@ -12,10 +12,20 @@ class ProdutoCreate(ProdutoBase):
     quantidade_inicial: int
     categoria_id: int
 
+class ProdutoUpdate(BaseModel):
+    nome: Optional[str] = None
+    descricao: Optional[str] = None
+    preco: Optional[float] = None
+    quantidade_estoque: Optional[int] = None
+    categoria_id: Optional[int] = None
+
 class ProdutoResponse(ProdutoBase):
     id: int
-    criado_em: datetime
-    atualizado_em: datetime
+    nome: str
+    descricao: str
+    preco: float
+    criado_em: Optional[datetime] = None
+    atualizado_em: Optional[datetime] = None
     imagens: list[ProdutoImagemResponse] = []
 
     class Config:
