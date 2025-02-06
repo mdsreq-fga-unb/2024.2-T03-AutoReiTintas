@@ -33,11 +33,14 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 5. O sistema salva o perfil e exibe uma mensagem de sucesso: "Perfil cadastrado com sucesso!"
 
 #### 2.2 Agendar Consulta
-
-1. O paciente abre o aplicativo e seleciona a opção `agendar consulta`
-2. O sistema exibe opções de filtragem (localização de postos de saúde próximos, especialidade, data)
-3. O paciente escolhe o local mais conveniente e algum horário disponível e confirma
-4. O sistema envia uma notificação com detalhes da consulta (local, documentos necessários)
+1. O paciente abre o aplicativo
+2. o sistema requer login
+3. o paciente insere os dados de login e clica em logar
+4. O sistema exibe as opções de serviços de saúde
+5. O paciente seleciona a opção `agendar consulta`
+6. O sistema exibe opções de filtragem (localização de postos de saúde próximos, especialidade, data)
+7. O paciente escolhe o local mais conveniente e algum horário disponível e confirma
+8. O sistema envia uma notificação com detalhes da consulta (local, documentos necessários)
 
 #### 2.3 Acessar Notificação
 
