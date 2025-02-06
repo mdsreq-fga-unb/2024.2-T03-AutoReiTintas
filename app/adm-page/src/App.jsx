@@ -4,9 +4,11 @@ import AdminPage from "./pages/AdminPage";
 import EstoquePage from "./pages/EstoquePage";
 import DashboardPage from "./pages/DashboardPage";
 import AdministrarContasPage from "./pages/AdministrarContasPage";
-import MinhaContaPage from "./pages/MinhaContaPage"; 
-import DashboardLayout from "./components/DashboardLayout";
+import MinhaContaPage from "./pages/MinhaContaPage";
+import NovoProdutoPage from "./pages/NovoProdutoPage";
+import NovoUsuarioPage from "./pages/NovoUsuarioPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import DashboardLayout from "./components/DashboardLayout";
 
 const App = () => {
   return (
@@ -19,10 +21,12 @@ const App = () => {
             <ProtectedRoute>
               <DashboardLayout>
                 <Routes>
+                  <Route index element={<DashboardPage />} />
                   <Route path="estoque" element={<EstoquePage />} />
+                  <Route path="estoque/novo" element={<NovoProdutoPage />} />
                   <Route path="administrar-contas" element={<AdministrarContasPage />} />
+                  <Route path="administrar-contas/novo" element={<NovoUsuarioPage />} />
                   <Route path="minha-conta" element={<MinhaContaPage />} />
-                  <Route path="dashboards" element={<DashboardPage />} />
                 </Routes>
               </DashboardLayout>
             </ProtectedRoute>

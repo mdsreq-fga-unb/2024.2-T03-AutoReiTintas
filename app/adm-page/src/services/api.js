@@ -33,6 +33,17 @@ export const getUsuarios = async () => {
   }
 };
 
+// function to create a new user
+export const createUsuario = async (usuario) => {
+  try {
+    const response = await api.post('/api/usuarios/', usuario);
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao criar usuário:", error);
+    throw error;
+  }
+};
+
 // function to make authentications
 export const loginUsuario = async (email, senha) => {
   const response = await fetch("http://localhost:8000/auth/login", {

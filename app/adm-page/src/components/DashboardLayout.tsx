@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Grid, Card, CardContent, Typography, Button } from '@mui/material';
-import { 
-  getProdutos, 
-  getUsuarios,
-  getEstoqueProduto
-} from '../services/api';
+import SideBarState from '../components/SideBarState';
+import { getProdutos, getUsuarios } from '../services/api';
 import { useNavigate } from 'react-router-dom';
 
 const DashboardPage = () => {
@@ -15,35 +12,27 @@ const DashboardPage = () => {
   useEffect(() => {
     const carregarDados = async () => {
       try {
-        const produtosData = await getProdutos();
-        const produtosComEstoque = await Promise.all(
-          produtosData.slice(0, 5).map(async (produto) => {
-            const estoque = await getEstoqueProduto(produto.id);
-            return {
-              ...produto,
-              quantidade_estoque: estoque?.quantidade_atual || 0
-            };
-          })
-        );
-
-        const usuariosData = await getUsuarios();
-
-        setProdutos(produtosComEstoque);
-        setUsuarios(usuariosData.slice(0, 5));
+        const [produtosData, usuariosData] = await Promise.all([
+          getProdutos(),
+          getUsuarios()
+        ]);
+        setProdutos(produtosData.slice(0, 5)); // Últimos 5 produtos
+        setUsuarios(usuariosData.slice(0, 5)); // Últimos 5 usuários
       } catch (error) {
         console.error("Erro ao carregar dados:", error);
       }
     };
-
     carregarDados();
   }, []);
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh' }}>
+      <SideBarState />
+      
       <main style={{ 
         flex: 1, 
-        padding: '10px',
-        marginLeft: '100px', 
+        padding: '20px',
+        marginLeft: '250px', // Acompanha largura do sidebar
         transition: 'margin 0.3s'
       }}>
         <Typography variant="h4" gutterBottom>
@@ -51,6 +40,7 @@ const DashboardPage = () => {
         </Typography>
 
         <Grid container spacing={3}>
+          {/* Card de Estoque */}
           <Grid item xs={12} md={6}>
             <Card>
               <CardContent>
@@ -67,14 +57,14 @@ const DashboardPage = () => {
                     borderRadius: 1
                   }}>
                     <Typography>{produto.nome}</Typography>
-                    <Typography>Estoque: {produto.quantidade_estoque}</Typography>
+                    <Typography>Estoque: {produto.quantidade_estoque || 0}</Typography>
                   </Box>
                 ))}
                 <Button 
                   fullWidth 
                   variant="contained" 
                   sx={{ mt: 2 }}
-                  onClick={() => navigate('/dashboard/estoque')}
+                  onClick={() => navigate('/estoque')}
                 >
                   Ver Estoque Completo
                 </Button>
@@ -82,6 +72,7 @@ const DashboardPage = () => {
             </Card>
           </Grid>
 
+          {/* Card de Usuários */}
           <Grid item xs={12} md={6}>
             <Card>
               <CardContent>
@@ -105,7 +96,7 @@ const DashboardPage = () => {
                   fullWidth 
                   variant="contained" 
                   sx={{ mt: 2 }}
-                  onClick={() => navigate('/dashboard/administrar-contas')}
+                  onClick={() => navigate('/administrar-contas')}
                 >
                   Gerenciar Usuários
                 </Button>
@@ -113,6 +104,7 @@ const DashboardPage = () => {
             </Card>
           </Grid>
 
+          {/* Card de Ações Rápidas */}
           <Grid item xs={12}>
             <Card>
               <CardContent>
@@ -124,7 +116,7 @@ const DashboardPage = () => {
                     <Button 
                       fullWidth 
                       variant="contained" 
-                      onClick={() => navigate('/dashboard/estoque/novo')}
+                      onClick={() => navigate('/estoque/novo')}
                     >
                       Novo Produto
                     </Button>
@@ -133,7 +125,7 @@ const DashboardPage = () => {
                     <Button 
                       fullWidth 
                       variant="contained" 
-                      onClick={() => navigate('/dashboard/administrar-contas/novo')}
+                      onClick={() => navigate('/administrar-contas/novo')}
                     >
                       Novo Usuário
                     </Button>
