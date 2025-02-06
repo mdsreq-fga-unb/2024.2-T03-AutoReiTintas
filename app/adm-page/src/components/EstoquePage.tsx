@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { getProdutos, removeProduto, getCategorias, updateEstoqueProduto, getCategoriaProduto, getEstoqueProduto, addCategoria } from "../services/api"; // Importar funções da API
+import { getProdutos, removeProduto, getCategorias, updateEstoqueProduto, getCategoriaProduto, getEstoqueProduto, addCategoria } from "../services/api"; 
 import ProdutoForm from "./ProdutoForm";
 import { ProdutoResponse } from '../types/produtos';
 
@@ -12,7 +12,8 @@ const EstoquePage = () => {
   const [produtoEditando, setProdutoEditando] = useState<ProdutoResponse | null>(null);
   const [categorias, setCategorias] = useState<{ id: number, nome: string }[]>([]);
   const [openCategoriaDialog, setOpenCategoriaDialog] = useState(false);
-  const [novaCategoria, setNovaCategoria] = useState<string>("");
+  const [novaCategoria, setNovaCategoria] = useState<string>('');
+  const [searchTerm, setSearchTerm] = useState<string>(''); 
 
   const fetchProdutos = async () => {
     try {
@@ -28,7 +29,7 @@ const EstoquePage = () => {
         const estoque = await getEstoqueProduto(produto.id);
         console.log("Estoque para produto:", produto.id, estoque);
 
-        const quantidadeEstoque = estoque?.quantidade_atual || 0; 
+        const quantidadeEstoque = estoque?.quantidade_atual || 0;
 
         return {
           ...produto,
@@ -38,7 +39,7 @@ const EstoquePage = () => {
             ordem: img.ordem
           })),
           quantidade_estoque: quantidadeEstoque,
-          categorias: categoriaNomes, 
+          categorias: categoriaNomes,
         };
       }));
 
@@ -71,7 +72,7 @@ const EstoquePage = () => {
   const handleDeleteProduto = async (id: number) => {
     try {
       await removeProduto(id);
-      setProdutos((prevProdutos) => prevProdutos.filter(produto => produto.id !== id)); // Remover produto da lista
+      setProdutos((prevProdutos) => prevProdutos.filter(produto => produto.id !== id)); 
     } catch (error) {
       console.error("Erro ao remover produto:", error);
     }
@@ -94,11 +95,11 @@ const EstoquePage = () => {
 
   const handleAddCategoria = async () => {
     try {
-      if (novaCategoria.trim() === "") return; // Valida se o nome da categoria não está vazio
+      if (novaCategoria.trim() === "") return; 
       await addCategoria({ nome: novaCategoria });
-      setNovaCategoria(""); // Limpar o campo após adicionar
-      setOpenCategoriaDialog(false); // Fechar o dialog
-      fetchCategorias(); // Atualizar lista de categorias
+      setNovaCategoria("");
+      setOpenCategoriaDialog(false); 
+      fetchCategorias();
     } catch (error) {
       console.error("Erro ao adicionar categoria:", error);
     }
@@ -109,6 +110,10 @@ const EstoquePage = () => {
     fetchCategorias();
   }, []);
 
+  const filteredProdutos = produtos.filter(produto =>
+    produto.nome.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
       <h1>Estoque</h1>
@@ -118,6 +123,15 @@ const EstoquePage = () => {
       <Button variant="contained" color="secondary" onClick={() => setOpenCategoriaDialog(true)}>
         Adicionar Categoria
       </Button>
+
+      <TextField
+        label="Buscar Produto"
+        variant="outlined"
+        fullWidth
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        margin="normal"
+      />
 
       <TableContainer component={Paper}>
         <Table>
@@ -134,12 +148,12 @@ const EstoquePage = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {produtos.length === 0 ? (
+            {filteredProdutos.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={8} align="center">Nenhum produto encontrado</TableCell>
               </TableRow>
             ) : (
-              produtos.map((produto) => (
+              filteredProdutos.map((produto) => (
                 <TableRow key={produto.id}>
                   <TableCell>{produto.id}</TableCell>
                   <TableCell>
