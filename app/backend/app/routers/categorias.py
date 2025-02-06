@@ -11,7 +11,7 @@ from app.schemas.categoria_schemas import (
 
 router = APIRouter()
 
-@router.post("/categorias", 
+@router.post("/categorias/", 
             response_model=CategoriaResponse,
             status_code=status.HTTP_201_CREATED)
 def create_categoria(categoria: CategoriaCreate, db: Session = Depends(get_db)):

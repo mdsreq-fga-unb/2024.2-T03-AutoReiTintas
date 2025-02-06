@@ -27,7 +27,6 @@ const ProdutoForm: React.FC<ProdutoFormProps> = ({ produto, categorias, onClose,
         descricao: produto.descricao,
         preco: produto.preco,
         categoria_id: produto.categorias[0]?.id || 0,
-        quantidade_inicial: produto.quantidade_estoque, 
         quantidade_estoque: produto.quantidade_estoque 
       });
     }
@@ -38,7 +37,9 @@ const ProdutoForm: React.FC<ProdutoFormProps> = ({ produto, categorias, onClose,
       if (produto) {
         await updateProduto(produto.id, formData);
       } else {
-        await addProduto(formData as ProdutoCreate);
+        const produtoToAdd = { ...formData };
+        delete produtoToAdd.quantidade_estoque; 
+        await addProduto(produtoToAdd as ProdutoCreate);
       }
       onProdutoAddedOrUpdated(); 
       onClose(); 
@@ -74,14 +75,16 @@ const ProdutoForm: React.FC<ProdutoFormProps> = ({ produto, categorias, onClose,
           margin="normal"
         />
         
-        <TextField
-          label="Quantidade no Estoque"
-          type="number"
-          fullWidth
-          value={formData.quantidade_estoque}
-          onChange={(e) => setFormData({...formData, quantidade_estoque: Number(e.target.value)})}
-          margin="normal"
-        />
+        {produto && (
+          <TextField
+            label="Quantidade no Estoque"
+            type="number"
+            fullWidth
+            value={formData.quantidade_estoque}
+            onChange={(e) => setFormData({...formData, quantidade_estoque: Number(e.target.value)})}
+            margin="normal"
+          />
+        )}
         
         <FormControl fullWidth margin="normal">
           <InputLabel>Categoria</InputLabel>
@@ -97,6 +100,7 @@ const ProdutoForm: React.FC<ProdutoFormProps> = ({ produto, categorias, onClose,
             ))}
           </Select>
         </FormControl>
+
         {!produto && (
           <TextField
             label="Quantidade Inicial"

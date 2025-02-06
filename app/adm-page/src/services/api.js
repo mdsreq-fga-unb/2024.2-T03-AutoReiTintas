@@ -117,6 +117,16 @@ export const removeProduto = async (id) => {
   }
 };
 
+// function to create a new categorie
+export const addCategoria = async (categoria) => {
+  try {
+    const response = await api.post('/api/categorias/', categoria);
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao adicionar categoria:", error);
+    throw error;
+  }
+};
 
 // function to get categories
 export const getCategorias = async () => {

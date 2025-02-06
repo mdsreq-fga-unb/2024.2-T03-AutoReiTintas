@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
+import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { getProdutos, removeProduto, getCategorias, updateEstoqueProduto, getCategoriaProduto, getEstoqueProduto } from "../services/api"; // Importar funções da API
+import { getProdutos, removeProduto, getCategorias, updateEstoqueProduto, getCategoriaProduto, getEstoqueProduto, addCategoria } from "../services/api"; // Importar funções da API
 import ProdutoForm from "./ProdutoForm";
 import { ProdutoResponse } from '../types/produtos';
 
@@ -11,6 +11,8 @@ const EstoquePage = () => {
   const [openForm, setOpenForm] = useState(false);
   const [produtoEditando, setProdutoEditando] = useState<ProdutoResponse | null>(null);
   const [categorias, setCategorias] = useState<{ id: number, nome: string }[]>([]);
+  const [openCategoriaDialog, setOpenCategoriaDialog] = useState(false);
+  const [novaCategoria, setNovaCategoria] = useState<string>("");
 
   const fetchProdutos = async () => {
     try {
@@ -18,11 +20,9 @@ const EstoquePage = () => {
       console.log("Produtos recebidos:", produtosData);
 
       const produtosFormatados = await Promise.all(produtosData.map(async (produto) => {
- 
         const categorias = await getCategoriaProduto(produto.id);
         console.log("Categorias para produto:", produto.id, categorias);
 
-        // Verifique se categorias é um objeto e extraia o nome
         const categoriaNomes = categorias ? [categorias.categoria_nome] : [];
 
         const estoque = await getEstoqueProduto(produto.id);
@@ -58,11 +58,6 @@ const EstoquePage = () => {
     }
   };
 
-  useEffect(() => {
-    fetchProdutos();
-    fetchCategorias();
-  }, []);
-
   const handleAddProduto = () => {
     setProdutoEditando(null);
     setOpenForm(true);
@@ -97,11 +92,31 @@ const EstoquePage = () => {
     }
   };
 
+  const handleAddCategoria = async () => {
+    try {
+      if (novaCategoria.trim() === "") return; // Valida se o nome da categoria não está vazio
+      await addCategoria({ nome: novaCategoria });
+      setNovaCategoria(""); // Limpar o campo após adicionar
+      setOpenCategoriaDialog(false); // Fechar o dialog
+      fetchCategorias(); // Atualizar lista de categorias
+    } catch (error) {
+      console.error("Erro ao adicionar categoria:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProdutos();
+    fetchCategorias();
+  }, []);
+
   return (
     <div>
       <h1>Estoque</h1>
       <Button variant="contained" color="primary" onClick={handleAddProduto}>
         Adicionar Produto
+      </Button>
+      <Button variant="contained" color="secondary" onClick={() => setOpenCategoriaDialog(true)}>
+        Adicionar Categoria
       </Button>
 
       <TableContainer component={Paper}>
@@ -142,7 +157,7 @@ const EstoquePage = () => {
                     {produto.categorias.length > 0 ? (
                       produto.categorias.map((categoria, index) => (
                         <div key={`${produto.id}-categoria-${index}`}>
-                          {typeof categoria === "object" ? categoria.nome : categoria}
+                          {categoria}
                         </div>
                       ))
                     ) : (
@@ -161,8 +176,6 @@ const EstoquePage = () => {
               ))
             )}
           </TableBody>
-
-
         </Table>
       </TableContainer>
 
@@ -177,6 +190,27 @@ const EstoquePage = () => {
           }}
         />
       )}
+
+      <Dialog open={openCategoriaDialog} onClose={() => setOpenCategoriaDialog(false)}>
+        <DialogTitle>Adicionar Nova Categoria</DialogTitle>
+        <DialogContent>
+          <TextField
+            label="Nome da Categoria"
+            value={novaCategoria}
+            onChange={(e) => setNovaCategoria(e.target.value)}
+            fullWidth
+            autoFocus
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenCategoriaDialog(false)} color="secondary">
+            Cancelar
+          </Button>
+          <Button onClick={handleAddCategoria} color="primary">
+            Adicionar
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };
