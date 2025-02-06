@@ -21,7 +21,6 @@ export const testConnection = async () => {
   }
 };
 
-
 // function to get users
 export const getUsuarios = async () => {
   try {
@@ -61,9 +60,21 @@ export const getProdutos = async () => {
   }
 };
 
+// Função to add a new product
+export const addProduto = async (produto) => {
+  try {
+    const response = await api.post('/api/produtos/', produto);
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao adicionar produto:", error);
+    throw error;
+  }
+};
+
+// function to update a product
 export const updateProduto = async (id, produto) => {
   try {
-    const response = await api.put(`api/produtos/${id}`, produto);
+    const response = await api.put(`/api/produtos/${id}`, produto);
     return response.data;
   } catch (error) {
     console.error("Erro ao atualizar produto:", error);
@@ -71,6 +82,31 @@ export const updateProduto = async (id, produto) => {
   }
 };
 
+// function to get storage from a product
+export const getEstoqueProduto = async (produtoId) => {
+  try {
+    const response = await api.get(`/api/estoque/${produtoId}`);
+    return response.data;
+  } catch (error) {
+    console.log(`Erro ao pegar a quantidade do estoque do produto ${produtoId}`);
+    throw error;
+  }
+}
+
+// function to update storage
+export const updateEstoqueProduto = async (produtoId , quantidade) => {
+  try {
+    const response = await api.patch(`/api/estoque/${produtoId}`, { 
+      quantidade_atual: quantidade 
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao atualizar estoque:", error);
+    throw error;
+  }
+};
+
+// function to remove a product
 export const removeProduto = async (id) => {
   try {
     await api.delete(`api/produtos/${id}`);
@@ -81,30 +117,6 @@ export const removeProduto = async (id) => {
   }
 };
 
-
-// function to add a new product (corrigir URL e headers)
-export const addProduto = async (produto) => {
-  try {
-    const response = await api.post('/api/produtos', produto);
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao adicionar produto:", error);
-    throw error;
-  }
-};
-
-// function to update storage (ajustar endpoint)
-export const updateEstoqueProduto = async (produtoId, quantidade) => {
-  try {
-    const response = await api.patch(`/api/estoque/produto/${produtoId}`, { 
-      quantidade_atual: quantidade 
-    });
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao atualizar estoque:", error);
-    throw error;
-  }
-};
 
 // function to get categories
 export const getCategorias = async () => {
@@ -117,3 +129,13 @@ export const getCategorias = async () => {
   }
 };
 
+// function to get categorie from a product
+export const getCategoriaProduto = async (produtoId) => {
+  try {
+    const response = await api.get(`/api/produto-categoria/${produtoId}/`);
+    return response.data;
+  } catch (error) {
+    console.log("Error to find categorie from product " + produtoId);
+    throw error;
+  }
+}

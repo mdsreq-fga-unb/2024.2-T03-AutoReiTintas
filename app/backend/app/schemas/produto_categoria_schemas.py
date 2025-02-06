@@ -7,7 +7,9 @@ class ProdutoCategoriaBase(BaseModel):
 class ProdutoCategoriaCreate(ProdutoCategoriaBase):
     pass
 
-class ProdutoCategoriaResponse(ProdutoCategoriaBase):
+class ProdutoCategoriaResponse(BaseModel):
+    produto_id: int
+    categoria_nome: str
+
     class Config:
         orm_mode = True
-
