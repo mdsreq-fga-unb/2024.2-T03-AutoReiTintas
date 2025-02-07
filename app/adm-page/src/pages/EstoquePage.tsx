@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { 
   Button, Table, TableBody, TableCell, TableContainer, TableHead, 
   TableRow, Paper, Dialog, DialogActions, DialogContent, DialogTitle, 
-  TextField, FormControl, InputLabel, Select, MenuItem 
+  TextField, FormControl, InputLabel, Select, MenuItem, IconButton 
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { 
@@ -11,6 +11,8 @@ import {
 } from "../services/api"; 
 import ProdutoForm from "../components/ProdutoForm";
 import { ProdutoResponse } from "../types/produtos";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const EstoquePage = () => {
   const navigate = useNavigate();
@@ -24,6 +26,10 @@ const EstoquePage = () => {
   
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<number | "">("");
+  
+  // New state for delete confirmation
+  const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+  const [produtoToDelete, setProdutoToDelete] = useState<ProdutoResponse | null>(null);
 
   const fetchProdutos = async () => {
     try {
@@ -59,7 +65,7 @@ const EstoquePage = () => {
   const fetchCategorias = async () => {
     try {
       const categoriasData = await getCategorias();
-      console.log("Categorias recebidas: ", categoriasData);
+      console.log("Categorias recebidas:", categoriasData);
       setCategorias(categoriasData);
     } catch (error) {
       console.error("Erro ao buscar categorias:", error);
@@ -76,12 +82,23 @@ const EstoquePage = () => {
     setOpenForm(true);
   };
 
-  const handleDeleteProduto = async (id: number) => {
-    try {
-      await removeProduto(id);
-      setProdutos((prevProdutos) => prevProdutos.filter(produto => produto.id !== id)); 
-    } catch (error) {
-      console.error("Erro ao remover produto:", error);
+  const promptDeleteProduto = (produto: ProdutoResponse) => {
+    setProdutoToDelete(produto);
+    setOpenDeleteDialog(true);
+  };
+
+  const confirmDeleteProduto = async () => {
+    if (produtoToDelete) {
+      try {
+        await removeProduto(produtoToDelete.id);
+        setProdutos((prevProdutos) =>
+          prevProdutos.filter((produto) => produto.id !== produtoToDelete.id)
+        );
+        setOpenDeleteDialog(false);
+        setProdutoToDelete(null);
+      } catch (error) {
+        console.error("Erro ao remover produto:", error);
+      }
     }
   };
 
@@ -146,7 +163,6 @@ const EstoquePage = () => {
         margin="normal"
       />
 
-      {/* Filtro por Categoria */}
       <FormControl fullWidth margin="normal">
         <InputLabel>Filtrar por Categoria</InputLabel>
         <Select
@@ -209,12 +225,16 @@ const EstoquePage = () => {
                     )}
                   </TableCell>
                   <TableCell>
-                    <Button onClick={() => handleEditProduto(produto)} variant="contained" color="primary">
-                      Editar
-                    </Button>
-                    <Button onClick={() => handleDeleteProduto(produto.id)} variant="contained" color="secondary">
-                      Excluir
-                    </Button>
+                    <IconButton color="primary" onClick={() => handleEditProduto(produto)} aria-label="editar">
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton 
+                      color="secondary" 
+                      onClick={() => promptDeleteProduto(produto)} 
+                      aria-label="excluir"
+                    >
+                      <DeleteIcon />
+                    </IconButton>
                   </TableCell>
                 </TableRow>
               ))
@@ -222,6 +242,21 @@ const EstoquePage = () => {
           </TableBody>
         </Table>
       </TableContainer>
+
+      <Dialog open={openDeleteDialog} onClose={() => setOpenDeleteDialog(false)}>
+        <DialogTitle>Confirmar Exclusão</DialogTitle>
+        <DialogContent>
+          Tem certeza que deseja excluir este produto?
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenDeleteDialog(false)} color="secondary">
+            Cancelar
+          </Button>
+          <Button onClick={confirmDeleteProduto} color="primary">
+            Confirmar
+          </Button>
+        </DialogActions>
+      </Dialog>
 
       {openCategoriaDialog && (
         <Dialog open={openCategoriaDialog} onClose={() => setOpenCategoriaDialog(false)}>
@@ -244,6 +279,18 @@ const EstoquePage = () => {
             </Button>
           </DialogActions>
         </Dialog>
+      )}
+
+      {openForm && (
+        <ProdutoForm
+          produto={produtoEditando}
+          categorias={categorias}
+          onClose={handleCloseForm}
+          onProdutoAddedOrUpdated={() => {
+            setOpenForm(false);
+            fetchProdutos();
+          }}
+        />
       )}
     </div>
   );
