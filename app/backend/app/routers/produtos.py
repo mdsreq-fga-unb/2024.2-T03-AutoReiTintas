@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session, joinedload
 from app.database import get_db
 from app.models.models import Produto, Estoque, ProdutoCategoria, Categoria, ProdutoImagem
@@ -63,30 +63,51 @@ def get_produto(produto_id: int, db: Session = Depends(get_db)):
         imagens=[{"id": img.id, "url_imagem": img.url_imagem, "ordem": img.ordem} for img in produto.imagens]
     )
 
-@router.get("/produtos/", response_model=list[ProdutoResponse])
-def get_produtos(db: Session = Depends(get_db)):
-    produtos = (
-        db.query(Produto)
-        .options(
-            joinedload(Produto.estoque),
-            joinedload(Produto.categorias).joinedload(ProdutoCategoria.categoria),
-            joinedload(Produto.imagens)
-        )
-        .all()
+@router.get("/produtos/", response_model=dict)
+def get_produtos(
+    db: Session = Depends(get_db),
+    page: int = Query(1, ge=1),  # Página atual (começa em 1)
+    page_size: int = Query(10, ge=1, le=100),  # Itens por página
+    search: str = Query(None),  # Filtro de busca por nome
+    categoria_id: int = Query(None)  # Filtro por categoria
+):
+    # Query base
+    query = db.query(Produto).options(
+        joinedload(Produto.estoque),
+        joinedload(Produto.categorias).joinedload(ProdutoCategoria.categoria),
+        joinedload(Produto.imagens)
     )
-    return [
-        ProdutoResponse(
-            id=produto.id,
-            nome=produto.nome,
-            descricao=produto.descricao,
-            preco=produto.preco,
-            codigo=produto.codigo,
-            quantidade_estoque=produto.estoque.quantidade_atual if produto.estoque else 0,
-            categorias=[{"id": cat.categoria.id, "nome": cat.categoria.nome} for cat in produto.categorias],
-            imagens=[{"id": img.id, "url_imagem": img.url_imagem, "ordem": img.ordem} for img in produto.imagens]
-        )
-        for produto in produtos
-    ]
+
+    # Aplicar filtros
+    if search:
+        query = query.filter(Produto.nome.ilike(f"%{search}%"))  # Busca por nome
+    if categoria_id:
+        query = query.join(Produto.categorias).filter(ProdutoCategoria.categoria_id == categoria_id)  # Filtro por categoria
+
+    # Paginação
+    total = query.count()  # Total de produtos
+    offset = (page - 1) * page_size
+    produtos = query.offset(offset).limit(page_size).all()
+
+    # Formatar resposta
+    return {
+        "items": [
+            ProdutoResponse(
+                id=produto.id,
+                nome=produto.nome,
+                descricao=produto.descricao,
+                preco=produto.preco,
+                codigo=produto.codigo,
+                quantidade_estoque=produto.estoque.quantidade_atual if produto.estoque else 0,
+                categorias=[{"id": cat.categoria.id, "nome": cat.categoria.nome} for cat in produto.categorias],
+                imagens=[{"id": img.id, "url_imagem": img.url_imagem, "ordem": img.ordem} for img in produto.imagens]
+            )
+            for produto in produtos
+        ],
+        "total": total,
+        "page": page,
+        "page_size": page_size
+    }
 
 @router.put("/produtos/{produto_id}", response_model=ProdutoResponse)
 def update_produto(produto_id: int, produto_update: ProdutoUpdate, db: Session = Depends(get_db)):

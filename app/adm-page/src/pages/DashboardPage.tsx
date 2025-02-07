@@ -17,7 +17,7 @@ const DashboardPage = () => {
       try {
         const produtosData = await getProdutos();
         const produtosComEstoque = await Promise.all(
-          produtosData.slice(0, 5).map(async (produto) => {
+          produtosData.data.slice(0, 5).map(async (produto) => {
             const estoque = await getEstoqueProduto(produto.id);
             return {
               ...produto,
@@ -27,9 +27,12 @@ const DashboardPage = () => {
         );
 
         const usuariosData = await getUsuarios();
+        console.log('Resposta de getUsuarios:', usuariosData); // Log
+
+        const listaUsuarios = usuariosData.data ? usuariosData.data : usuariosData;
 
         setProdutos(produtosComEstoque);
-        setUsuarios(usuariosData.slice(0, 5));
+        setUsuarios(listaUsuarios.slice(0, 5));
       } catch (error) {
         console.error("Erro ao carregar dados:", error);
       }
