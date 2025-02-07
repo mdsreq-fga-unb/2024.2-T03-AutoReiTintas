@@ -29,7 +29,7 @@ const AdministrarContasPage = () => {
       const sucesso = await deletarUsuario(id);
       
       if (sucesso) {
-        await carregarUsuarios(); // Recarrega a lista atualizada
+        await carregarUsuarios(); 
         alert('Usuário excluído com sucesso!');
       }
     } catch (error) {

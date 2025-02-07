@@ -1,19 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
+import { 
+  Button, Table, TableBody, TableCell, TableContainer, TableHead, 
+  TableRow, Paper, Dialog, DialogActions, DialogContent, DialogTitle, 
+  TextField, FormControl, InputLabel, Select, MenuItem 
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { getProdutos, removeProduto, getCategorias, updateEstoqueProduto, getCategoriaProduto, getEstoqueProduto, addCategoria } from "../services/api"; 
+import { 
+  getProdutos, removeProduto, getCategorias, updateEstoqueProduto, 
+  getCategoriaProduto, getEstoqueProduto, addCategoria 
+} from "../services/api"; 
 import ProdutoForm from "../components/ProdutoForm";
-import { ProdutoResponse } from '../types/produtos';
+import { ProdutoResponse } from "../types/produtos";
 
 const EstoquePage = () => {
   const navigate = useNavigate();
   const [produtos, setProdutos] = useState<ProdutoResponse[]>([]);
   const [openForm, setOpenForm] = useState(false);
   const [produtoEditando, setProdutoEditando] = useState<ProdutoResponse | null>(null);
+  
   const [categorias, setCategorias] = useState<{ id: number, nome: string }[]>([]);
   const [openCategoriaDialog, setOpenCategoriaDialog] = useState(false);
   const [novaCategoria, setNovaCategoria] = useState<string>('');
-  const [searchTerm, setSearchTerm] = useState<string>(''); 
+  
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [selectedCategory, setSelectedCategory] = useState<number | "">("");
 
   const fetchProdutos = async () => {
     try {
@@ -21,11 +31,8 @@ const EstoquePage = () => {
       console.log("Produtos recebidos:", produtosData);
 
       const produtosFormatados = await Promise.all(produtosData.map(async (produto) => {
-        const categorias = await getCategoriaProduto(produto.id);
-        console.log("Categorias para produto:", produto.id, categorias);
-
-        const categoriaNomes = categorias ? [categorias.categoria_nome] : [];
-
+        const catData = await getCategoriaProduto(produto.id);
+        const categoriaNomes = catData ? [catData.categoria_nome] : [];
         const estoque = await getEstoqueProduto(produto.id);
         console.log("Estoque para produto:", produto.id, estoque);
 
@@ -110,9 +117,15 @@ const EstoquePage = () => {
     fetchCategorias();
   }, []);
 
-  const filteredProdutos = produtos.filter(produto =>
-    produto.nome.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredProdutos = produtos.filter(produto => {
+    const matchesSearch = produto.nome.toLowerCase().includes(searchTerm.toLowerCase());
+    if (selectedCategory !== "") {
+      const selectedCat = categorias.find(c => c.id === selectedCategory);
+      if (!selectedCat) return false;
+      return matchesSearch && produto.categorias.includes(selectedCat.nome);
+    }
+    return matchesSearch;
+  });
 
   return (
     <div>
@@ -120,7 +133,7 @@ const EstoquePage = () => {
       <Button variant="contained" color="primary" onClick={handleAddProduto}>
         Adicionar Produto
       </Button>
-      <Button variant="contained" color="secondary" onClick={() => setOpenCategoriaDialog(true)}>
+      <Button variant="contained" color="primary" onClick={() => setOpenCategoriaDialog(true)}>
         Adicionar Categoria
       </Button>
 
@@ -132,6 +145,23 @@ const EstoquePage = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
         margin="normal"
       />
+
+      {/* Filtro por Categoria */}
+      <FormControl fullWidth margin="normal">
+        <InputLabel>Filtrar por Categoria</InputLabel>
+        <Select
+          value={selectedCategory}
+          label="Filtrar por Categoria"
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
+          <MenuItem value="">Todas as Categorias</MenuItem>
+          {categorias.map(categoria => (
+            <MenuItem key={categoria.id} value={categoria.id}>
+              {categoria.nome}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
 
       <TableContainer component={Paper}>
         <Table>
@@ -193,38 +223,28 @@ const EstoquePage = () => {
         </Table>
       </TableContainer>
 
-      {openForm && (
-        <ProdutoForm
-          produto={produtoEditando}
-          categorias={categorias}
-          onClose={handleCloseForm}
-          onProdutoAddedOrUpdated={() => {
-            setOpenForm(false);
-            fetchProdutos();
-          }}
-        />
+      {openCategoriaDialog && (
+        <Dialog open={openCategoriaDialog} onClose={() => setOpenCategoriaDialog(false)}>
+          <DialogTitle>Adicionar Nova Categoria</DialogTitle>
+          <DialogContent>
+            <TextField
+              label="Nome da Categoria"
+              value={novaCategoria}
+              onChange={(e) => setNovaCategoria(e.target.value)}
+              fullWidth
+              autoFocus
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={() => setOpenCategoriaDialog(false)} color="secondary">
+              Cancelar
+            </Button>
+            <Button onClick={handleAddCategoria} color="primary">
+              Adicionar
+            </Button>
+          </DialogActions>
+        </Dialog>
       )}
-
-      <Dialog open={openCategoriaDialog} onClose={() => setOpenCategoriaDialog(false)}>
-        <DialogTitle>Adicionar Nova Categoria</DialogTitle>
-        <DialogContent>
-          <TextField
-            label="Nome da Categoria"
-            value={novaCategoria}
-            onChange={(e) => setNovaCategoria(e.target.value)}
-            fullWidth
-            autoFocus
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setOpenCategoriaDialog(false)} color="secondary">
-            Cancelar
-          </Button>
-          <Button onClick={handleAddCategoria} color="primary">
-            Adicionar
-          </Button>
-        </DialogActions>
-      </Dialog>
     </div>
   );
 };
