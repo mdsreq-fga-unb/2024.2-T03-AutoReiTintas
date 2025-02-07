@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { 
-  Button, Table, TableBody, TableCell, TableContainer, TableHead, 
-  TableRow, Paper, Dialog, DialogActions, DialogContent, DialogTitle, 
-  TextField, FormControl, InputLabel, Select, MenuItem, IconButton 
+import {
+  Button, Table, TableBody, TableCell, TableContainer, TableHead,
+  TableRow, Paper, Dialog, DialogActions, DialogContent, DialogTitle,
+  TextField, FormControl, InputLabel, Select, MenuItem, IconButton
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { 
-  getProdutos, removeProduto, getCategorias, updateEstoqueProduto, 
-  getCategoriaProduto, getEstoqueProduto, addCategoria 
-} from "../services/api"; 
+import {
+  getProdutos, removeProduto, getCategorias, updateEstoqueProduto,
+  getCategoriaProduto, getEstoqueProduto, addCategoria
+} from "../services/api";
 import ProdutoForm from "../components/ProdutoForm";
 import { ProdutoResponse } from "../types/produtos";
 import EditIcon from "@mui/icons-material/Edit";
@@ -19,14 +19,14 @@ const EstoquePage = () => {
   const [produtos, setProdutos] = useState<ProdutoResponse[]>([]);
   const [openForm, setOpenForm] = useState(false);
   const [produtoEditando, setProdutoEditando] = useState<ProdutoResponse | null>(null);
-  
+
   const [categorias, setCategorias] = useState<{ id: number, nome: string }[]>([]);
   const [openCategoriaDialog, setOpenCategoriaDialog] = useState(false);
   const [novaCategoria, setNovaCategoria] = useState<string>('');
-  
+
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<number | "">("");
-  
+
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
   const [produtoToDelete, setProdutoToDelete] = useState<ProdutoResponse | null>(null);
 
@@ -118,10 +118,10 @@ const EstoquePage = () => {
 
   const handleAddCategoria = async () => {
     try {
-      if (novaCategoria.trim() === "") return; 
+      if (novaCategoria.trim() === "") return;
       await addCategoria({ nome: novaCategoria });
       setNovaCategoria("");
-      setOpenCategoriaDialog(false); 
+      setOpenCategoriaDialog(false);
       fetchCategorias();
     } catch (error) {
       console.error("Erro ao adicionar categoria:", error);
@@ -185,6 +185,7 @@ const EstoquePage = () => {
               <TableCell>ID</TableCell>
               <TableCell>Imagem</TableCell>
               <TableCell>Nome</TableCell>
+              <TableCell>Cód. Produto</TableCell>
               <TableCell>Descrição</TableCell>
               <TableCell>Preço</TableCell>
               <TableCell>Estoque</TableCell>
@@ -195,7 +196,7 @@ const EstoquePage = () => {
           <TableBody>
             {filteredProdutos.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={8} align="center">Nenhum produto encontrado</TableCell>
+                <TableCell colSpan={9} align="center">Nenhum produto encontrado</TableCell>
               </TableRow>
             ) : (
               filteredProdutos.map((produto) => (
@@ -203,12 +204,17 @@ const EstoquePage = () => {
                   <TableCell>{produto.id}</TableCell>
                   <TableCell>
                     {produto.imagens.length > 0 ? (
-                      <img src={produto.imagens[0].url_imagem} alt={produto.nome} style={{ width: "50px", height: "50px" }} />
+                      <img
+                        src={produto.imagens[0].url_imagem}
+                        alt={produto.nome}
+                        style={{ width: "50px", height: "50px" }}
+                      />
                     ) : (
                       "Sem imagem"
                     )}
                   </TableCell>
                   <TableCell>{produto.nome}</TableCell>
+                  <TableCell>{produto.codigo ?? "Sem código"}</TableCell> {/* Aqui está a renderização do código do produto */}
                   <TableCell>{produto.descricao}</TableCell>
                   <TableCell>R$ {produto.preco.toFixed(2)}</TableCell>
                   <TableCell>{produto.quantidade_estoque !== undefined ? produto.quantidade_estoque : "Sem estoque"}</TableCell>
@@ -227,9 +233,9 @@ const EstoquePage = () => {
                     <IconButton color="primary" onClick={() => handleEditProduto(produto)} aria-label="editar">
                       <EditIcon />
                     </IconButton>
-                    <IconButton 
-                      color="secondary" 
-                      onClick={() => promptDeleteProduto(produto)} 
+                    <IconButton
+                      color="secondary"
+                      onClick={() => promptDeleteProduto(produto)}
                       aria-label="excluir"
                     >
                       <DeleteIcon />
@@ -239,6 +245,7 @@ const EstoquePage = () => {
               ))
             )}
           </TableBody>
+
         </Table>
       </TableContainer>
 

@@ -14,6 +14,7 @@ const ProdutoForm: React.FC<ProdutoFormProps> = ({ produto, categorias, onClose,
   const [formData, setFormData] = useState<ProdutoCreate | ProdutoUpdate>({
     nome: '',
     descricao: '',
+    codigo: 0,
     preco: 0,
     categoria_id: 0,
     quantidade_inicial: 0,
@@ -25,6 +26,7 @@ const ProdutoForm: React.FC<ProdutoFormProps> = ({ produto, categorias, onClose,
       setFormData({
         nome: produto.nome,
         descricao: produto.descricao,
+        codigo: produto.codigo,
         preco: produto.preco,
         categoria_id: produto.categorias[0]?.id || 0,
         quantidade_estoque: produto.quantidade_estoque 
@@ -64,6 +66,13 @@ const ProdutoForm: React.FC<ProdutoFormProps> = ({ produto, categorias, onClose,
           fullWidth
           value={formData.descricao}
           onChange={(e) => setFormData({...formData, descricao: e.target.value})}
+          margin="normal"
+        />
+         <TextField
+          label="Código do Produto"
+          fullWidth
+          value={formData.codigo}
+          onChange={(e) => setFormData({...formData, codigo: e.target.value})}
           margin="normal"
         />
         <TextField
