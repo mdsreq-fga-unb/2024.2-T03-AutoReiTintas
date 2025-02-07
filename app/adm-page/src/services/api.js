@@ -65,13 +65,25 @@ export const loginUsuario = async (email, senha) => {
 
 
 // function to get all products
-export const getProdutos = async () => {
+export const getProdutos = async (params = {}) => {
   try {
-    const response = await api.get("/api/produtos/");
-    return response.data;
+    const response = await api.get('/api/produtos/', {
+      params: {
+        page: params.page || 1, 
+        page_size: params.pageSize || 10,  
+        search: params.search || '', 
+        categoria_id: params.categoryId || null  
+      }
+    });
+    return {
+      data: response.data.items || [], 
+      total: response.data.total || 0, 
+      page: response.data.page || 1,  
+      pageSize: response.data.page_size || 10  
+    };
   } catch (error) {
     console.error("Erro ao carregar produtos:", error);
-    throw error;
+    return { data: [], total: 0, page: 1, pageSize: 10 };
   }
 };
 
@@ -231,6 +243,24 @@ export const tornarAdmin = async (usuarioId) => {
     return response.data;
   } catch (error) {
     console.error("Erro ao tornar usuário admin:", error);
+    throw error;
+  }
+};
+
+// function to get role from a user
+export const getUsuarioRole = async (usuarioId) => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) throw new Error("Token não encontrado");
+    
+    const response = await api.get(`/api/usuario_roles/${usuarioId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao buscar role do usuário:", error);
     throw error;
   }
 };

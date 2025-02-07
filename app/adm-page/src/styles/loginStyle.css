@@ -129,3 +129,14 @@
     color: #5B77CE;
     font-size: 9px;
   }
+
+  .admin-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #3B54A0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  

@@ -1,7 +1,12 @@
+# schemas/produto_schemas.py
 from pydantic import BaseModel
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 from app.schemas.produto_imagem_schemas import ProdutoImagemResponse
+
+class CategoriaResponse(BaseModel):
+    id: int
+    nome: str
 
 class ProdutoBase(BaseModel):
     nome: str
@@ -23,13 +28,11 @@ class ProdutoUpdate(BaseModel):
 
 class ProdutoResponse(ProdutoBase):
     id: int
-    nome: str
-    codigo: Optional[int] = None
-    descricao: str
-    preco: float
     criado_em: Optional[datetime] = None
     atualizado_em: Optional[datetime] = None
-    imagens: list[ProdutoImagemResponse] = []
+    imagens: List[ProdutoImagemResponse] = []
+    quantidade_estoque: int
+    categorias: List[CategoriaResponse] = []
 
     class Config:
         orm_mode = True

@@ -2,17 +2,34 @@ import React, { useEffect, useState } from "react";
 import {
   Button, Table, TableBody, TableCell, TableContainer, TableHead,
   TableRow, Paper, Dialog, DialogActions, DialogContent, DialogTitle,
-  TextField, FormControl, InputLabel, Select, MenuItem, IconButton
+  TextField, FormControl, InputLabel, Select, MenuItem, IconButton,
+  TablePagination
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {
   getProdutos, removeProduto, getCategorias, updateEstoqueProduto,
-  getCategoriaProduto, getEstoqueProduto, addCategoria
+  addCategoria
 } from "../services/api";
 import ProdutoForm from "../components/ProdutoForm";
 import { ProdutoResponse } from "../types/produtos";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+
+const useDebounce = (value: string, delay: number) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+};
 
 const EstoquePage = () => {
   const navigate = useNavigate();
@@ -20,11 +37,17 @@ const EstoquePage = () => {
   const [openForm, setOpenForm] = useState(false);
   const [produtoEditando, setProdutoEditando] = useState<ProdutoResponse | null>(null);
 
+  // Estados de paginação
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [totalCount, setTotalCount] = useState(0);
+
   const [categorias, setCategorias] = useState<{ id: number, nome: string }[]>([]);
   const [openCategoriaDialog, setOpenCategoriaDialog] = useState(false);
   const [novaCategoria, setNovaCategoria] = useState<string>('');
 
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
   const [selectedCategory, setSelectedCategory] = useState<number | "">("");
 
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -32,43 +55,48 @@ const EstoquePage = () => {
 
   const fetchProdutos = async () => {
     try {
-      const produtosData = await getProdutos();
-      console.log("Produtos recebidos:", produtosData);
+      const { data, total } = await getProdutos({
+        page: page + 1,
+        pageSize: rowsPerPage,
+        search: debouncedSearchTerm,
+        categoryId: selectedCategory
+      });
 
-      const produtosFormatados = await Promise.all(produtosData.map(async (produto) => {
-        const catData = await getCategoriaProduto(produto.id);
-        const categoriaNomes = catData ? [catData.categoria_nome] : [];
-        const estoque = await getEstoqueProduto(produto.id);
-        console.log("Estoque para produto:", produto.id, estoque);
+      console.log("Produtos recebidos:", data);  // Log 
 
-        const quantidadeEstoque = estoque?.quantidade_atual || 0;
-
-        return {
-          ...produto,
-          imagens: produto.imagens.map((img) => ({
-            id: img.id,
-            url_imagem: img.url_imagem,
-            ordem: img.ordem
-          })),
-          quantidade_estoque: quantidadeEstoque,
-          categorias: categoriaNomes,
-        };
-      }));
-
-      setProdutos(produtosFormatados);
+      setProdutos(data);
+      setTotalCount(total);
     } catch (error) {
       console.error("Erro ao buscar produtos:", error);
+      setProdutos([]);
+      setTotalCount(0);
     }
   };
 
   const fetchCategorias = async () => {
     try {
       const categoriasData = await getCategorias();
-      console.log("Categorias recebidas:", categoriasData);
       setCategorias(categoriasData);
     } catch (error) {
       console.error("Erro ao buscar categorias:", error);
     }
+  };
+
+  useEffect(() => {
+    fetchProdutos();
+  }, [page, rowsPerPage, debouncedSearchTerm, selectedCategory]);
+
+  useEffect(() => {
+    fetchCategorias();
+  }, []);
+
+  const handleChangePage = (event: unknown, newPage: number) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0); 
   };
 
   const handleAddProduto = () => {
@@ -90,19 +118,13 @@ const EstoquePage = () => {
     if (produtoToDelete) {
       try {
         await removeProduto(produtoToDelete.id);
-        setProdutos((prevProdutos) =>
-          prevProdutos.filter((produto) => produto.id !== produtoToDelete.id)
-        );
+        await fetchProdutos();
         setOpenDeleteDialog(false);
         setProdutoToDelete(null);
       } catch (error) {
         console.error("Erro ao remover produto:", error);
       }
     }
-  };
-
-  const handleCloseForm = () => {
-    setOpenForm(false);
   };
 
   const handleUpdateEstoque = async (produtoId: number, novaQuantidade: number) => {
@@ -128,55 +150,42 @@ const EstoquePage = () => {
     }
   };
 
-  useEffect(() => {
-    fetchProdutos();
-    fetchCategorias();
-  }, []);
-
-  const filteredProdutos = produtos.filter(produto => {
-    const matchesSearch = produto.nome.toLowerCase().includes(searchTerm.toLowerCase());
-    if (selectedCategory !== "") {
-      const selectedCat = categorias.find(c => c.id === selectedCategory);
-      if (!selectedCat) return false;
-      return matchesSearch && produto.categorias.includes(selectedCat.nome);
-    }
-    return matchesSearch;
-  });
-
   return (
-    <div>
+    <div style={{ padding: '20px' }}>
       <h1>Estoque</h1>
-      <Button variant="contained" color="primary" onClick={handleAddProduto}>
-        Adicionar Produto
-      </Button>
-      <Button variant="contained" color="primary" onClick={() => setOpenCategoriaDialog(true)}>
-        Adicionar Categoria
-      </Button>
+      
+      <div style={{ marginBottom: '20px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+        <Button variant="contained" color="primary" onClick={handleAddProduto}>
+          Adicionar Produto
+        </Button>
+        <Button variant="contained" color="primary" onClick={() => setOpenCategoriaDialog(true)}>
+          Adicionar Categoria
+        </Button>
 
-      <TextField
-        label="Buscar Produto"
-        variant="outlined"
-        fullWidth
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        margin="normal"
-      />
+        <TextField
+          label="Buscar Produto"
+          variant="outlined"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{ minWidth: '250px' }}
+        />
 
-      <FormControl fullWidth margin="normal">
-        <InputLabel>Filtrar por Categoria</InputLabel>
-        <Select
-          value={selectedCategory}
-          label="Filtrar por Categoria"
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          <MenuItem value="">Todas as Categorias</MenuItem>
-          {categorias.map(categoria => (
-            <MenuItem key={categoria.id} value={categoria.id}>
-              {categoria.nome}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+        <FormControl style={{ minWidth: '200px' }}>
+          <InputLabel>Filtrar por Categoria</InputLabel>
+          <Select
+            value={selectedCategory}
+            label="Filtrar por Categoria"
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
+            <MenuItem value="">Todas as Categorias</MenuItem>
+            {categorias.map(categoria => (
+              <MenuItem key={categoria.id} value={categoria.id}>
+                {categoria.nome}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </div>
 
       <TableContainer component={Paper}>
         <Table>
@@ -194,49 +203,48 @@ const EstoquePage = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredProdutos.length === 0 ? (
+            {produtos.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={9} align="center">Nenhum produto encontrado</TableCell>
               </TableRow>
             ) : (
-              filteredProdutos.map((produto) => (
+              produtos.map((produto) => (
                 <TableRow key={produto.id}>
                   <TableCell>{produto.id}</TableCell>
                   <TableCell>
-                    {produto.imagens.length > 0 ? (
+                    {produto.imagens?.[0]?.url_imagem ? (
                       <img
                         src={produto.imagens[0].url_imagem}
                         alt={produto.nome}
-                        style={{ width: "50px", height: "50px" }}
+                        style={{ width: "50px", height: "50px", objectFit: 'cover' }}
                       />
                     ) : (
                       "Sem imagem"
                     )}
                   </TableCell>
                   <TableCell>{produto.nome}</TableCell>
-                  <TableCell>{produto.codigo ?? "Sem código"}</TableCell> {/* Aqui está a renderização do código do produto */}
+                  <TableCell>{produto.codigo ?? "N/A"}</TableCell>
                   <TableCell>{produto.descricao}</TableCell>
-                  <TableCell>R$ {produto.preco.toFixed(2)}</TableCell>
-                  <TableCell>{produto.quantidade_estoque !== undefined ? produto.quantidade_estoque : "Sem estoque"}</TableCell>
+                  <TableCell>R$ {produto.preco?.toFixed(2)}</TableCell>
                   <TableCell>
-                    {produto.categorias.length > 0 ? (
-                      produto.categorias.map((categoria, index) => (
-                        <div key={`${produto.id}-categoria-${index}`}>
-                          {categoria}
-                        </div>
-                      ))
-                    ) : (
-                      <p>Sem categoria</p>
-                    )}
+                    <TextField
+                      type="number"
+                      value={produto.quantidade_estoque || 0}
+                      onChange={(e) => handleUpdateEstoque(produto.id, parseInt(e.target.value))}
+                      inputProps={{ min: 0 }}
+                      variant="standard"
+                    />
                   </TableCell>
                   <TableCell>
-                    <IconButton color="primary" onClick={() => handleEditProduto(produto)} aria-label="editar">
+                    {produto.categorias?.map(categoria => categoria.nome).join(', ') || "Sem categoria"}
+                  </TableCell>
+                  <TableCell>
+                    <IconButton color="primary" onClick={() => handleEditProduto(produto)}>
                       <EditIcon />
                     </IconButton>
                     <IconButton
-                      color="secondary"
+                      color="error"
                       onClick={() => promptDeleteProduto(produto)}
-                      aria-label="excluir"
                     >
                       <DeleteIcon />
                     </IconButton>
@@ -245,8 +253,19 @@ const EstoquePage = () => {
               ))
             )}
           </TableBody>
-
         </Table>
+
+        <TablePagination
+          rowsPerPageOptions={[10, 25, 50, 100]}
+          component="div"
+          count={totalCount}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          labelRowsPerPage="Itens por página:"
+          labelDisplayedRows={({ from, to, count }) => `${from}-${to} de ${count}`}
+        />
       </TableContainer>
 
       <Dialog open={openDeleteDialog} onClose={() => setOpenDeleteDialog(false)}>
@@ -264,38 +283,33 @@ const EstoquePage = () => {
         </DialogActions>
       </Dialog>
 
-      {openCategoriaDialog && (
-        <Dialog open={openCategoriaDialog} onClose={() => setOpenCategoriaDialog(false)}>
-          <DialogTitle>Adicionar Nova Categoria</DialogTitle>
-          <DialogContent>
-            <TextField
-              label="Nome da Categoria"
-              value={novaCategoria}
-              onChange={(e) => setNovaCategoria(e.target.value)}
-              fullWidth
-              autoFocus
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={() => setOpenCategoriaDialog(false)} color="secondary">
-              Cancelar
-            </Button>
-            <Button onClick={handleAddCategoria} color="primary">
-              Adicionar
-            </Button>
-          </DialogActions>
-        </Dialog>
-      )}
+      <Dialog open={openCategoriaDialog} onClose={() => setOpenCategoriaDialog(false)}>
+        <DialogTitle>Adicionar Nova Categoria</DialogTitle>
+        <DialogContent>
+          <TextField
+            label="Nome da Categoria"
+            value={novaCategoria}
+            onChange={(e) => setNovaCategoria(e.target.value)}
+            fullWidth
+            autoFocus
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenCategoriaDialog(false)} color="secondary">
+            Cancelar
+          </Button>
+          <Button onClick={handleAddCategoria} color="primary">
+            Adicionar
+          </Button>
+        </DialogActions>
+      </Dialog>
 
       {openForm && (
         <ProdutoForm
           produto={produtoEditando}
           categorias={categorias}
-          onClose={handleCloseForm}
-          onProdutoAddedOrUpdated={() => {
-            setOpenForm(false);
-            fetchProdutos();
-          }}
+          onClose={() => setOpenForm(false)}
+          onProdutoAddedOrUpdated={fetchProdutos}
         />
       )}
     </div>
