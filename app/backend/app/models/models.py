@@ -67,6 +67,7 @@ class Produto(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(255), nullable=False)
+    codigo = Column(Integer, unique=True, nullable=True)
     descricao = Column(Text, nullable=True)
     preco = Column(Numeric(10, 2), nullable=False)
     criado_em = Column(TIMESTAMP, default=datetime.datetime.utcnow)

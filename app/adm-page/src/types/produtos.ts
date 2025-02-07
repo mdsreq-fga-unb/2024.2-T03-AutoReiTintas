@@ -1,6 +1,7 @@
 export interface ProdutoCreate {
   nome: string;
   descricao: string;
+  codigo: number;
   preco: number;
   categoria_id: number;
   quantidade_inicial: number;
@@ -9,6 +10,7 @@ export interface ProdutoCreate {
 export interface ProdutoResponse {
   id: number;
   nome: string;
+  codigo: number;
   descricao: string;
   preco: number;
   quantidade_estoque: number;
@@ -19,6 +21,7 @@ export interface ProdutoResponse {
 export interface ProdutoUpdate {
   nome?: string;
   descricao?: string;
+  codigo?: number;
   preco?: number;
   categoria_id?: number;
   quantidade_estoque?: number;
@@ -33,6 +36,7 @@ export interface ProdutoImagem {
 export interface ProdutoResponse {
   id: number;
   nome: string;
+  codigo: number;
   descricao: string;
   preco: number;
   imagens: ProdutoImagem[];

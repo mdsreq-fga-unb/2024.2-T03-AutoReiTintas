@@ -7,6 +7,7 @@ class ProdutoBase(BaseModel):
     nome: str
     descricao: Optional[str] = None
     preco: float
+    codigo: Optional[int] = None
 
 class ProdutoCreate(ProdutoBase):
     quantidade_inicial: int
@@ -18,10 +19,12 @@ class ProdutoUpdate(BaseModel):
     preco: Optional[float] = None
     quantidade_estoque: Optional[int] = None
     categoria_id: Optional[int] = None
+    codigo: Optional[int] = None
 
 class ProdutoResponse(ProdutoBase):
     id: int
     nome: str
+    codigo: Optional[int] = None
     descricao: str
     preco: float
     criado_em: Optional[datetime] = None

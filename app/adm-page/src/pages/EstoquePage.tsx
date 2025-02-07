@@ -27,7 +27,6 @@ const EstoquePage = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<number | "">("");
   
-  // New state for delete confirmation
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
   const [produtoToDelete, setProdutoToDelete] = useState<ProdutoResponse | null>(null);
 
