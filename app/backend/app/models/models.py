@@ -22,7 +22,12 @@ class Usuario(Base):
     criado_em = Column(DateTime(timezone=True), server_default=func.now())
     atualizado_em = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
-    roles = relationship("UsuarioRole", back_populates="usuario")
+    roles = relationship(
+        "UsuarioRole",
+        back_populates="usuario",
+        cascade="all, delete-orphan",
+        passive_deletes=True
+    )
 
     def verify_password(self, senha: str) -> bool:
         return bcrypt.verify(senha, self.senha_hash)
@@ -62,6 +67,7 @@ class Produto(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(255), nullable=False)
+    codigo = Column(Integer, unique=True, nullable=True)
     descricao = Column(Text, nullable=True)
     preco = Column(Numeric(10, 2), nullable=False)
     criado_em = Column(TIMESTAMP, default=datetime.datetime.utcnow)

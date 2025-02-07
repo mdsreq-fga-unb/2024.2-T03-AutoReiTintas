@@ -204,11 +204,19 @@ export const getUsuarioAtual = async () => {
 // function to delete a user
 export const deletarUsuario = async (id) => {
   try {
-    await api.delete(`/api/usuarios/${id}`);
-    return { message: "Usuário deletado com sucesso!" };
+    const token = localStorage.getItem('token');
+    if (!token) throw new Error('Token não encontrado');
+
+    await api.delete(`/api/usuarios/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    
+    return true;
   } catch (error) {
-    console.error("Erro ao deletar usuário:", error);
-    throw new Error("Não foi possível deletar o usuário. Tente novamente mais tarde.");
+    console.error("Erro ao deletar usuário:", error.response?.data || error.message);
+    throw error;
   }
 };
 

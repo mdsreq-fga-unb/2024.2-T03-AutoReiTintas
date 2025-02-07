@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
+from sqlalchemy.exc import SQLAlchemyError
 from app.database import get_db
 from app.models.models import Usuario
 from app.schemas.usuario_schemas import UsuarioCreate, UsuarioResponse, UsuarioUpdate
@@ -72,11 +73,18 @@ def update_usuario(usuario_id: int, usuario_update: UsuarioUpdate, db: Session =
 @router.delete("/usuarios/{usuario_id}", status_code=204)
 def delete_usuario(usuario_id: int, db: Session = Depends(get_db)):
     usuario = db.query(Usuario).filter(Usuario.id == usuario_id).first()
-
     if not usuario:
         raise HTTPException(status_code=404, detail="Usuário não encontrado")
-
+    
+    if usuario.roles:
+        for role in usuario.roles:
+            db.delete(role)
+    
     db.delete(usuario)
-    db.commit()
-
+    try:
+        db.commit()
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Erro ao deletar usuário: {str(e)}")
+    
     return {"message": "Usuário excluído com sucesso"}

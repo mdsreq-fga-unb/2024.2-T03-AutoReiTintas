@@ -6,14 +6,15 @@ const MinhaContaPage = () => {
   const [usuario, setUsuario] = useState({
     nome: '',
     email: '',
-    telefone: ''
+    telefone: '',
+    senha: ''  
   });
 
   useEffect(() => {
     const carregarUsuario = async () => {
       try {
         const dadosUsuario = await getUsuarioAtual();
-        setUsuario(dadosUsuario);
+        setUsuario({ ...dadosUsuario, senha: '' });
       } catch (error) {
         console.error("Erro ao carregar dados do usuário:", error);
       }
@@ -45,7 +46,7 @@ const MinhaContaPage = () => {
             fullWidth
             margin="normal"
             value={usuario.nome}
-            onChange={(e) => setUsuario({...usuario, nome: e.target.value})}
+            onChange={(e) => setUsuario({ ...usuario, nome: e.target.value })}
           />
           
           <TextField
@@ -53,7 +54,7 @@ const MinhaContaPage = () => {
             fullWidth
             margin="normal"
             value={usuario.email}
-            onChange={(e) => setUsuario({...usuario, email: e.target.value})}
+            onChange={(e) => setUsuario({ ...usuario, email: e.target.value })}
           />
           
           <TextField
@@ -61,7 +62,17 @@ const MinhaContaPage = () => {
             fullWidth
             margin="normal"
             value={usuario.telefone}
-            onChange={(e) => setUsuario({...usuario, telefone: e.target.value})}
+            onChange={(e) => setUsuario({ ...usuario, telefone: e.target.value })}
+          />
+
+          <TextField
+            label="Nova Senha"
+            type="password"
+            fullWidth
+            margin="normal"
+            value={usuario.senha}
+            onChange={(e) => setUsuario({ ...usuario, senha: e.target.value })}
+            helperText="Preencha para alterar a senha. Deixe em branco para manter a atual."
           />
           
           <Button 
