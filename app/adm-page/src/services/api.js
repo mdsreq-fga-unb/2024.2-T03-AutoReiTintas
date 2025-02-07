@@ -234,3 +234,21 @@ export const tornarAdmin = async (usuarioId) => {
     throw error;
   }
 };
+
+// function to get role from a user
+export const getUsuarioRole = async (usuarioId) => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) throw new Error("Token não encontrado");
+    
+    const response = await api.get(`/api/usuario_roles/${usuarioId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao buscar role do usuário:", error);
+    throw error;
+  }
+};

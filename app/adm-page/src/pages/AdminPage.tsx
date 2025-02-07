@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { loginUsuario } from '../services/api';
+import jwtDecode from 'jwt-decode';
+import { loginUsuario, getUsuarioRole } from '../services/api';
 import '../styles/loginStyle.css';
 
 const AdminPage = () => {
@@ -13,6 +14,15 @@ const AdminPage = () => {
 
     try {
       const data = await loginUsuario(email, senha);
+      const decoded = jwtDecode(data.access_token);
+      const usuarioId = decoded.sub;
+      const usuarioRole = await getUsuarioRole(usuarioId);
+
+      if (usuarioRole.role_id !== 1) {
+        alert('Você não possui permissão para acessar esta página.');
+        return;
+      }
+
       localStorage.setItem("access_token", data.access_token);
       navigate("/dashboard");
     } catch (error) {
@@ -25,7 +35,7 @@ const AdminPage = () => {
       <div className="container">
         <h1 className="admin-title">Página do Administrador</h1>
         <div className="heading">Login</div>
-        <form className="form">
+        <form className="form" onSubmit={handleLogin}>
           <input
             className="input"
             type="email"
@@ -43,7 +53,7 @@ const AdminPage = () => {
           <span className="forgot-password">
             <a href="#">Esqueceu a senha?</a>
           </span>
-          <input className="login-button" type="submit" value="Sign In" onClick={handleLogin} />
+          <input className="login-button" type="submit" value="Sign In" />
         </form>
         <span className="agreement">
           <a href="">Learn user licence agreement</a>
