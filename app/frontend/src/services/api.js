@@ -63,6 +63,16 @@ export const loginUsuario = async (email, senha) => {
   return data;
 };
 
+// function to register a new user
+export const registerUser = async (data) => {
+    try {
+      const response = await api.post('/auth/register', data);
+      return response.data;
+    } catch (error) {
+      console.error("Erro ao registrar usuário:", error);
+      throw error;
+    }
+  };
 
 // function to get all products
 export const getProdutos = async (params = {}) => {
@@ -87,27 +97,6 @@ export const getProdutos = async (params = {}) => {
   }
 };
 
-// Função to add a new product
-export const addProduto = async (produto) => {
-  try {
-    const response = await api.post('/api/produtos/', produto);
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao adicionar produto:", error);
-    throw error;
-  }
-};
-
-// function to update a product
-export const updateProduto = async (id, produto) => {
-  try {
-    const response = await api.put(`/api/produtos/${id}`, produto);
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao atualizar produto:", error);
-    throw error;
-  }
-};
 
 // function to get storage from a product
 export const getEstoqueProduto = async (produtoId) => {
@@ -119,41 +108,6 @@ export const getEstoqueProduto = async (produtoId) => {
     throw error;
   }
 }
-
-// function to update storage
-export const updateEstoqueProduto = async (produtoId , quantidade) => {
-  try {
-    const response = await api.patch(`/api/estoque/${produtoId}`, { 
-      quantidade_atual: quantidade 
-    });
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao atualizar estoque:", error);
-    throw error;
-  }
-};
-
-// function to remove a product
-export const removeProduto = async (id) => {
-  try {
-    await api.delete(`api/produtos/${id}`);
-    console.log("Produto excluído com sucesso");
-  } catch (error) {
-    console.error("Erro ao remover produto:", error.response || error.message);
-    throw error;
-  }
-};
-
-// function to create a new categorie
-export const addCategoria = async (categoria) => {
-  try {
-    const response = await api.post('/api/categorias/', categoria);
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao adicionar categoria:", error);
-    throw error;
-  }
-};
 
 // function to get categories
 export const getCategorias = async () => {
@@ -209,40 +163,6 @@ export const getUsuarioAtual = async () => {
     return response.data;
   } catch (error) {
     console.error("Erro ao buscar usuário atual:", error);
-    throw error;
-  }
-};
-
-// function to delete a user
-export const deletarUsuario = async (id) => {
-  try {
-    const token = localStorage.getItem('token');
-    if (!token) throw new Error('Token não encontrado');
-
-    await api.delete(`/api/usuarios/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    });
-    
-    return true;
-  } catch (error) {
-    console.error("Erro ao deletar usuário:", error.response?.data || error.message);
-    throw error;
-  }
-};
-
-
-// function to promove user to adm
-export const tornarAdmin = async (usuarioId) => {
-  try {
-    const response = await api.post('/api/usuario_roles/', {
-      usuario_id: usuarioId,
-      role_id: 1
-    });
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao tornar usuário admin:", error);
     throw error;
   }
 };

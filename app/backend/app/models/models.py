@@ -22,7 +22,12 @@ class Usuario(Base):
     criado_em = Column(DateTime(timezone=True), server_default=func.now())
     atualizado_em = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
-    roles = relationship("UsuarioRole", back_populates="usuario")
+    roles = relationship(
+        "UsuarioRole",
+        back_populates="usuario",
+        cascade="all, delete-orphan",
+        passive_deletes=True
+    )
 
     def verify_password(self, senha: str) -> bool:
         return bcrypt.verify(senha, self.senha_hash)
@@ -51,7 +56,7 @@ class ProdutoImagem(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     produto_id = Column(Integer, ForeignKey("produtos.id", ondelete="CASCADE"), nullable=False)
-    url_imagem = Column(String(500), nullable=False)  # Aumente o tamanho para URLs longas
+    url_imagem = Column(String(500), nullable=False)  
     ordem = Column(Integer, default=0)
     criado_em = Column(TIMESTAMP, default=datetime.datetime.utcnow)
 
@@ -62,6 +67,7 @@ class Produto(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(255), nullable=False)
+    codigo = Column(Integer, unique=True, nullable=True)
     descricao = Column(Text, nullable=True)
     preco = Column(Numeric(10, 2), nullable=False)
     criado_em = Column(TIMESTAMP, default=datetime.datetime.utcnow)
@@ -77,7 +83,25 @@ class Categoria(Base):
     __tablename__ = "categorias"
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(255), nullable=False)
-    categoria_pai_id = Column(Text, nullable=True)
+    categoria_pai_id = Column(
+        Integer, 
+        ForeignKey('categorias.id', ondelete="SET NULL"), 
+        nullable=True
+    )
+
+    subcategorias = relationship(
+        "Categoria",
+        back_populates="categoria_pai",
+        remote_side=[categoria_pai_id],  
+        cascade="all, delete-orphan",
+        single_parent=True  
+    )
+    
+    categoria_pai = relationship(
+        "Categoria", 
+        back_populates="subcategorias",
+        remote_side=[id]
+    )
 
     produtos = relationship("ProdutoCategoria", back_populates="categoria")
 

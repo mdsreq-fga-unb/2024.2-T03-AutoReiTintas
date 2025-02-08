@@ -1,29 +1,37 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import AdminPage from './components/AdminPage';
-import EstoquePage from './components/EstoquePage';
-import MenuPage from './components/MenuPage';
-import ProtectedRoute from './components/ProtectedRoute'; 
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AdminPage from "./pages/AdminPage";
+import EstoquePage from "./pages/EstoquePage";
+import DashboardPage from "./pages/DashboardPage";
+import AdministrarContasPage from "./pages/AdministrarContasPage";
+import MinhaContaPage from "./pages/MinhaContaPage";
+import NovoProdutoPage from "./pages/NovoProdutoPage";
+import NovoUsuarioPage from "./pages/NovoUsuarioPage";
+import RecuperarContaPage from "./pages/RecuperarContaPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import DashboardLayout from "./components/DashboardLayout";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AdminPage />} />
+        <Route path="/recuperar-conta" element={<RecuperarContaPage />} />
         <Route
-          path="/estoque"
+          path="/dashboard/*"
           element={
             <ProtectedRoute>
-              <EstoquePage /> 
+              <DashboardLayout>
+                <Routes>
+                  <Route index element={<DashboardPage />} />
+                  <Route path="estoque" element={<EstoquePage />} />
+                  <Route path="estoque/novo" element={<NovoProdutoPage />} />
+                  <Route path="administrar-contas" element={<AdministrarContasPage />} />
+                  <Route path="administrar-contas/novo" element={<NovoUsuarioPage />} />
+                  <Route path="minha-conta" element={<MinhaContaPage />} />
+                </Routes>
+              </DashboardLayout>
             </ProtectedRoute>
-          }
-        />
-        <Route 
-          path='/menu'
-          element={
-            // <ProtectedRoute>
-              <MenuPage />
-            // </ProtectedRoute>
           }
         />
       </Routes>

@@ -1,52 +1,53 @@
 import React, { useState, useEffect } from "react";
-import { TextField, Button, Dialog, DialogActions, DialogContent, DialogTitle, Select, MenuItem, InputLabel, FormControl, Checkbox, SelectChangeEvent } from "@mui/material";
+import { TextField, Button, Dialog, DialogActions, DialogContent, DialogTitle, Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 import { addProduto, updateProduto } from "../services/api";
-import { ProdutoCreate } from '../types/produtos';
+import { ProdutoCreate, ProdutoUpdate, ProdutoResponse, CategoriaResponse } from '../types/produtos';
 
 interface ProdutoFormProps {
-  produto: ProdutoCreate | null;
-  categorias: { id: number, nome: string }[]; 
+  produto: ProdutoResponse | null;
+  categorias: CategoriaResponse[];
   onClose: () => void;
   onProdutoAddedOrUpdated: () => void;
 }
 
 const ProdutoForm: React.FC<ProdutoFormProps> = ({ produto, categorias, onClose, onProdutoAddedOrUpdated }) => {
-  const [nome, setNome] = useState("");
-  const [descricao, setDescricao] = useState("");
-  const [preco, setPreco] = useState("");
-  const [categoriasSelecionadas, setCategoriasSelecionadas] = useState<number[]>([]);
+  const [formData, setFormData] = useState<ProdutoCreate | ProdutoUpdate>({
+    nome: '',
+    descricao: '',
+    codigo: 0,
+    preco: 0,
+    categoria_id: 0,
+    quantidade_inicial: 0,
+    quantidade_estoque: 0 
+  });
 
   useEffect(() => {
     if (produto) {
-      setNome(produto.nome);
-      setDescricao(produto.descricao || "");
-      setPreco(produto.preco.toString());
-      setCategoriasSelecionadas(produto.categorias ? produto.categorias.map((cat) => cat.categoria_id) : []); // Verificando se há categorias no produto
+      setFormData({
+        nome: produto.nome,
+        descricao: produto.descricao,
+        codigo: produto.codigo,
+        preco: produto.preco,
+        categoria_id: produto.categorias[0]?.id || 0,
+        quantidade_estoque: produto.quantidade_estoque 
+      });
     }
   }, [produto]);
 
   const handleSubmit = async () => {
-    const produtoData: ProdutoCreate = {
-      nome, 
-      descricao, 
-      preco: Number(preco),
-      categorias: categoriasSelecionadas.map((categoria_id) => ({
-        produto_id: produto?.id, 
-        categoria_id
-      }))
-    };
-
-    if (produto) {
-      await updateProduto(produto.id, produtoData);
-    } else {
-      await addProduto(produtoData);
+    try {
+      if (produto) {
+        await updateProduto(produto.id, formData);
+      } else {
+        const produtoToAdd = { ...formData };
+        delete produtoToAdd.quantidade_estoque; 
+        await addProduto(produtoToAdd as ProdutoCreate);
+      }
+      onProdutoAddedOrUpdated(); 
+      onClose(); 
+    } catch (error) {
+      console.error("Erro ao salvar produto:", error);
     }
-
-    onProdutoAddedOrUpdated();
-  };
-
-  const handleChangeCategorias = (event: SelectChangeEvent<number[]>) => {
-    setCategoriasSelecionadas(event.target.value as number[]);
   };
 
   return (
@@ -56,38 +57,69 @@ const ProdutoForm: React.FC<ProdutoFormProps> = ({ produto, categorias, onClose,
         <TextField
           label="Nome"
           fullWidth
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
+          value={formData.nome}
+          onChange={(e) => setFormData({...formData, nome: e.target.value})}
+          margin="normal"
         />
         <TextField
           label="Descrição"
           fullWidth
-          value={descricao}
-          onChange={(e) => setDescricao(e.target.value)}
+          value={formData.descricao}
+          onChange={(e) => setFormData({...formData, descricao: e.target.value})}
+          margin="normal"
+        />
+         <TextField
+          label="Código do Produto"
+          fullWidth
+          value={formData.codigo}
+          onChange={(e) => setFormData({...formData, codigo: e.target.value})}
+          margin="normal"
         />
         <TextField
           label="Preço"
           type="number"
           fullWidth
-          value={preco}
-          onChange={(e) => setPreco(e.target.value)}
+          value={formData.preco}
+          onChange={(e) => setFormData({...formData, preco: Number(e.target.value)})}
+          margin="normal"
         />
-        <FormControl fullWidth>
-          <InputLabel>Selecione as Categorias</InputLabel>
+        
+        {produto && (
+          <TextField
+            label="Quantidade no Estoque"
+            type="number"
+            fullWidth
+            value={formData.quantidade_estoque}
+            onChange={(e) => setFormData({...formData, quantidade_estoque: Number(e.target.value)})}
+            margin="normal"
+          />
+        )}
+        
+        <FormControl fullWidth margin="normal">
+          <InputLabel>Categoria</InputLabel>
           <Select
-            multiple
-            value={categoriasSelecionadas}
-            onChange={handleChangeCategorias}
-            renderValue={(selected) => selected.join(', ')}
+            value={formData.categoria_id}
+            onChange={(e) => setFormData({...formData, categoria_id: Number(e.target.value)})}
+            label="Categoria"
           >
             {categorias.map((categoria) => (
               <MenuItem key={categoria.id} value={categoria.id}>
-                <Checkbox checked={categoriasSelecionadas.indexOf(categoria.id) > -1} />
                 {categoria.nome}
               </MenuItem>
             ))}
           </Select>
         </FormControl>
+
+        {!produto && (
+          <TextField
+            label="Quantidade Inicial"
+            type="number"
+            fullWidth
+            value={formData.quantidade_inicial}
+            onChange={(e) => setFormData({...formData, quantidade_inicial: Number(e.target.value)})}
+            margin="normal"
+          />
+        )}
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose} color="secondary">
