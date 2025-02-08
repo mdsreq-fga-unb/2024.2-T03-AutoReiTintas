@@ -29,12 +29,11 @@ A seguir, em tabela, mostra-se cada história de usuário que derivaram dos requ
 | EP01 | **US08** | Como cliente, eu quero ser redirecionado para o WhatsApp ao finalizar a compra, para que eu possa realizar o pagamento ou tirar dúvidas diretamente com o atendimento. |
 | EP01 | **US09** | Como um usuário, eu quero navegar pelo site e montar carrinhos de compras sem realizar login, para que eu possa explorar os produtos antes de criar uma conta. |
 | EP05 | **US10** | Como cliente, eu quero avaliar os produtos e a experiência de compra, para que essas informações ajudem outros usuários e aprimorem o serviço. |
-|  | **US11** | Como cliente logado, eu quero consultar o histórico de pedidos, para que eu possa acompanhar e revisar minhas compras. |
+| EP06 | **US11** | Como cliente logado, eu quero consultar o histórico de pedidos, para que eu possa acompanhar e revisar minhas compras. |
 | EP04 | **US12** | Como gestor, eu quero gerar relatórios de vendas e tendências de compra, para que eu possa tomar decisões estratégicas para o negócio. |
 | EP01 | **US13** | Como gestor, eu quero monitorar produtos adicionados ao carrinho mas não comprados, para que eu possa identificar padrões de abandono e melhorar a conversão. |
 | EP03 | **US14** | Como usuário, eu quero recuperar minha senha por e-mail, para que eu possa acessar minha conta mesmo após esquecer a senha. |
 | EP06 | **US15** | Como usuário, eu quero pesquisar por produtos, para que eu possa encontrar itens de forma prática e melhorar minha experiência no site. |
-
 
 
 ## Priorização do Backlog
@@ -110,7 +109,6 @@ Com base no método **MoSCoW** (Must Have, Should Have, Could Have, Won't Have),
 | **US14** | Como usuário, eu quero recuperar minha senha por e-mail, para que eu possa acessar minha conta mesmo após esquecer a senha. | **Should Have (S)** |
 | **US15** | Como usuário, eu quero pesquisar por produtos, para que eu possa encontrar itens de forma prática e melhorar minha experiência no site. | **Should Have (S)** |
 
-
 ### **Histórias Selecionadas para o MVP (Should + Must have)**
 
 *   **US01**, **US02**, **US03**, **US04**, **US05**, **US06**, **US07**, **US08**, **US09**, **US10**, **US12**, **US15**
@@ -137,4 +135,6 @@ Com base no método **MoSCoW** (Must Have, Should Have, Could Have, Won't Have),
 | `1.1` | 09/12/2024 | levantamento do backlog do produto | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn) e [Diogo](https://github.com/Diogo-Barboza) |
 | `1.2` | 12/12/2024 | tabela MoSCoW<br> | [Paulo Henrique](https://github.com/Nanashii76) | [Johan](https://github.com/johan-rocha) |
 | `1.3` | 16/12/2024 | Adição dos épicos | [Paulo Henrique](https://github.com/Nanashii76), [Johan](https://github.com/johan-rocha), [Mariana Letícia](https://github.com/Marianannn) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+| `1.4` | 17/01/2025 | Descrição em US's | [Diogo](https://github.com/Diogo-Barboza) | [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn) e [Mateus Cavalcante](https://github.com/mateuscavati) |
 | `2.0` | 25/01/2025 | Alterando declaração de histórias de usuário | [Mariana Letícia](https://github.com/Marianannn) | [Johan](https://github.com/johan-rocha) |
+
