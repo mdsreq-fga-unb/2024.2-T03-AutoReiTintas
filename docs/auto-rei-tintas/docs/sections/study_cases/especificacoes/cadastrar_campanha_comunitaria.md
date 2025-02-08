@@ -34,8 +34,8 @@ Este caso de uso permite Organizações Externas ao ConnectCare cadastrarem camp
 
 ### 2.1. Fluxo principal
 
-<div style="display: flex; justify-content: center;">
-  <div style="text-align: left;">
+<div style="display: flex; justify-content: center; text-align: center; width: 100%;">
+  <div style="text-align: left; max-width: 800px; word-wrap: break-word;">
 
 2.1.1. O sistema apresenta a seguinte opção:<br>
 
@@ -47,15 +47,15 @@ Este caso de uso permite Organizações Externas ao ConnectCare cadastrarem camp
 
   2.1.4. A organização escolhe o tipo de campanha comunitária a ser feita. [FA01]<br><br>
 
-  2.1.5. A organização preenche os campos com os dados necessários e solicita a inclusão de uma nova campanha. [FE01] [FE02]<br><br>
+  2.1.5. A organização preenche os campos com os dados necessários e solicita a inclusão de uma nova campanha. [FE01] [FE02] <br><br>
 
-  2.1.6. O sistema verifica os dados cadastrados.[FE02]<br><br>
+  2.1.6. O sistema verifica os dados cadastrados.[FE02] [RN01] [RN02] [RN03]<br><br>
 
   2.1.7. O sistema autoriza a inclusão de uma nova campanha comunitária.<br><br>
 
   2.1.8. O sistema apresenta uma mensagem relatando que o cadastro foi um sucesso.<br><br>
 
-  2.1.9. O sistema notifica usuários da campanha cadastrada.<br><br>
+  2.1.9. O sistema notifica usuários da campanha cadastrada. [RN04]<br><br>
 
   2.1.10. Fim do caso de uso.
 
@@ -121,7 +121,7 @@ No passo 2.1.4. do fluxo básico de cadastro de campanha comunitária, a organiz
 
 ## 4. Regras de negócio
 
-### 4.1. Validação de informações
+### 4.1. [RN01] Validação de informações
 
 | Nome                     |          Formato          | Obrigatoriedade |                          valores                          |
 | ------------------------ | :-----------------------: | :-------------: | :-------------------------------------------------------: |
@@ -131,21 +131,37 @@ No passo 2.1.4. do fluxo básico de cadastro de campanha comunitária, a organiz
 | Descrição da campanha    | texto até 2000 caracteres |       Sim       |                             -                             |
 | Local da campanha        | texto até 500 caracteres  |       Sim       |                             -                             |
 
-<a id="pre-condicoes"></a>
+### 4.2. [RN02] Validação de data
 
+As datas não poderão ser registradas se forem constadas como anteriores às datas atuais
+
+### 4.3. [RN03] Preenchimento de campo
+
+Caso os todos os campos não sejam preenchidos, a organização externa não poderá registrar a campanha.
+
+### 4.4. [RN04] Envio de notificação
+
+Após o cadastro devidamente efetivado da campanha de comunitária, uma notificação para os pacientes deverá ser enviada.
+
+<a id="pre-condicoes"></a>
 ## 5. Pré-condições
+### 5.1. Login
+
+É necessário efetuar login para cadastrar campanha comunitária.
 
 <a id="pos-condicoes"></a>
-
 ## 6. Pós-condições
+### 6.1 Persistência dos dados
+
+Após o cadastro dos dados, eles devem pesistir no sistema para o envio de notificações.
 
 <a id="pontos-de-extensao"></a>
-
 ## 7. Pontos de extensão
 
+Não há pontos de extensão
 
 ## Histórico de Versões
 
-| Versão |    Data    | Descrição                                 | Autor(es)                                       | Revisor(es)                                    |
-| ------ | :--------: | ----------------------------------------- | ----------------------------------------------- | ---------------------------------------------- |
-| `1.0`   | 08/02/2025 | Criação do documento                        | [Mariana Letícia](https://github.com/Marianannn) |     [Johan](https://github.com/johan-rocha) e [Paulo Henrique](https://github.com/Nanashii76)     | 
+| Versão |    Data    | Descrição            | Autor(es)                                        | Revisor(es)                                                                               |
+| ------ | :--------: | -------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| `1.0`  | 08/02/2025 | Criação do documento | [Mariana Letícia](https://github.com/Marianannn) | [Johan](https://github.com/johan-rocha) e [Paulo Henrique](https://github.com/Nanashii76) |
