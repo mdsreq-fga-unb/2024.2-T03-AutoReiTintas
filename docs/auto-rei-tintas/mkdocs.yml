@@ -18,12 +18,13 @@ nav:
     - DoR e DoD: sections/product_vision/8_dorAndDod.md
     - Backlog: sections/product_vision/9_backlog.md
   - Sprints:
-    - Sprint: sections/sprints/sprints.md
+    - Sprint 1: sections/sprints/sprint1.md
     - Sprint 2: sections/sprints/sprint2.md
   - Estudos de Caso:
     - Estudo de Caso TechFix: sections/study_cases/study_case_PBB.md
     - Estudo de Caso EduConnect: sections/study_cases/study_case_USM.md
-  - Entregas: 
+    - Estudo de Caso ConnectCare: sections/study_cases/study_case_UC.md
+  - Apresentações e Entregas: 
     - Entrega Unidade 1: sections/presentations/presentation_1.md
     - Entrega Unidade 2: sections/presentations/presentation_2.md
     - Entrega Unidade 3: sections/presentations/presentation_3.md
@@ -35,13 +36,16 @@ nav:
       - ATA 14-11: sections/atas/ata14-11.md
       - ATA 03-12: sections/atas/ata03-12.md
       - ATA 12-12: sections/atas/ata12-12.md
+      - ATA 27-01: sections/atas/ata27-01.md
   - Como contribuir:
     - Ambiente de desenvolvimento: how_to_contribute/environment.md
+    - Arquitetura de Software: sections/architecture/arquitetura.md
+    - Política de Branchs: sections/branch_policy/politica_branch.md
 
 theme:
   name: material
-  font:
-    text: Fira Sans
+  #font:
+  #  text: Fira Sans
   language: pt-BR
   palette:
     # Palette toggle for light mode
@@ -77,8 +81,45 @@ theme:
     - header.autohide
   icon:
     repo: fontawesome/brands/github
+
+markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.keys
+  - footnotes
+  - admonition
+  - markdown.extensions.attr_list
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
+
 plugins:
   - search
+
+fonts:
+  icon: material/format-font
+  preferences:
+    - text: Default
+    - text: Roboto
+      code: Roboto Mono
+    - text: OpenDyslexic
+      code: OpenDyslexicMono
+      src: https://fonts.cdnfonts.com/css/opendyslexic
 
 extra_css:
   - stylesheets/extra.css
