@@ -1,0 +1,62 @@
+.recuperar-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7fb;
+  }
+  
+  .recuperar-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .recuperar-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .recuperar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .recuperar-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .recuperar-button {
+    padding: 10px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .recuperar-button:hover {
+    background-color: #115293;
+  }
+  
+  .recuperar-message {
+    margin-top: 20px;
+    color: #1976d2;
+  }
+  
+  .recuperar-back-button {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    color: #1976d2;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  

@@ -51,7 +51,7 @@ const AdminPage = () => {
             onChange={(e) => setSenha(e.target.value)}
           />
           <span className="forgot-password">
-            <a href="#">Esqueceu a senha?</a>
+            <a href="recuperar-conta">Esqueceu a senha?</a>
           </span>
           <input className="login-button" type="submit" value="Sign In" />
         </form>

@@ -5,12 +5,18 @@ import logo_user from "../assets/images/user_person.png";
 import carrinho from "../assets/images/shopping cart.png";
 import pincel from "../assets/images/create.png";
 import logo_db from "../assets/images/diamond.png";
+import logoutIcon from "../assets/images/logout.png"; 
 
 const SideBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
 
   return (
     <div className="container">
@@ -42,6 +48,10 @@ const SideBar = () => {
         >
           <img src={logo_db} alt="Dashboards" />
           <h3>DashBoards</h3>
+        </div>
+        <div onClick={handleLogout} className="logout-container">
+          <img src={logoutIcon} alt="Logout" className="logout-icon" />
+          <h3>Logout</h3>
         </div>
       </div>
     </div>
