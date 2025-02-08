@@ -7,6 +7,7 @@ import AdministrarContasPage from "./pages/AdministrarContasPage";
 import MinhaContaPage from "./pages/MinhaContaPage";
 import NovoProdutoPage from "./pages/NovoProdutoPage";
 import NovoUsuarioPage from "./pages/NovoUsuarioPage";
+import RecuperarContaPage from "./pages/RecuperarContaPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import DashboardLayout from "./components/DashboardLayout";
 
@@ -15,6 +16,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AdminPage />} />
+        <Route path="/recuperar-conta" element={<RecuperarContaPage />} />
         <Route
           path="/dashboard/*"
           element={

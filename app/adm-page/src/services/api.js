@@ -264,3 +264,14 @@ export const getUsuarioRole = async (usuarioId) => {
     throw error;
   }
 };
+
+// function to send revocery email
+export const sendRecoveryEmail = async (email) => {
+  try {
+    const response = await api.post('/auth/forgot-password', { email });
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao enviar email de recuperação:", error);
+    throw error;
+  }
+};
