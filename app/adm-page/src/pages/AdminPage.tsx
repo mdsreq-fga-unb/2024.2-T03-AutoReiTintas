@@ -32,8 +32,11 @@ const AdminPage = () => {
 
   return (
     <div className="body">
-      <div className="container">
+      <div className='header'>
         <h1 className="admin-title">Página do Administrador</h1>
+      </div>
+      <div className='login-container'>
+      <div className="container">
         <div className="heading">Login</div>
         <form className="form" onSubmit={handleLogin}>
           <input
@@ -58,6 +61,7 @@ const AdminPage = () => {
         <span className="agreement">
           <a href="">Learn user licence agreement</a>
         </span>
+      </div>
       </div>
     </div>
   );
