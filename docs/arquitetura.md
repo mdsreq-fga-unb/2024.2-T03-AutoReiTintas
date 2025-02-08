@@ -69,33 +69,33 @@ O projeto se baseará na arquitetura em camadas. Essa rquitetura busca identific
 **backend**
 
    backend/
-   ├── app/                        # Diretório principal da aplicação
-   │   ├── __init__.py             # Inicializa a aplicação FastAPI
-   │   ├── main.py                 # Arquivo principal para inicialização da aplicação FastAPI
-   │   ├── config.py               # Configurações gerais (como as credenciais do Supabase)
-   │   ├── db/                     # Lógica relacionada ao banco de dados
-   │   │   ├── __init__.py         # Inicializa o módulo db
-   │   │   ├── database.py         # Configuração da conexão com o banco (SQLAlchemy)
-   │   │   └── models.py           # Definição dos modelos do banco (SQLAlchemy)
-   │   ├── api/                    # Diretório de rotas e lógica da API
-   │   │   ├── __init__.py         # Inicializa o módulo de rotas
-   │   │   ├── users.py            # Rota e lógica para usuários
-   │   │   └── posts.py            # Rota e lógica para posts (exemplo de outro recurso)
-   │   ├── services/               # Lógica de negócios e serviços auxiliares
-   │   │   ├── __init__.py         # Inicializa o módulo de serviços
-   │   │   ├── user_service.py     # Lógica de negócios para usuários
-   │   │   └── post_service.py     # Lógica de negócios para posts
-   │   ├── schemas/                # Esquemas de validação (pydantic)
-   │   │   ├── __init__.py         # Inicializa o módulo de esquemas
-   │   ├── routers/                # Funções de manipulação de dados (Create, Read, Update, Delete)
-   │   │   ├── __init__.py         # Inicializa o módulo de CRUD
-   │   └── utils/                  # Funções auxiliares
-   │       ├── __init__.py         # Inicializa o módulo de utilitários
-   │       └── auth.py             # Funções auxiliares de autenticação, como JWT
-   ├── alembic/                    # Diretório do Alembic para migrações de banco de dados
-   │   ├── versions/               # Versões das migrações
-   │   └── env.py                  # Configuração do Alembic para migrações
-   └── requirements.txt            # Dependências do projeto (incluindo FastAPI, SQLAlchemy, etc.)
+    ├── app/                        # Diretório principal da aplicação
+    │   ├── __init__.py             # Inicializa a aplicação FastAPI
+    │   ├── main.py                 # Arquivo principal para inicialização da aplicação FastAPI
+    │   ├── config.py               # Configurações gerais (como as credenciais do Supabase)
+    │   ├── db/                     # Lógica relacionada ao banco de dados
+    │   │   ├── __init__.py         # Inicializa o módulo db
+    │   │   ├── database.py         # Configuração da conexão com o banco (SQLAlchemy)
+    │   │   └── models.py           # Definição dos modelos do banco (SQLAlchemy)
+    │   ├── api/                    # Diretório de rotas e lógica da API
+    │   │   ├── __init__.py         # Inicializa o módulo de rotas
+    │   │   ├── users.py            # Rota e lógica para usuários
+    │   │   └── posts.py            # Rota e lógica para posts (exemplo de outro recurso)
+    │   ├── services/               # Lógica de negócios e serviços auxiliares
+    │   │   ├── __init__.py         # Inicializa o módulo de serviços
+    │   │   ├── user_service.py     # Lógica de negócios para usuários
+    │   │   └── post_service.py     # Lógica de negócios para posts
+    │   ├── schemas/                # Esquemas de validação (pydantic)
+    │   │   ├── __init__.py         # Inicializa o módulo de esquemas
+    │   ├── routers/                # Funções de manipulação de dados (Create, Read, Update, Delete)
+    │   │   ├── __init__.py         # Inicializa o módulo de CRUD
+    │   └── utils/                  # Funções auxiliares
+    │       ├── __init__.py         # Inicializa o módulo de utilitários
+    │       └── auth.py             # Funções auxiliares de autenticação, como JWT
+    ├── alembic/                    # Diretório do Alembic para migrações de banco de dados
+    │   ├── versions/               # Versões das migrações
+    │   └── env.py                  # Configuração do Alembic para migrações
+    └── requirements.txt            # Dependências do projeto (incluindo FastAPI, SQLAlchemy, etc.)
 
 1. **`app/`**:
    - Diretório principal da aplicação, onde está todo o código de configuração, rotas e lógica de negócios.
