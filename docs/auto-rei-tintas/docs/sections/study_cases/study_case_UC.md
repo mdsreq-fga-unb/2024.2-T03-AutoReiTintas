@@ -12,15 +12,29 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 
 ### 1.1 Atores
 
-- Paciente: representa as pessoas que estão consumindo o produto a fim de realizar consultas.
-- Médico: a pessoa na qual irá consultar os pacientes.
-- Enfermeiro: será responsável por auxiliar no tratamento do paciente na clinica.
-- Agente comunitário: irá realizar campanhas
-. engedúas ed
-- Profissional da saúde:
-- Clínica: 
+- **Paciente**: representa as pessoas que estão consumindo o produto a fim de realizar consultas.
+- **Médico**: a pessoa na qual irá consultar os pacientes.
+- **Enfermeiro**: será responsável por auxiliar no tratamento do paciente na clinica.
+- **Agente comunitário**: irá realizar campanhas comunitárias de saúde
+- **Profissional da saúde**: engloba os enfermeiros, aagentes comunitários e médicos
+- **Clínica**: irá cadastrar as campanhas comunitárias
 
 ---
+
+### Casos de Uso
+
+| ID   | Casos de Uso                                       |
+| ---- | -------------------------------------------------- |
+| UC01 | Cadastrar Perfil de Pacientes                      |
+| UC02 | Agendar Consulta                                   |
+| UC03 | Acessar Notificação                                |
+| UC04 | Visualizar Histórico de Consulta                   |
+| UC05 | Realizar Login                                     |
+| UC06 | Visualizar Agenda de Consulta                      |
+| UC07 | Gerar Relatório de Paciente                        |
+| UC08 | Cadastrar Perfil Profissional                      |
+| UC09 | Disponibilizar Canal de Comunicação com o Paciente |
+| US10 | Cadastrar Campanha Comunitária                     |
 
 ### 2. Fluxo Básico de Eventos
 
@@ -33,6 +47,7 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 5. O sistema salva o perfil e exibe uma mensagem de sucesso: "Perfil cadastrado com sucesso!"
 
 #### 2.2 Agendar Consulta
+
 1. O paciente abre o aplicativo
 2. o sistema requer login
 3. o paciente insere os dados de login e clica em logar
@@ -79,54 +94,62 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 ### 3. Fluxos Alternativos
 
 #### **3.1.1 Atualizar Perfil de Pacientes (2.1)**
-| Área de Funcionalidade (A1)       | Área de Funcionalidade (A2)       | Área de Funcionalidade (A3)       |
-|-----------------------------------|-----------------------------------|-----------------------------------|
-| Editar dados pessoais (nome, idade)| Atualizar histórico médico        | Validar campos obrigatórios       |
+
+| Área de Funcionalidade (A1)         | Área de Funcionalidade (A2) | Área de Funcionalidade (A3) |
+| ----------------------------------- | --------------------------- | --------------------------- |
+| Editar dados pessoais (nome, idade) | Atualizar histórico médico  | Validar campos obrigatórios |
 
 #### **3.1.2 Consultar Perfil de Paciente (2.1)**
-| Área de Funcionalidade (A1)       | Área de Funcionalidade (A2)       | Área de Funcionalidade (A3)       |
-|-----------------------------------|-----------------------------------|-----------------------------------|
-| Visualizar dados básicos          | Acessar histórico de consultas    | Filtrar por período/data          |
+
+| Área de Funcionalidade (A1) | Área de Funcionalidade (A2)    | Área de Funcionalidade (A3) |
+| --------------------------- | ------------------------------ | --------------------------- |
+| Visualizar dados básicos    | Acessar histórico de consultas | Filtrar por período/data    |
 
 #### **3.1.3 Remover Perfil de Paciente (2.1)**
-| Área de Funcionalidade (A1)       | Área de Funcionalidade (A2)       | Área de Funcionalidade (A3)       |
-|-----------------------------------|-----------------------------------|-----------------------------------|
-| Solicitar exclusão                | Confirmar ação via autenticação   | Excluir dados permanentemente     |
+
+| Área de Funcionalidade (A1) | Área de Funcionalidade (A2)     | Área de Funcionalidade (A3)   |
+| --------------------------- | ------------------------------- | ----------------------------- |
+| Solicitar exclusão          | Confirmar ação via autenticação | Excluir dados permanentemente |
 
 ---
 
 #### **3.2.1 Atualizar Perfil Profissional (2.8)**
-| Área de Funcionalidade (A1)       | Área de Funcionalidade (A2)       | Área de Funcionalidade (A3)       |
-|-----------------------------------|-----------------------------------|-----------------------------------|
-| Modificar especialização          | Atualizar agenda de atendimento   | Validar credenciais profissionais |
+
+| Área de Funcionalidade (A1) | Área de Funcionalidade (A2)     | Área de Funcionalidade (A3)       |
+| --------------------------- | ------------------------------- | --------------------------------- |
+| Modificar especialização    | Atualizar agenda de atendimento | Validar credenciais profissionais |
 
 #### **3.2.2 Consultar Perfil Profissional (2.8)**
-| Área de Funcionalidade (A1)       | Área de Funcionalidade (A2)       | Área de Funcionalidade (A3)       |
-|-----------------------------------|-----------------------------------|-----------------------------------|
-| Visualizar disponibilidade        | Acessar histórico de pacientes    | Filtrar por especialidade         |
+
+| Área de Funcionalidade (A1) | Área de Funcionalidade (A2)    | Área de Funcionalidade (A3) |
+| --------------------------- | ------------------------------ | --------------------------- |
+| Visualizar disponibilidade  | Acessar histórico de pacientes | Filtrar por especialidade   |
 
 #### **3.2.3 Remover Perfil Profissional (2.8)**
-| Área de Funcionalidade (A1)       | Área de Funcionalidade (A2)       | Área de Funcionalidade (A3)       |
-|-----------------------------------|-----------------------------------|-----------------------------------|
-| Solicitar desativação             | Confirmar ação via autenticação   | Remover acesso ao sistema         |
+
+| Área de Funcionalidade (A1) | Área de Funcionalidade (A2)     | Área de Funcionalidade (A3) |
+| --------------------------- | ------------------------------- | --------------------------- |
+| Solicitar desativação       | Confirmar ação via autenticação | Remover acesso ao sistema   |
 
 ---
 
 #### **3.3.1 Atualizar Campanha Comunitária (2.10)**
-| Área de Funcionalidade (A1)       | Área de Funcionalidade (A2)       | Área de Funcionalidade (A3)       |
-|-----------------------------------|-----------------------------------|-----------------------------------|
-| Editar detalhes da campanha       | Modificar público-alvo            | Revalidar datas e locais          |
+
+| Área de Funcionalidade (A1) | Área de Funcionalidade (A2) | Área de Funcionalidade (A3) |
+| --------------------------- | --------------------------- | --------------------------- |
+| Editar detalhes da campanha | Modificar público-alvo      | Revalidar datas e locais    |
 
 #### **3.3.2 Consultar Campanha Comunitária (2.10)**
-| Área de Funcionalidade (A1)       | Área de Funcionalidade (A2)       | Área de Funcionalidade (A3)       |
-|-----------------------------------|-----------------------------------|-----------------------------------|
-| Visualizar campanhas ativas       | Filtrar por localização           | Acessar métricas de participação  |
+
+| Área de Funcionalidade (A1) | Área de Funcionalidade (A2) | Área de Funcionalidade (A3)      |
+| --------------------------- | --------------------------- | -------------------------------- |
+| Visualizar campanhas ativas | Filtrar por localização     | Acessar métricas de participação |
 
 #### **3.3.3 Remover Campanha Comunitária (2.10)**
-| Área de Funcionalidade (A1)       | Área de Funcionalidade (A2)       | Área de Funcionalidade (A3)       |
-|-----------------------------------|-----------------------------------|-----------------------------------|
-| Solicitar encerramento            | Confirmar ação via autenticação   | Excluir registros da campanha     |
 
+| Área de Funcionalidade (A1) | Área de Funcionalidade (A2)     | Área de Funcionalidade (A3)   |
+| --------------------------- | ------------------------------- | ----------------------------- |
+| Solicitar encerramento      | Confirmar ação via autenticação | Excluir registros da campanha |
 
 ---
 
