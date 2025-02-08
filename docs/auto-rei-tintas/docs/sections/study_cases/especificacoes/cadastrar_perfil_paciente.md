@@ -1,4 +1,4 @@
-## Sumário
+`## Sumário
 1. [Breve Descrição](#breve-descricao)<br>
 1.2. [Atores](#atores)<br>
 2. [Fluxo de eventos](#fluxo-de-eventos)<br>
@@ -11,43 +11,57 @@
 6. [Pós-condições](#pos-condicoes)<br>
 7. [Pontos de extensão](#pontos-de-extensao)<br>
 
-## 1 Caso de uso
+## 1. Caso de uso
 
 <a id="breve-descricao"></a>
-### 1.1 Breve descrição
+### 1.1. Breve descrição
 
 <a id="atores"></a>
-### 1.2 Atores
+### 1.2. Atores
 
 <a id="fluxo-de-eventos"></a>
-## 2 Fluxo de eventos
+## 2. Fluxo de eventos
 
 <a id="fluxo-principal"></a>
-### 2.1 Fluxo principal
+### 2.1. Fluxo principal
+
+<div style="display: flex; justify-content: center;">
+  <div style="text-align: left;">
+2.1.1.
+2.1.2.
+  </div>
+</div>
 
 <a id="fluxos-alternativos"></a>
-### 2.2 Fluxos alternativos
+### 2.2. Fluxos alternativos
+
+<div style="display: flex; justify-content: center;">
+  <div style="text-align: left;">
+2.2.1.
+2.2.2.
+  </div>
+</div>
 
 <a id="fluxo-alternativo-1"></a>
-#### 2.2.1 Fluxo alternativo 1
+#### 2.2.1. Fluxo alternativo 1
 
 <a id="fluxo-alternativo-2"></a>
-#### 2.2.2 Fluxo alternativo 2
+#### 2.2.2. Fluxo alternativo 2
 
 <a id="fluxos-de-excecao"></a>
-### 2.3 Fluxos de exceção
+### 2.3. Fluxos de exceção
 
 <a id="requisitos-especiais"></a>
-## 3 Requisitos Especiais
+## 3. Requisitos Especiais
 
 <a id="regras-de-negocio"></a>
-## 4 Regras de negócio
+## 4. Regras de negócio
 
 <a id="pre-condicoes"></a>
-## 5 Pré-condições
+## 5. Pré-condições
 
 <a id="pos-condicoes"></a>
-## 6 Pós-condições
+## 6. Pós-condições
 
 <a id="pontos-de-extensao"></a>
-## 7 Pontos de extensão
+## 7. Pontos de extensão`
