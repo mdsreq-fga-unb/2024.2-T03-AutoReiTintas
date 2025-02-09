@@ -10,6 +10,7 @@ import NovoUsuarioPage from "./pages/NovoUsuarioPage";
 import RecuperarContaPage from "./pages/RecuperarContaPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import DashboardLayout from "./components/DashboardLayout";
+import MenuPage from "./pages/MenuPage";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
               <DashboardLayout>
                 <Routes>
                   <Route index element={<DashboardPage />} />
+                  <Route path="menu" element={<MenuPage />} />
                   <Route path="estoque" element={<EstoquePage />} />
                   <Route path="estoque/novo" element={<NovoProdutoPage />} />
                   <Route path="administrar-contas" element={<AdministrarContasPage />} />

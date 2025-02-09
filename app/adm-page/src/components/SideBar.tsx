@@ -39,7 +39,7 @@ const SideBar = () => {
           className={isActive("/dashboard/administrar-contas") ? "active" : ""}
           onClick={() => navigate("/dashboard/administrar-contas")}
         >
-          <img src={pincel} alt="Administrar Contas" />
+          <img src={pincel} alt="Administrar Contas" id="seta-container" />
           <h3>Administrar Contas</h3>
         </div>
         <div
@@ -50,7 +50,7 @@ const SideBar = () => {
           <h3>DashBoards</h3>
         </div>
         <div onClick={handleLogout} className="logout-container">
-          <img src={logoutIcon} alt="Logout" className="logout-icon" />
+          <img src={logoutIcon} alt="Logout" className="logout-icon" id="seta-container" />
           <h3>Logout</h3>
         </div>
       </div>
