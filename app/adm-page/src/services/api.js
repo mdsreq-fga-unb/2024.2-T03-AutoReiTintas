@@ -275,3 +275,22 @@ export const sendRecoveryEmail = async (email) => {
     throw error;
   }
 };
+
+// function to add a new image to a product
+export const addImagemProduto = async (produtoId, urls) => {
+  const formData = new FormData();
+  urls.forEach(url => formData.append('urls_imagens', url));
+  
+  const response = await api.post(`/api/produtos/${produtoId}/imagens/`, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
+  return response.data;
+};
+
+// function to remove a image from a product
+export const removeImagemProduto = async (produtoId, imagemId) => {
+  const response = await api.delete(`/api/produtos/${produtoId}/imagens/${imagemId}`);
+  return response.data;
+};
