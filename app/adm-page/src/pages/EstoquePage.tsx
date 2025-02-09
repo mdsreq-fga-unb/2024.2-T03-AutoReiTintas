@@ -14,6 +14,7 @@ import ProdutoForm from "../components/ProdutoForm";
 import { ProdutoResponse } from "../types/produtos";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import "../styles/estoqueStyle.css";
 
 const useDebounce = (value: string, delay: number) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -151,14 +152,17 @@ const EstoquePage = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Estoque</h1>
+    <div className="estoque-container" >
+      <div className="header-h1">
+        <h1>Estoque</h1>
+
+      </div>
       
-      <div style={{ marginBottom: '20px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-        <Button variant="contained" color="primary" onClick={handleAddProduto}>
+      <div className="header-container" >
+        <Button className="botao" variant="contained" onClick={handleAddProduto}>
           Adicionar Produto
         </Button>
-        <Button variant="contained" color="primary" onClick={() => setOpenCategoriaDialog(true)}>
+        <Button className="botao" variant="contained" onClick={() => setOpenCategoriaDialog(true)}>
           Adicionar Categoria
         </Button>
 
@@ -167,10 +171,10 @@ const EstoquePage = () => {
           variant="outlined"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          style={{ minWidth: '250px' }}
+          className="textfield"
         />
 
-        <FormControl style={{ minWidth: '200px' }}>
+        <FormControl className="formcontrol" >
           <InputLabel>Filtrar por Categoria</InputLabel>
           <Select
             value={selectedCategory}
@@ -190,7 +194,7 @@ const EstoquePage = () => {
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
-            <TableRow>
+            <TableRow className="table-head">
               <TableCell>ID</TableCell>
               <TableCell>Imagem</TableCell>
               <TableCell>Nome</TableCell>
