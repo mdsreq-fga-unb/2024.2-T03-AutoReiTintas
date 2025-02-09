@@ -1,3 +1,7 @@
+*{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+}
+
 .recuperar-body {
     display: flex;
     justify-content: center;
@@ -28,12 +32,13 @@
   }
   
   .recuperar-input {
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
   
   .recuperar-button {
+    font-size: medium;
     padding: 10px;
     background-color: #1976d2;
     color: #fff;

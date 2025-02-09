@@ -37,7 +37,7 @@ const MinhaContaPage = () => {
   return (
     <Container maxWidth="md">
       <Box sx={{ mt: 4 }}>
-        <Typography variant="h4" gutterBottom className='titulo-pagina'>
+        <Typography variant="h4" gutterBottom className='a'>
           Minha Conta
         </Typography>
         
