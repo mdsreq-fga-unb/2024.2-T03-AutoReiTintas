@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import { getUsuarioAtual, atualizarUsuario } from '../services/api';
+import "../styles/minhaContaStyle.css";
 
 const MinhaContaPage = () => {
   const [usuario, setUsuario] = useState({
@@ -36,7 +37,7 @@ const MinhaContaPage = () => {
   return (
     <Container maxWidth="md">
       <Box sx={{ mt: 4 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom className='titulo-pagina'>
           Minha Conta
         </Typography>
         
