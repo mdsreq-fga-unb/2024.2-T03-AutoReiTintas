@@ -316,6 +316,7 @@ const EstoquePage = () => {
           onProdutoAddedOrUpdated={fetchProdutos}
         />
       )}
+      </div>
     </div>
   );
 };

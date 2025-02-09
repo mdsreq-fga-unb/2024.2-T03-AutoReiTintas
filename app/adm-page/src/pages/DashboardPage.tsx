@@ -6,6 +6,7 @@ import {
   getEstoqueProduto
 } from '../services/api';
 import { useNavigate } from 'react-router-dom';
+import "../styles/minhaContaStyle.css";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ const DashboardPage = () => {
         marginLeft: '100px', 
         transition: 'margin 0.3s'
       }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom className='titulo-pagina' style={{backgroundColor: 'white', color: '#4d75cb', borderRadius: '5px', boxShadow: '0 1px 2px 0px grey', }}>
           Dashboard Resumo
         </Typography>
 
