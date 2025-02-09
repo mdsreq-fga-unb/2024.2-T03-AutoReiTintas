@@ -14,6 +14,7 @@ import ProdutoForm from "../components/ProdutoForm";
 import { ProdutoResponse } from "../types/produtos";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import SideBar from "../components/SideBar";
 
 const useDebounce = (value: string, delay: number) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -151,7 +152,11 @@ const EstoquePage = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{display: 'flex', }}>
+      <SideBar></SideBar>
+      <div style={{ padding: '20px'}}>
+
+      
       <h1>Estoque</h1>
       
       <div style={{ marginBottom: '20px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
@@ -312,6 +317,7 @@ const EstoquePage = () => {
           onProdutoAddedOrUpdated={fetchProdutos}
         />
       )}
+      </div>
     </div>
   );
 };
