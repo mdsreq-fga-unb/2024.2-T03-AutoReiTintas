@@ -36,7 +36,7 @@ export default function Gallery() {
     ];
   
     return (
-      <div style={{ display: "flex",gap: "20px", paddingLeft: "100px",paddingRight: "100px", paddingBottom: "20px", paddingTop: "20px", flexWrap:"wrap", justifyContent: "center" }}>
+      <div style={{ display: "flex",gap: "20px", marginLeft: "100px",marginRight: "100px", paddingBottom: "20px", paddingTop: "20px", marginBottom:"20px", flexWrap:"wrap", justifyContent: "center", backgroundColor: "rgba(156, 163, 185, 0.88)", borderRadius:"40px"}} >
         {items.map((item, index) => (
           <div
             key={index}
@@ -44,7 +44,8 @@ export default function Gallery() {
               display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                
+              cursor: "pointer",
+              hover: "scale(1.1)",
               gap: "15px",
               background: "#f5f5f5",
               padding: "10px",
