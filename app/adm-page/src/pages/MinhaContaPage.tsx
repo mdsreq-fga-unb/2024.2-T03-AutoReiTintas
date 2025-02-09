@@ -37,7 +37,6 @@ const MinhaContaPage = () => {
 
   return (
     <div className='container-minha-conta'>
-      <SideBar></SideBar>
       <Box className='box-minha-conta'>
         <Typography variant="h4" gutterBottom className='a'>
           Minha Conta

@@ -374,7 +374,6 @@ const EstoquePage = () => {
         />
       )}
       </div>
-    </div>
   );
 };
 

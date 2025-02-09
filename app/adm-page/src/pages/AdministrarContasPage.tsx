@@ -75,7 +75,6 @@ const AdministrarContasPage = () => {
 
   return (
     <Box style={{ display: 'flex' }}>
-      <SideBar></SideBar>
       <div>
 
       <Typography variant="h4" gutterBottom className='titulo-pagina'>
