@@ -1,0 +1,22 @@
+.container-minha-conta{
+    display: flex;
+    justify-content: stretch;
+    flex-direction: row;
+}
+
+.titulo-pagina {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-bottom: 10px;
+    background-color: #eff1f8;
+    padding: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 20px -20px;
+    color: #5B77CE;
+}
+
+.box-minha-conta{
+    padding: 30px;
+}
+
+

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import { getUsuarioAtual, atualizarUsuario } from '../services/api';
+import "../styles/minhaContaStyle.css";
+import SideBar from '../components/SideBar';
 
 const MinhaContaPage = () => {
   const [usuario, setUsuario] = useState({
@@ -34,9 +36,10 @@ const MinhaContaPage = () => {
   };
 
   return (
-    <Container maxWidth="md">
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h4" gutterBottom>
+    <div className='container-minha-conta'>
+      <SideBar></SideBar>
+      <Box className='box-minha-conta'>
+        <Typography variant="h4" gutterBottom className='a'>
           Minha Conta
         </Typography>
         
@@ -85,7 +88,7 @@ const MinhaContaPage = () => {
           </Button>
         </form>
       </Box>
-    </Container>
+    </div>
   );
 };
 

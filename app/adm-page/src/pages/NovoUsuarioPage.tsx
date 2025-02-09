@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, TextField, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { createUsuario } from '../services/api';
+import "../styles/minhaContaStyle.css";
 
 const NovoUsuarioPage = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const NovoUsuarioPage = () => {
 
   return (
     <Box sx={{ p: 3 }}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom className='titulo-pagina'>
         Novo Usuário
       </Typography>
       

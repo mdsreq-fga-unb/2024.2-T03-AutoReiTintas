@@ -3,6 +3,8 @@ import { DataGrid, GridColDef, GridActionsCellItem } from '@mui/x-data-grid';
 import { Delete, AdminPanelSettings } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import { getUsuarios, deletarUsuario, tornarAdmin } from '../services/api';
+import "../styles/minhaContaStyle.css";
+import SideBar from '../components/SideBar';
 
 const AdministrarContasPage = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -72,8 +74,11 @@ const AdministrarContasPage = () => {
   ];
 
   return (
-    <Box sx={{ height: 400, width: '100%', p: 2 }}>
-      <Typography variant="h4" gutterBottom>
+    <Box style={{ display: 'flex' }}>
+      <SideBar></SideBar>
+      <div>
+
+      <Typography variant="h4" gutterBottom className='titulo-pagina'>
         Administrar Contas
       </Typography>
       <DataGrid
@@ -83,7 +88,8 @@ const AdministrarContasPage = () => {
         rowsPerPageOptions={[5]}
         checkboxSelection
         disableSelectionOnClick
-      />
+        />
+      </div>
     </Box>
   );
 };

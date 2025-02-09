@@ -226,7 +226,7 @@ const EstoquePage = () => {
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
-            <TableRow>
+            <TableRow className="table-head">
               <TableCell>ID</TableCell>
               <TableCell>Imagens</TableCell>
               <TableCell>Nome</TableCell>
@@ -373,6 +373,7 @@ const EstoquePage = () => {
           onProdutoAddedOrUpdated={fetchProdutos}
         />
       )}
+      </div>
     </div>
   );
 };

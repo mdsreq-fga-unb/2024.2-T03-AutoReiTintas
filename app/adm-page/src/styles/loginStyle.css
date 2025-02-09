@@ -1,16 +1,49 @@
+* {
+  margin:0;
+}
+
 .body {
-  display: flex;
-  justify-content: center;
+  margin: 0;
   
 }
 
-.container {
-    max-width: 350px;
+.header {
+  margin: 0;
+  margin-bottom: 50px;
+  background-color: #eff1f8;
+  padding: 20px;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 20px -20px;
+}
+
+.admin-title {
+  text-align: left;
+  font-size: 32px;
+  font-weight: bold;
+  color: #3B54A0;
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 1px #12B1D1;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  margin: 0;
+}
+
+.container { 
+    max-width: 400px;
+    max-height: 400px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: #F8F9FD;
     background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);
-    border-radius: 40px;
-    padding: 25px 35px;
     border: 5px solid rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
     margin: 20px;
   }
@@ -24,10 +57,12 @@
   
   .form {
     margin-top: 20px;
+    border-radius: 10px;
+    
   }
   
   .form .input {
-    width: 100%;
+    width: 80%;
     background: white;
     border: none;
     padding: 15px 20px;
@@ -57,7 +92,7 @@
   }
   
   .form .forgot-password a {
-    font-size: 11px;
+    font-size: 15px;
     color: #5B77CE;
     text-decoration: none;
   }
@@ -127,16 +162,8 @@
   .agreement a {
     text-decoration: none;
     color: #5B77CE;
-    font-size: 9px;
+    font-size: 13px;
   }
 
-  .admin-title {
-    text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    color: #3B54A0;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+
   
