@@ -1,4 +1,5 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File, Form
+from typing import List, Union
 from sqlalchemy.orm import Session, joinedload
 from app.database import get_db
 from app.models.models import Produto, Estoque, ProdutoCategoria, Categoria, ProdutoImagem
@@ -66,30 +67,26 @@ def get_produto(produto_id: int, db: Session = Depends(get_db)):
 @router.get("/produtos/", response_model=dict)
 def get_produtos(
     db: Session = Depends(get_db),
-    page: int = Query(1, ge=1),  # Página atual (começa em 1)
-    page_size: int = Query(10, ge=1, le=100),  # Itens por página
-    search: str = Query(None),  # Filtro de busca por nome
-    categoria_id: int = Query(None)  # Filtro por categoria
+    page: int = Query(1, ge=1),  
+    page_size: int = Query(10, ge=1, le=100),  
+    search: str = Query(None),  
+    categoria_id: int = Query(None)  
 ):
-    # Query base
     query = db.query(Produto).options(
         joinedload(Produto.estoque),
         joinedload(Produto.categorias).joinedload(ProdutoCategoria.categoria),
-        joinedload(Produto.imagens)
+        joinedload(Produto.imagens) 
     )
 
-    # Aplicar filtros
     if search:
-        query = query.filter(Produto.nome.ilike(f"%{search}%"))  # Busca por nome
+        query = query.filter(Produto.nome.ilike(f"%{search}%")) 
     if categoria_id:
         query = query.join(Produto.categorias).filter(ProdutoCategoria.categoria_id == categoria_id)  # Filtro por categoria
 
-    # Paginação
-    total = query.count()  # Total de produtos
+    total = query.count() 
     offset = (page - 1) * page_size
     produtos = query.offset(offset).limit(page_size).all()
 
-    # Formatar resposta
     return {
         "items": [
             ProdutoResponse(
@@ -100,7 +97,15 @@ def get_produtos(
                 codigo=produto.codigo,
                 quantidade_estoque=produto.estoque.quantidade_atual if produto.estoque else 0,
                 categorias=[{"id": cat.categoria.id, "nome": cat.categoria.nome} for cat in produto.categorias],
-                imagens=[{"id": img.id, "url_imagem": img.url_imagem, "ordem": img.ordem} for img in produto.imagens]
+                imagens=[
+                    {
+                        "id": img.id,
+                        "url_imagem": img.url_imagem,
+                        "ordem": img.ordem,
+                        "criado_em": img.criado_em  
+                    }
+                    for img in produto.imagens
+                ]
             )
             for produto in produtos
         ],
@@ -157,3 +162,110 @@ def delete_produto(produto_id: int, db: Session = Depends(get_db)):
     db.delete(produto)
     db.commit()
     return {"message": "Produto excluído com sucesso"}
+
+
+# relationship with images
+@router.post("/produtos/{produto_id}/imagens/", response_model=ProdutoResponse)
+async def add_imagem_produto(
+    produto_id: int,
+    urls_imagens: str = Form(...),  
+    db: Session = Depends(get_db)
+):
+    urls = [url.strip() for url in urls_imagens.split(",")]
+
+    produto = db.query(Produto).filter(Produto.id == produto_id).first()
+    if not produto:
+        raise HTTPException(status_code=404, detail="Produto não encontrado")
+
+    for idx, url in enumerate(urls):
+        nova_imagem = ProdutoImagem(
+            produto_id=produto_id,
+            url_imagem=url,
+            ordem=idx
+        )
+        db.add(nova_imagem)
+
+    db.commit()
+
+    produto = (
+        db.query(Produto)
+        .options(
+            joinedload(Produto.estoque),
+            joinedload(Produto.categorias).joinedload(ProdutoCategoria.categoria),
+            joinedload(Produto.imagens)
+        )
+        .filter(Produto.id == produto_id)
+        .first()
+    )
+
+    return ProdutoResponse(
+        id=produto.id,
+        nome=produto.nome,
+        descricao=produto.descricao,
+        preco=produto.preco,
+        codigo=produto.codigo,
+        quantidade_estoque=produto.estoque.quantidade_atual,
+        categorias=[
+            {"id": categoria.categoria.id, "nome": categoria.categoria.nome}
+            for categoria in produto.categorias
+        ],
+        imagens=[
+            {
+                "id": imagem.id,
+                "url_imagem": imagem.url_imagem,
+                "ordem": imagem.ordem,
+                "criado_em": imagem.criado_em  
+            }
+            for imagem in produto.imagens
+        ]
+    )
+
+@router.delete("/produtos/{produto_id}/imagens/{imagem_id}", response_model=ProdutoResponse)
+def remover_imagem_produto(
+    produto_id: int,
+    imagem_id: int,
+    db: Session = Depends(get_db)
+):
+    imagem = db.query(ProdutoImagem).filter(
+        ProdutoImagem.id == imagem_id,
+        ProdutoImagem.produto_id == produto_id
+    ).first()
+    
+    if not imagem:
+        raise HTTPException(status_code=404, detail="Imagem não encontrada")
+    
+    db.delete(imagem)
+    db.commit()
+    
+    produto = (
+        db.query(Produto)
+        .options(
+            joinedload(Produto.estoque),
+            joinedload(Produto.categorias).joinedload(ProdutoCategoria.categoria),
+            joinedload(Produto.imagens)
+        )
+        .filter(Produto.id == produto_id)
+        .first()
+    )
+
+    return ProdutoResponse(
+        id=produto.id,
+        nome=produto.nome,
+        descricao=produto.descricao,
+        preco=produto.preco,
+        codigo=produto.codigo,
+        quantidade_estoque=produto.estoque.quantidade_atual,
+        categorias=[
+            {"id": categoria.categoria.id, "nome": categoria.categoria.nome}
+            for categoria in produto.categorias
+        ],
+        imagens=[
+            {
+                "id": imagem.id,
+                "url_imagem": imagem.url_imagem,
+                "ordem": imagem.ordem,
+                "criado_em": imagem.criado_em  
+            }
+            for imagem in produto.imagens
+        ]
+    )
