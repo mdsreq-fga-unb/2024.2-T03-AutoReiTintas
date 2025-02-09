@@ -1,20 +1,38 @@
 import React, { useEffect, useState } from "react";
 import {
-  Button, Table, TableBody, TableCell, TableContainer, TableHead,
-  TableRow, Paper, Dialog, DialogActions, DialogContent, DialogTitle,
-  TextField, FormControl, InputLabel, Select, MenuItem, IconButton,
-  TablePagination
+  Button,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  IconButton,
+  TablePagination,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {
-  getProdutos, removeProduto, getCategorias, updateEstoqueProduto,
-  addCategoria
+  getProdutos,
+  removeProduto,
+  getCategorias,
+  updateEstoqueProduto,
+  addCategoria,
 } from "../services/api";
 import ProdutoForm from "../components/ProdutoForm";
 import { ProdutoResponse } from "../types/produtos";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import "../styles/estoqueStyle.css";
+import ImageIcon from "@mui/icons-material/Image";
 
 const useDebounce = (value: string, delay: number) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -38,21 +56,23 @@ const EstoquePage = () => {
   const [openForm, setOpenForm] = useState(false);
   const [produtoEditando, setProdutoEditando] = useState<ProdutoResponse | null>(null);
 
-  // Estados de paginação
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [totalCount, setTotalCount] = useState(0);
 
-  const [categorias, setCategorias] = useState<{ id: number, nome: string }[]>([]);
+  const [categorias, setCategorias] = useState<{ id: number; nome: string }[]>([]);
   const [openCategoriaDialog, setOpenCategoriaDialog] = useState(false);
-  const [novaCategoria, setNovaCategoria] = useState<string>('');
+  const [novaCategoria, setNovaCategoria] = useState<string>("");
 
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
   const [selectedCategory, setSelectedCategory] = useState<number | "">("");
 
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
   const [produtoToDelete, setProdutoToDelete] = useState<ProdutoResponse | null>(null);
+
+  const [openImageDialog, setOpenImageDialog] = useState(false);
+  const [selectedImages, setSelectedImages] = useState<string[]>([]);
 
   const fetchProdutos = async () => {
     try {
@@ -60,11 +80,8 @@ const EstoquePage = () => {
         page: page + 1,
         pageSize: rowsPerPage,
         search: debouncedSearchTerm,
-        categoryId: selectedCategory
+        categoryId: selectedCategory,
       });
-
-      console.log("Produtos recebidos:", data);  // Log 
-
       setProdutos(data);
       setTotalCount(total);
     } catch (error) {
@@ -97,7 +114,7 @@ const EstoquePage = () => {
 
   const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0); 
+    setPage(0);
   };
 
   const handleAddProduto = () => {
@@ -131,9 +148,11 @@ const EstoquePage = () => {
   const handleUpdateEstoque = async (produtoId: number, novaQuantidade: number) => {
     try {
       await updateEstoqueProduto(produtoId, novaQuantidade);
-      setProdutos(prev => prev.map(p =>
-        p.id === produtoId ? { ...p, quantidade_estoque: novaQuantidade } : p
-      ));
+      setProdutos((prev) =>
+        prev.map((p) =>
+          p.id === produtoId ? { ...p, quantidade_estoque: novaQuantidade } : p
+        )
+      );
     } catch (error) {
       console.error("Erro ao atualizar estoque:", error);
     }
@@ -151,18 +170,31 @@ const EstoquePage = () => {
     }
   };
 
-  return (
-    <div className="estoque-container" >
-      <div className="header-h1">
-        <h1>Estoque</h1>
+  const handleImageClick = (images: string[]) => {
+    setSelectedImages(images);
+    setOpenImageDialog(true);
+  };
 
-      </div>
-      
-      <div className="header-container" >
-        <Button className="botao" variant="contained" onClick={handleAddProduto}>
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>Estoque</h1>
+
+      <div
+        style={{
+          marginBottom: "20px",
+          display: "flex",
+          gap: "10px",
+          flexWrap: "wrap",
+        }}
+      >
+        <Button variant="contained" color="primary" onClick={handleAddProduto}>
           Adicionar Produto
         </Button>
-        <Button className="botao" variant="contained" onClick={() => setOpenCategoriaDialog(true)}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setOpenCategoriaDialog(true)}
+        >
           Adicionar Categoria
         </Button>
 
@@ -171,10 +203,10 @@ const EstoquePage = () => {
           variant="outlined"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="textfield"
+          style={{ minWidth: "250px" }}
         />
 
-        <FormControl className="formcontrol" >
+        <FormControl style={{ minWidth: "200px" }}>
           <InputLabel>Filtrar por Categoria</InputLabel>
           <Select
             value={selectedCategory}
@@ -182,7 +214,7 @@ const EstoquePage = () => {
             onChange={(e) => setSelectedCategory(e.target.value)}
           >
             <MenuItem value="">Todas as Categorias</MenuItem>
-            {categorias.map(categoria => (
+            {categorias.map((categoria) => (
               <MenuItem key={categoria.id} value={categoria.id}>
                 {categoria.nome}
               </MenuItem>
@@ -196,7 +228,7 @@ const EstoquePage = () => {
           <TableHead>
             <TableRow className="table-head">
               <TableCell>ID</TableCell>
-              <TableCell>Imagem</TableCell>
+              <TableCell>Imagens</TableCell>
               <TableCell>Nome</TableCell>
               <TableCell>Cód. Produto</TableCell>
               <TableCell>Descrição</TableCell>
@@ -209,19 +241,19 @@ const EstoquePage = () => {
           <TableBody>
             {produtos.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={9} align="center">Nenhum produto encontrado</TableCell>
+                <TableCell colSpan={9} align="center">
+                  Nenhum produto encontrado
+                </TableCell>
               </TableRow>
             ) : (
               produtos.map((produto) => (
                 <TableRow key={produto.id}>
                   <TableCell>{produto.id}</TableCell>
                   <TableCell>
-                    {produto.imagens?.[0]?.url_imagem ? (
-                      <img
-                        src={produto.imagens[0].url_imagem}
-                        alt={produto.nome}
-                        style={{ width: "50px", height: "50px", objectFit: 'cover' }}
-                      />
+                    {produto.imagens && produto.imagens.length > 0 ? (
+                      <Button variant="outlined" onClick={() => handleImageClick(produto.imagens.map(img => img.url_imagem))}>
+                        Ver Imagens
+                      </Button>
                     ) : (
                       "Sem imagem"
                     )}
@@ -234,16 +266,23 @@ const EstoquePage = () => {
                     <TextField
                       type="number"
                       value={produto.quantidade_estoque || 0}
-                      onChange={(e) => handleUpdateEstoque(produto.id, parseInt(e.target.value))}
+                      onChange={(e) =>
+                        handleUpdateEstoque(produto.id, parseInt(e.target.value))
+                      }
                       inputProps={{ min: 0 }}
                       variant="standard"
                     />
                   </TableCell>
                   <TableCell>
-                    {produto.categorias?.map(categoria => categoria.nome).join(', ') || "Sem categoria"}
+                    {produto.categorias
+                      ?.map((categoria) => categoria.nome)
+                      .join(", ") || "Sem categoria"}
                   </TableCell>
                   <TableCell>
-                    <IconButton color="primary" onClick={() => handleEditProduto(produto)}>
+                    <IconButton
+                      color="primary"
+                      onClick={() => handleEditProduto(produto)}
+                    >
                       <EditIcon />
                     </IconButton>
                     <IconButton
@@ -304,6 +343,24 @@ const EstoquePage = () => {
           </Button>
           <Button onClick={handleAddCategoria} color="primary">
             Adicionar
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      <Dialog open={openImageDialog} onClose={() => setOpenImageDialog(false)}>
+        <DialogTitle>Imagens do Produto</DialogTitle>
+        <DialogContent>
+          {selectedImages.map((img, index) => (
+            <a key={index} href={img} target="_blank" rel="noopener noreferrer">
+              <IconButton>
+                <ImageIcon />
+              </IconButton>
+            </a>
+          ))}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenImageDialog(false)} color="primary">
+            Fechar
           </Button>
         </DialogActions>
       </Dialog>
