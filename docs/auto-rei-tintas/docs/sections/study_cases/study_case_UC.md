@@ -40,14 +40,14 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 
 #### 2.1 Cadastrar Perfil de Pacientes
 
-2.1.1 Cliente acessa o aplicativos
-2.1.2 cliente seleciona a opção “fazer cadastro”
-2.1.3 O sistema exibe um formulário com campos brigatórios como: `nome`, `idade`, e `condições de saúde preexistentes`
-2.1.4 cliente preenche como nome FE1, FE2, RN03
-2.1.5 cliente informa idade FE1, FE3
-2.1.6 cliente informa condições de saúde preexistentes
-2.1.7 cliente confirma a opção “criar conta”
-2.1.8 sistema cria a conta  RN01,  RN02
+2.1.1. Cliente acessa o aplicativos\
+2.1.2. cliente seleciona a opção “fazer cadastro”\
+2.1.3. O sistema exibe um formulário com campos brigatórios como: `nome`, `idade`, e `condições de saúde preexistentes`\
+2.1.4. cliente preenche como nome FE1, FE2, RN03\
+2.1.5. cliente informa idade FE1, FE3\
+2.1.6. cliente informa condições de saúde preexistentes\
+2.1.7. cliente confirma a opção “criar conta”\
+2.1.8. sistema cria a conta  RN01,  RN02
 
 #### 2.2 Agendar Consulta
 
