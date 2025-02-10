@@ -1,10 +1,20 @@
-import { React} from "react";
-import { RoutesConfig } from "./routes/routes.js";
+import React, { useState } from "react";
+import RoutesConfig from "./routes/routes.js";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]);
+  };
+
+  const removeFromCart = (product) => {
+    setCartItems(cartItems.filter(item => item.id !== product.id));
+  };
+
   return (
     <div>
-        <RoutesConfig />
+      <RoutesConfig addToCart={addToCart} cartItems={cartItems} removeFromCart={removeFromCart} />
     </div>
   );
 }
