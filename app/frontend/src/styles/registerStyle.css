@@ -49,6 +49,21 @@
     border-inline: 2px solid #12B1D1;
   }
   
+  .password-container {
+    position: relative;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #5B77CE;
+    cursor: pointer;
+  }
+  
   .form .forgot-password {
     display: block;
     margin-top: 10px;
@@ -127,4 +142,16 @@
     text-decoration: none;
     color: #5B77CE;
     font-size: 9px;
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .success-message {
+    color: green;
+    margin-top: 10px;
+    text-align: center;
   }

@@ -65,14 +65,14 @@ export const loginUsuario = async (email, senha) => {
 
 // function to register a new user
 export const registerUser = async (data) => {
-    try {
-      const response = await api.post('/auth/register', data);
-      return response.data;
-    } catch (error) {
-      console.error("Erro ao registrar usuário:", error);
-      throw error;
-    }
-  };
+  try {
+    const response = await api.post('/auth/register', data);
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao registrar usuário:", error);
+    throw error;
+  }
+};
 
 // function to get all products
 export const getProdutos = async (params = {}) => {
@@ -96,7 +96,6 @@ export const getProdutos = async (params = {}) => {
     return { data: [], total: 0, page: 1, pageSize: 10 };
   }
 };
-
 
 // function to get storage from a product
 export const getEstoqueProduto = async (produtoId) => {
