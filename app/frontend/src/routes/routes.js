@@ -8,6 +8,8 @@ import ProductPage from "../pages/productPage";
 import SearchResults from "../components/searchResults";
 import AccountPage from "../pages/AccountPage";
 import ColoramaPage from "../pages/ColoramaPage";
+import AboutPage from "../pages/aboutPage";
+import ContactPage from "../pages/contactPage";
 
 const RoutesConfig = () => {
   return (
