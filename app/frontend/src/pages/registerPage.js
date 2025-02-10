@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/registerStyle.css";
 import Header from "../components/header";
+import Footer from '../components/footer';
 import { registerUser } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
@@ -122,6 +123,7 @@ const RegisterPage = () => {
           </span>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
