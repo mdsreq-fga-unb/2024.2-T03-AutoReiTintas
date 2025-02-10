@@ -90,9 +90,14 @@ const Header = () => {
                 </button>
               </>
             ) : (
-              <button onClick={() => navigate("/login")} className="botao-login">
-                Fazer Login
-              </button>
+              <>
+                <button onClick={() => navigate("/login")} className="botao-login">
+                  Fazer Login
+                </button>
+                <button onClick={() => navigate("/cadastro")} className="botao-login">
+                  Registrar
+                </button>
+              </>
             )}
           </li>
         </ul>
