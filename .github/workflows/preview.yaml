@@ -16,7 +16,7 @@ jobs:
           - uses: actions/checkout@v3
 
           - name: Install Vercel Cli
-            run: npm i -g Vercel
+            run: npm i -g vercel
 
           - name: Pull Vercel Environment information
             run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
