@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/galeria.css";
 import { useCart } from "../contexts/CartContext";
+import ProductModal from "../components/productModal";
 
 const Gallery = ({ products = [] }) => {
   const { addToCart } = useCart();
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleOpenModal = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProduct(null);
+  };
 
   return (
     <div className="product-container">
@@ -38,9 +48,22 @@ const Gallery = ({ products = [] }) => {
             >
               Adicionar ao Carrinho
             </button>
+            <button 
+              onClick={() => handleOpenModal(product)}
+              className="view-details-btn"
+            >
+              Ver Detalhes
+            </button>
           </div>
         </div>
       ))}
+      {selectedProduct && (
+        <ProductModal 
+          product={selectedProduct} 
+          onClose={handleCloseModal} 
+          addToCart={addToCart} 
+        />
+      )}
     </div>
   );
 }
