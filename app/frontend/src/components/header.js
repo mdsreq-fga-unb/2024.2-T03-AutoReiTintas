@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../utils/logo.png';
 import lupa from '../utils/lupa.png';
 import logo_carrinho from '../utils/logo_carrinho_compra.png';
+import CartDropdown from './CartDropdown';
 import "../styles/header.css";
 
-
-
-const Header = () => {
+const Header = ({ cartItems, removeFromCart, updateQuantity }) => {
+  const [cartOpen, setCartOpen] = useState(false);
   const navigate = useNavigate();
+
+  const toggleCart = () => {
+    setCartOpen(!cartOpen);
+  };
+
   return (
     <div className="header-geral">
       <div className="header">
@@ -41,7 +46,7 @@ const Header = () => {
           ></input>
         </div>
         <ul className="header-menu">
-          <li>
+          <li onClick={toggleCart}>
             <img
               src={logo_carrinho}
               alt="logo de carrinho de compras"
@@ -49,9 +54,9 @@ const Header = () => {
             />
           </li>
           <li>
-            
-              <button onClick={() => navigate("/login")} className="botao-login">Fazer Login</button>
-            
+            <button onClick={() => navigate("/login")} className="botao-login">
+              Fazer Login
+            </button>
           </li>
         </ul>
       </div>
@@ -62,7 +67,13 @@ const Header = () => {
         <h1>Contato</h1>
         <h1>Assistência Técnica</h1>
       </div>
-        
+      {cartOpen && (
+        <CartDropdown
+          cartItems={cartItems}
+          removeFromCart={removeFromCart}
+          updateQuantity={updateQuantity}
+        />
+      )}
     </div>
   );
 };

@@ -6,14 +6,24 @@ import LoginPage from "../pages/loginPage";
 import HomePage from "../pages/homePage";
 import ProductPage from "../pages/productPage";
 
-export const RoutesConfig = () => {
+export const RoutesConfig = ({ addToCart, cartItems, removeFromCart, updateQuantity }) => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} exact/>
+        <Route path="/" element={<HomePage />} exact />
         <Route path="/cadastro" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/produtos" element={<ProductPage />} />
+        <Route
+          path="/produtos"
+          element={
+            <ProductPage
+              addToCart={addToCart}
+              cartItems={cartItems}
+              removeFromCart={removeFromCart}
+              updateQuantity={updateQuantity}
+            />
+          }
+        />
       </Routes>
     </Router>
   );
