@@ -96,11 +96,40 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 
 ### 3. Fluxos Alternativos
 
+#### 3.1 Cadastrar Perfil de Pacientes
+Não se aplica
+
 
 
 ---
 
 ### 4. Fluxos de Exceção
+#### 4.1 Cadastrar Perfil de Pacientes
+
+#### 4.1.1 [FE01] --- Cliente não digita as informações necessárias
+
+<div style="display: flex; justify-content: center; text-align: center; width: 100%;">
+  <div style="text-align: left; max-width: 800px; word-wrap: break-word;">
+No passo 2.1.4 do fluxo básico, caso o cliente não informe um nome, ou no passo 2.1.5, deixe de informar uma idade o sistema o impedirá de criar uma conta no passo 2.1.8.<br><br>
+  </div>
+</div>
+
+#### 4.1.2 [FE02] --- Paciente já possui conta no sistema
+
+<div style="display: flex; justify-content: center; text-align: center; width: 100%;">
+  <div style="text-align: left; max-width: 800px; word-wrap: break-word;">
+    No passo 2.1.4 do fluxo básico, caso o cliente informe um nome já existente no banco de dados, o sistema o informará que já há uma conta em seu nome no passo 2.1.8.<br><br>
+  </div>
+</div>
+
+#### 4.1.3 [FE03] --- Idade inválida
+
+<div style="display: flex; justify-content: center; text-align: center; width: 100%;">
+  <div style="text-align: left; max-width: 800px; word-wrap: break-word;">
+No passo 2.1.5 do fluxo básico, caso o cliente informe um valor invalido, como 200, o sistema o impedirá de criar uma conta no passo 2.1.8.
+    <br><br>
+  </div>
+</div>
 
 #### Fluxo de Exceção (FE1)
 
@@ -111,24 +140,34 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 ---
 
 ### 5. Pré-Condições
+#### 5.1 Cadastrar Perfil de Pacientes
+- 5.1.1  Paciente não fez login
+- 5.1.2  Paciente não possui cadastro
 
 #### ...
 
 ---
 
 ### 6. Pós-Condições
+#### 6.1 Cadastrar Perfil de Pacientes
+- 6.1.  Cliente retorna com o login já realizado
 
 #### ...
 
 ---
 
 ### 7. Pontos de Extensão
+#### 7.1 Cadastrar Perfil de Pacientes
+Não se aplica
 
 #### ...
 
 ---
 
 ### 8. Requisitos Especiais
+#### 7.1.1 Cadastrar Perfil de Pacientes
+#### 8.1.1 --- Esse caso de uso deve ser acessível
+- Usuário deve ser capaz de cadastrar um paciente em dispositivos simples e com conexões de internet limitadas
 
 #### ...
 
