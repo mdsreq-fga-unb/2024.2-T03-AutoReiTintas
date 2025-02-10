@@ -18,6 +18,8 @@ const RoutesConfig = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/produtos" element={<ProductPage />} />
         <Route path="/search" element={<SearchResults />} />
+        <Route path="/sobre" element={<AboutPage />} />
+        <Route path="/contato" element={<ContactPage />} />
         <Route path="/account" element={<AccountPage />} />
         <Route path="/colorama" element={<ColoramaPage />} />
       </Routes>
