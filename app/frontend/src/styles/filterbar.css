@@ -1,0 +1,35 @@
+.filter-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background: #f5f5f5;
+    border-right: 1px solid #ccc;
+    height: 100vh;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .category-checkbox {
+    margin-right: 10px;
+    accent-color: #007bff;
+  }
+  
+  .category-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .category-item:hover .category-label {
+    color: #007bff;
+  }

@@ -5,15 +5,24 @@ import lupa from '../utils/lupa.png';
 import logo_carrinho from '../utils/logo_carrinho_compra.png';
 import CartDropdown from './CartDropdown';
 import { useCart } from '../contexts/CartContext';
+import { getProdutos } from "../services/api";
 import "../styles/header.css";
 
 const Header = () => {
   const [cartOpen, setCartOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const { cartItems, removeFromCart, updateQuantity } = useCart();
   const navigate = useNavigate();
 
   const toggleCart = () => {
     setCartOpen(!cartOpen);
+  };
+
+  const handleSearch = async (event) => {
+    if (event.key === 'Enter') {
+      const response = await getProdutos({ search: searchQuery });
+      navigate("/search", { state: { results: response.data } });
+    }
   };
 
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
@@ -36,18 +45,21 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="search-container">
           <input
             type="text"
             placeholder="Busque por produtos, marcas e mais..."
             className="pesquisa-input"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyPress={handleSearch}
             style={{
               backgroundImage: `url(${lupa})`,
               backgroundRepeat: "no-repeat",
-              backgroundPosition: "250px center",
+              backgroundPosition: "right 10px center",
               paddingRight: "40px",
             }}
-          ></input>
+          />
         </div>
         <ul className="header-menu">
           <li onClick={toggleCart}>

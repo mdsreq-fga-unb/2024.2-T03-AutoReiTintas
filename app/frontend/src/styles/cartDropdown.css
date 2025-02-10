@@ -3,36 +3,44 @@
   width: 300px;
   right: 0;
   background: white;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   padding: 20px;
+  border-radius: 12px;
 }
 
 .cart-dropdown h2 {
   font-size: 18px;
   margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .cart-dropdown p {
   margin: 5px 0;
+  color: #333;
 }
 
 .cart-item {
   margin-bottom: 15px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
 }
 
 .cart-total {
   font-weight: bold;
   margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #007bff;
 }
 
 .quantity-control {
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: center;
 }
 
 .quantity-control button {
@@ -40,11 +48,14 @@
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .quantity-control input {
   width: 40px;
   text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .remove-button {
@@ -53,19 +64,26 @@
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.remove-button:hover {
+  background: #ff2222;
 }
 
 .whatsapp-button {
   display: block;
-  width: 100%;
+  width: calc(100% - 40px);
   background: #25d366;
   color: white;
   border: none;
-  padding: 10px 0;
+  padding: 10px 20px;
   text-align: center;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 10px;
+  margin: 10px auto 0;
+  border-radius: 5px;
 }
 
 .whatsapp-button:hover {
