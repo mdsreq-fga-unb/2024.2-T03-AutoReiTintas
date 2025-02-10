@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "../styles/registerStyle.css";
-import Header from "../components/header.js";
+import Header from "../components/header";
 import { registerUser } from "../services/api";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../contexts/UserContext";
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +16,8 @@ const RegisterPage = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const { login } = useUser();
 
   const handleChange = (e) => {
     setFormData({
@@ -47,9 +51,10 @@ const RegisterPage = () => {
       return;
     }
     try {
-      await registerUser(formData);
+      const userData = await registerUser(formData);
+      login(userData);
       setSuccess("Usuário registrado com sucesso!");
-      setError("");
+      navigate("/account");
     } catch (err) {
       setError("Erro ao registrar usuário. Tente novamente.");
       setSuccess("");

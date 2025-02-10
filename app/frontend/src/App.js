@@ -1,12 +1,15 @@
 import React from "react";
-import RoutesConfig from "./routes/routes.js";
+import RoutesConfig from "./routes/routes";
 import { CartProvider } from "./contexts/CartContext";
+import { UserProvider } from "./contexts/UserContext";
 
 function App() {
   return (
-    <CartProvider>
-      <RoutesConfig />
-    </CartProvider>
+    <UserProvider>
+      <CartProvider>
+        <RoutesConfig />
+      </CartProvider>
+    </UserProvider>
   );
 }
 

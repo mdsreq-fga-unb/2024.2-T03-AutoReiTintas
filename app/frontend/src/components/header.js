@@ -5,6 +5,7 @@ import lupa from '../utils/lupa.png';
 import logo_carrinho from '../utils/logo_carrinho_compra.png';
 import CartDropdown from './CartDropdown';
 import { useCart } from '../contexts/CartContext';
+import { useUser } from '../contexts/UserContext';
 import { getProdutos } from "../services/api";
 import "../styles/header.css";
 
@@ -12,6 +13,7 @@ const Header = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const { cartItems, removeFromCart, updateQuantity } = useCart();
+  const { user, isAuthenticated, logout } = useUser();
   const navigate = useNavigate();
 
   const toggleCart = () => {
@@ -23,6 +25,11 @@ const Header = () => {
       const response = await getProdutos({ search: searchQuery });
       navigate("/search", { state: { results: response.data } });
     }
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
   };
 
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
@@ -73,9 +80,20 @@ const Header = () => {
             </div>
           </li>
           <li>
-            <button onClick={() => navigate("/login")} className="botao-login">
-              Fazer Login
-            </button>
+            {isAuthenticated() ? (
+              <>
+                <button onClick={() => navigate("/account")} className="botao-login">
+                  Acessar Conta
+                </button>
+                <button onClick={handleLogout} className="botao-login">
+                  Logout
+                </button>
+              </>
+            ) : (
+              <button onClick={() => navigate("/login")} className="botao-login">
+                Fazer Login
+              </button>
+            )}
           </li>
         </ul>
       </div>
