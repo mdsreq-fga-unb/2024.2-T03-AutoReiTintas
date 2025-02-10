@@ -6,6 +6,21 @@ const CartDropdown = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
   const total = cartItems.reduce((acc, item) => acc + item.preco * item.quantity, 0);
 
+  const generateWhatsAppMessage = () => {
+    let message = "Olá, gostaria de finalizar a compra dos seguintes itens:\n\n";
+    cartItems.forEach(item => {
+      message += `${item.nome} - Quantidade: ${item.quantity} - Preço: R$ ${(item.preco * item.quantity).toFixed(2)}\n`;
+    });
+    message += `\nTotal: R$ ${total.toFixed(2)}`;
+    return message;
+  };
+
+  const handleWhatsAppRedirect = () => {
+    const phoneNumber = "556199755078";
+    const message = encodeURIComponent(generateWhatsAppMessage());
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+  };
+
   return (
     <div className="cart-dropdown">
       <h2>Carrinho de Compras</h2>
@@ -44,6 +59,9 @@ const CartDropdown = () => {
             ))}
           </ul>
           <div className="cart-total">Total do Carrinho: R$ {total.toFixed(2)}</div>
+          <button onClick={handleWhatsAppRedirect} className="whatsapp-button">
+            Finalizar Compra no WhatsApp
+          </button>
         </>
       )}
     </div>
