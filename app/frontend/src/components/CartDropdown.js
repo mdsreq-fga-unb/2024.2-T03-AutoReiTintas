@@ -1,7 +1,9 @@
 import React from "react";
 import "../styles/cartDropdown.css";
+import { useCart } from "../contexts/CartContext";
 
-const CartDropdown = ({ cartItems = [], removeFromCart, updateQuantity }) => {
+const CartDropdown = () => {
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
   const total = cartItems.reduce((acc, item) => acc + item.preco * item.quantity, 0);
 
   return (

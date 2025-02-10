@@ -1,6 +1,8 @@
 import React from 'react';
+import { useCart } from "../contexts/CartContext";
 
-const Cart = ({ cartItems, removeFromCart, updateQuantity }) => {
+const Cart = () => {
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
   const total = cartItems.reduce((acc, item) => acc + (item.preco * item.quantity), 0);
 
   return (

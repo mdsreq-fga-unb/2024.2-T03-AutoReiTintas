@@ -4,15 +4,19 @@ import logo from '../utils/logo.png';
 import lupa from '../utils/lupa.png';
 import logo_carrinho from '../utils/logo_carrinho_compra.png';
 import CartDropdown from './CartDropdown';
+import { useCart } from '../contexts/CartContext';
 import "../styles/header.css";
 
-const Header = ({ cartItems, removeFromCart, updateQuantity }) => {
+const Header = () => {
   const [cartOpen, setCartOpen] = useState(false);
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
   const navigate = useNavigate();
 
   const toggleCart = () => {
     setCartOpen(!cartOpen);
   };
+
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <div className="header-geral">
@@ -47,11 +51,14 @@ const Header = ({ cartItems, removeFromCart, updateQuantity }) => {
         </div>
         <ul className="header-menu">
           <li onClick={toggleCart}>
-            <img
-              src={logo_carrinho}
-              alt="logo de carrinho de compras"
-              className="logo-carrinho"
-            />
+            <div className="cart-icon">
+              <img
+                src={logo_carrinho}
+                alt="logo de carrinho de compras"
+                className="logo-carrinho"
+              />
+              {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
+            </div>
           </li>
           <li>
             <button onClick={() => navigate("/login")} className="botao-login">
