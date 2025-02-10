@@ -27,7 +27,7 @@ const HomePage = () => {
     <div>
       <Header />
       <Capa />
-      <h1 style={{ margin: "30px" }}>Produtos</h1>
+      <h1 style={{ margin: "30px" }}> Últimas Ofertas </h1>
       <Gallery products={randomProducts} />
     </div>
   );
