@@ -107,7 +107,8 @@ const Header = () => {
         <h1 onClick={() => navigate("/produtos")}>Produtos</h1>
         <h1 onClick={() => navigate("/sobre")}>Sobre a Loja</h1>
         <h1 onClick={() => navigate("/contato")}>Contato</h1>
-        <h1>Assistência Técnica</h1>
+        <h1 onClick={() => navigate("/assistencia")}>Assistência Técnica</h1>
+        <h1 onClick={() => navigate("/colorama")}>Colorama</h1>
       </div>
       {cartOpen && (
         <CartDropdown

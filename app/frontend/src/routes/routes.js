@@ -7,8 +7,7 @@ import HomePage from "../pages/homePage";
 import ProductPage from "../pages/productPage";
 import SearchResults from "../components/searchResults";
 import AccountPage from "../pages/AccountPage";
-import AboutPage from "../pages/aboutPage";
-import ContactPage from "../pages/contactPage";
+import ColoramaPage from "../pages/ColoramaPage";
 
 const RoutesConfig = () => {
   return (
@@ -22,6 +21,7 @@ const RoutesConfig = () => {
         <Route path="/sobre" element={<AboutPage />} />
         <Route path="/contato" element={<ContactPage />} />
         <Route path="/account" element={<AccountPage />} />
+        <Route path="/colorama" element={<ColoramaPage />} />
       </Routes>
     </Router>
   );
