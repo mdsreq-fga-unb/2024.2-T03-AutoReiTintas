@@ -118,7 +118,7 @@ const RegisterPage = () => {
           {error && <div className="error-message">{error}</div>}
           {success && <div className="success-message">{success}</div>}
           <span className="agreement">
-            <a href="#">Learn user licence agreement</a>
+            <a href="/licence">Learn user licence agreement</a>
           </span>
         </div>
       </div>

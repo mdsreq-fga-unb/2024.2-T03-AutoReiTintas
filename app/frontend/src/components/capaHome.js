@@ -23,7 +23,7 @@ const Capa = () => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000); 
     return () => clearInterval(interval); 
-  }, []);
+  }, [nextSlide]);
 
   return (
     <div className="slider-container">
