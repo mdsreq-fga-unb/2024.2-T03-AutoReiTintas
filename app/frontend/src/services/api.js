@@ -2,7 +2,7 @@ import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000', 
+  baseURL: 'https://two024-2-t03-autoreitintas-5zzj.onrender.com/', 
   withCredentials: false, 
   headers: {
     'Content-Type': 'application/json',
