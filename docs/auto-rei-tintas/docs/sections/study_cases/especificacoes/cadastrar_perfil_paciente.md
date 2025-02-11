@@ -40,21 +40,21 @@ _Este caso de uso é utilizado pelos clientes para cadastrar uma conta de pacien
   <div style="text-align: left; max-width: 800px; word-wrap: break-word;">
 
   
-- 2.1.1 Cliente acessa o aplicativos <br><br>
+ 2.1.1 Cliente acessa o aplicativos <br><br>
 
-- 2.1.2 cliente seleciona a opção “fazer cadastro” <br><br>
+ 2.1.2 cliente seleciona a opção “fazer cadastro” <br><br>
 
-- 2.1.3 O sistema exibe um formulário com campos obrigatórios como: `nome`, `idade`, e `condições de saúde preexistentes` <br><br>
+ 2.1.3 O sistema exibe um formulário com campos obrigatórios como: `nome`, `idade`, e `condições de saúde preexistentes` <br><br>
 
-- 2.1.4 cliente preenche como nome FE01, FE02, RN03 <br><br>
+ 2.1.4 cliente preenche como nome FE01, FE02, RN03 <br><br>
 
-- 2.1.5 cliente informa idade FE01, FE03 <br><br>
+ 2.1.5 cliente informa idade FE01, FE03 <br><br>
 
-- 2.1.6 cliente informa condições de saúde preexistentes <br><br>
+ 2.1.6 cliente informa condições de saúde preexistentes <br><br>
 
-- 2.1.7 cliente confirma a opção “criar conta” <br><br>
+ 2.1.7 cliente confirma a opção “criar conta” <br><br>
 
-- 2.1.8 sistema cria a conta RN01, RN02 <br><br>
+ 2.1.8 sistema cria a conta RN01, RN02 <br><br>
 
 
     </div>
