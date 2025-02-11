@@ -29,10 +29,12 @@ nav:
       - Agendar Consulta: sections/study_cases/especificacoes/agendar_consulta.md
       - Cadastrar Campanha comunitária: sections/study_cases/especificacoes/cadastrar_campanha_comunitaria.md
       - Cadastrar Perfil do Profissional: sections/study_cases/especificacoes/cadastrar_perfil_profissional.md
+      - Visualizar Histórico de Consulta: sections/study_cases/especificacoes/visualizar_historico_consulta.md
   - Apresentações e Entregas: 
     - Entrega Unidade 1: sections/presentations/presentation_1.md
     - Entrega Unidade 2: sections/presentations/presentation_2.md
     - Entrega Unidade 3: sections/presentations/presentation_3.md
+    - Entrega Unidade 4: sections/presentations/presentation_4.md
   - Lições Aprendidas: sections/presentations/learned_lessons.md
   - Reuniões:
     - ATAS:
