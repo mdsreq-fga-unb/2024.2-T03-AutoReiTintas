@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/header";
 import Gallery from "../components/galeria";
 import FilterBar from "../components/FilterBar";
-import { useCart } from "../contexts/CartContext";
 import { getProdutos } from "../services/api";
 import "../styles/productpage.css";
 
 const ProductPage = () => {
-  const { addToCart } = useCart();
   const [categoryFilter, setCategoryFilter] = useState("");
   const [products, setProducts] = useState([]);
   const [totalProducts, setTotalProducts] = useState(0);
