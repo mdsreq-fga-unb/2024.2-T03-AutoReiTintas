@@ -28,6 +28,7 @@ nav:
       - Cadastrar perfil do Paciente: sections/study_cases/especificacoes/cadastrar_perfil_paciente.md
       - Agendar Consulta: sections/study_cases/especificacoes/agendar_consulta.md
       - Cadastrar Campanha comunitária: sections/study_cases/especificacoes/cadastrar_campanha_comunitaria.md
+      - Cadastrar Perfil do Profissional: sections/study_cases/especificacoes/cadastrar_perfil_profissional.md
   - Apresentações e Entregas: 
     - Entrega Unidade 1: sections/presentations/presentation_1.md
     - Entrega Unidade 2: sections/presentations/presentation_2.md
