@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "../styles/galeria.css";
 import { useCart } from "../contexts/CartContext";
 import Header from "./header";
+import ProductModal from "./productModal";
 
 const SearchResults = () => {
   const location = useLocation();
   const { results } = location.state || { results: [] };
   const { addToCart } = useCart();
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const openModal = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
 
   return (
     <>
@@ -38,12 +48,21 @@ const SearchResults = () => {
                 <h3 className="product-name">{product.nome}</h3>
                 <p className="product-description">{product.descricao}</p>
                 <p className="product-price">R$ {product.preco}</p>
-                <button 
-                  onClick={() => addToCart(product)}
-                  className="add-to-cart-btn"
-                >
-                  Adicionar ao Carrinho
-                </button>
+                
+                <div className="button-group">
+                  <button 
+                    onClick={() => addToCart(product)}
+                    className="add-to-cart-btn"
+                  >
+                    Adicionar ao Carrinho
+                  </button>
+                  <button 
+                    onClick={() => openModal(product)}
+                    className="view-details-btn"
+                  >
+                    Ver Detalhes
+                  </button>
+                </div>
               </div>
             </div>
           ))
@@ -51,6 +70,14 @@ const SearchResults = () => {
           <p>Nenhum produto encontrado</p>
         )}
       </div>
+
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={closeModal}
+          addToCart={addToCart}
+        />
+      )}
     </>
   );
 };
