@@ -10,4 +10,4 @@
 
 | Versão |    Data    | Descrição                                 | Autor(es)                                       | Revisor(es)                                    |
 | ------ | :--------: | ----------------------------------------- | ----------------------------------------------- | ---------------------------------------------- |
-| `1.0`   | 11/02/2025 | Adição do vídeo de apresentação 3                         | [Paulo Henrique](https://github.com/Nanashii76)  |     [Johan](https://github.com/johan-rocha) e  [Mariana Letícia](https://github.com/Marianannn)   | 
+| `1.0`   | 11/02/2025 | Adição do vídeo de apresentação 4                         | [Paulo Henrique](https://github.com/Nanashii76)  |     [Johan](https://github.com/johan-rocha) e  [Mariana Letícia](https://github.com/Marianannn)   | 
