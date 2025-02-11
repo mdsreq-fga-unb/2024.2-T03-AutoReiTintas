@@ -1,62 +1,55 @@
 # **Cronograma e Entregas**
 
-  
-
-  
-
 Com base nas estratégias apontadas pelos frameworks e decididas pelo grupo, a seguinte proposta de cronograma e entregas e feito:
 
-| **Sprint** | **Fase do ScrumXP** | **Entregas** | **Data Início** | **Data Fim** |
-| --- | --- | --- | --- | --- |
-| **Sprint 1** | Planejamento de Sprint | Planejamento, elaboração dos requisitos, definição do backlog e MVP | 25/11/2024 | 08/12/2024 |
-|  | Execução (Desenvolvimento) | Desenvolvimento das primeiras funcionalidades, como definição de arquitetura | 25/11/2024 | 08/12/2024 |
-|  | Revisão da Sprint | Apresentação do andamento do projeto | 21/11/2024 | 25/11/2024 |
-|  | Retrospectiva da Sprint | Análise do que funcionou bem e o que pode ser melhorado para as próximas sprints | 08/12/2024 | 08/12/2024 |
-|  | Integração Contínua | - | - | - |
-|  | Desenvolvimento Contínuo | Ajustes na arquitetura e configuração inicial do sistema | 25/11/2024 | 08/12/2024 |
-| **Sprint 2** | Planejamento de Sprint | Planejamento da criação do banco de dados, backend e frontend | 09/12/2024 | 22/12/2024 |
-|  | Execução (Desenvolvimento) | Desenvolvimento do banco de dados, backend e frontend | 09/12/2024 | 22/12/2024 |
-|  | Revisão da Sprint | Revisão do banco de dados e integração inicial do sistema | 09/12/2024 | 22/12/2024 |
-|  | Retrospectiva da Sprint | Avaliação do que funcionou bem, ajustes na integração e backend | 22/12/2024 | 22/12/2024 |
-|  | Integração Contínua | Integração das tabelas e backend com o sistema | 09/12/2024 | 22/12/2024 |
-|  | Desenvolvimento Contínuo | Acompanhamento do progresso do sistema e refinamento do código | 09/12/2024 | 22/12/2024 |
-| **RECESSO** | - | - | 23/12/2024 | 05/01/2025 |
-| **Sprint 3** | Planejamento de Sprint | Planejamento das funcionalidades de busca e exibição de produtos | 06/01/2025 | 13/01/2025 |
-|  | Execução (Desenvolvimento) | Implementação da funcionalidade de busca e exibição de produtos | 06/01/2025 | 13/01/2025 |
-|  | Revisão da Sprint | Testes e avaliação da exibição de produtos | 06/01/2025 | 13/01/2025 |
-|  | Retrospectiva da Sprint | Reflexão sobre as funcionalidades desenvolvidas e melhorias no processo | 13/01/2025 | 13/01/2025 |
-|  | Integração Contínua | Integração da busca com o banco de dados | 06/01/2025 | 13/01/2025 |
-|  | Desenvolvimento Contínuo | Continuação do desenvolvimento das funcionalidades de exibição | 06/01/2025 | 13/01/2025 |
-| **Sprint 4** | Planejamento de Sprint | Planejamento da funcionalidade de carrinho e resumo | 13/01/2025 | 20/01/2025 |
-|  | Execução (Desenvolvimento) | Implementação das funcionalidades de carrinho e resumo | 13/01/2025 | 20/01/2025 |
-|  | Revisão da Sprint | Testes e revisão das funcionalidades implementadas | 13/01/2025 | 20/01/2025 |
-|  | Retrospectiva da Sprint | Avaliação de desempenho do carrinho e ajustes no fluxo | 20/01/2025 | 20/01/2025 |
-|  | Integração Contínua | Integração do carrinho com o sistema de estoque | 13/01/2025 | 20/01/2025 |
-|  | Desenvolvimento Contínuo | Refinamento das funcionalidades de carrinho | 13/01/2025 | 20/01/2025 |
-| **Sprint 5** | Planejamento de Sprint | Planejamento da funcionalidade de redirecionamento para o WhatsApp | 20/01/2025 | 27/01/2025 |
-|  | Execução (Desenvolvimento) | Implementação do botão de redirecionamento | 20/01/2025 | 27/01/2025 |
-|  | Revisão da Sprint | Testes de integração com WhatsApp | 20/01/2025 | 27/01/2025 |
-|  | Retrospectiva da Sprint | Reflexão sobre a funcionalidade de WhatsApp e melhorias no fluxo | 27/01/2025 | 27/01/2025 |
-|  | Integração Contínua | Integração do botão com a API do WhatsApp | 20/01/2025 | 27/01/2025 |
-|  | Desenvolvimento Contínuo | Ajustes contínuos no código e interface | 20/01/2025 | 27/01/2025 |
-| **Sprint 6** | Planejamento de Sprint | Planejamento de funcionalidades de cadastro e controle de estoque | 27/01/2025 | 03/02/2025 |
-|  | Execução (Desenvolvimento) | Desenvolvimento do cadastro, edição e controle de estoque | 27/01/2025 | 03/02/2025 |
-|  | Revisão da Sprint | Testes de cadastro e controle de estoque | 27/01/2025 | 03/02/2025 |
-|  | Retrospectiva da Sprint | Análise de como o cadastro e o controle de estoque funcionaram | 03/02/2025 | 03/02/2025 |
-|  | Integração Contínua | Integração das permissões e novos roles | 27/01/2025 | 03/02/2025 |
-|  | Desenvolvimento Contínuo | Refinamento do controle de estoque e roles | 27/01/2025 | 03/02/2025 |
-| **Sprint 7** | Planejamento de Sprint | Planejamento da funcionalidade de histórico de compras | 03/02/2025 | 10/02/2025 |
-|  | Execução (Desenvolvimento) | Implementação da visualização de histórico de compras | 03/02/2025 | 10/02/2025 |
-|  | Revisão da Sprint | Testes do histórico de compras | 03/02/2025 | 10/02/2025 |
-|  | Retrospectiva da Sprint | Reflexão sobre a funcionalidade de histórico e melhorias | 10/02/2025 | 10/02/2025 |
-|  | Integração Contínua | Integração do histórico de compras com o sistema | 03/02/2025 | 10/02/2025 |
-|  | Desenvolvimento Contínuo | Ajustes contínuos no sistema de histórico de compras | 03/02/2025 | 10/02/2025 |
-| **Sprint 8** | Planejamento de Sprint | Planejamento da funcionalidade de recuperação de senha | 12/02/2025 | 17/02/2025 |
-|  | Execução (Desenvolvimento) | Implementação da recuperação de senha por e-mail | 12/02/2025 | 17/02/2025 |
-|  | Revisão da Sprint | Testes da recuperação de senha | 12/02/2025 | 17/02/2025 |
-|  | Retrospectiva da Sprint | Análise do fluxo de recuperação de senha e ajustes | 17/02/2025 | 17/02/2025 |
-|  | Integração Contínua | Integração da recuperação de senha com o sistema de autenticação | 12/02/2025 | 17/02/2025 |
-|  | Desenvolvimento Contínuo | Refinamento do código e testes de integração | 12/02/2025 | 17/02/2025 |
+| **Sprint**   | **Fase do ScrumXP**        | **Entregas**                                                                 | **Histórias de Usuário (US)**                                                                                     | **Data Início** | **Data Fim** | **Observações** |
+| ------------ | -------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------- | ------------ | --------------- |
+| **Sprint 1** | Planejamento de Sprint     | Planejamento, elaboração dos requisitos, definição do backlog e MVP          | -                                                                                                                 | 25/11/2024      | 08/12/2024   | -               |
+|              | Execução (Desenvolvimento) | Desenvolvimento das primeiras funcionalidades, como definição de arquitetura | -                                                                                                                 | 25/11/2024      | 08/12/2024   | -               |
+|              | Revisão da Sprint          | Apresentação do planejamento e backlog                                       | -                                                                                                                 | 08/12/2024      | 08/12/2024   | -               |
+|              | Retrospectiva da Sprint    | Análise do planejamento e ajustes para as próximas sprints                   | -                                                                                                                 | 08/12/2024      | 08/12/2024   | -               |
+| **Sprint 2** | Planejamento de Sprint     | Planejamento do cadastro, login, gestão de produtos, roles e recuperação de senha | **US01 (Cadastro de usuário)**<br> **US04 (Autenticação de usuário e gestor)**<br> **US05 (CRUD de produtos)**<br> **US06 (Controle de roles)**<br> **US14 (Recuperação de senha)** | 09/12/2024      | 22/12/2024   | -               |
+|              | Execução (Desenvolvimento) | Desenvolvimento das funcionalidades                                          | Implementação do cadastro (US01), login (US04), CRUD de produtos (US05), roles (US06) e recuperação de senha (US14) | 09/12/2024      | 22/12/2024   | -               |
+|              | Revisão da Sprint          | Apresentação do andamento do projeto                                         | Validação do cadastro, login e gestão de produtos                                                                 | 22/12/2024      | 22/12/2024   | -               |
+|              | Retrospectiva da Sprint    | Análise do que funcionou bem e o que pode ser melhorado                      | Discussão sobre dificuldades na implementação de roles e recuperação de senha                                     | 22/12/2024      | 22/12/2024   | -               |
+| **RECESSO**  | -                          | -                                                                            | -                                                                                                                 | 23/12/2024      | 05/01/2025   | -               |
+| **Sprint 3** | Planejamento de Sprint     | Planejamento da busca, carrinho, navegação sem login, WhatsApp e gestão de perfis | **US15 (Busca de produtos)**<br> **US07 (Carrinho de compras)**<br> **US09 (Navegação sem login)**<br> **US02 (Edição de perfil)** | 06/01/2025      | 27/01/2025   | **Atraso**: Sprint 2 e 3 serão entregues junto com a Sprint 4. |
+|              | Execução (Desenvolvimento) | Desenvolvimento das funcionalidades                                          | Implementação da busca (US15), carrinho (US07), navegação sem login (US09), WhatsApp (US08), edição (US02) e exclusão de conta (US03) | 06/01/2025      | 27/01/2025   | Duração estendida para 3 semanas devido a atrasos. |
+|              | Revisão da Sprint          | Testes e validação das funcionalidades integradas                            | Validação do fluxo de navegação, carrinho, WhatsApp e gestão de perfis                                            | 27/01/2025      | 27/01/2025   | -               |
+|              | Retrospectiva da Sprint    | Reflexão sobre os ajustes e melhorias                                        | Discussão sobre priorização e gestão de tempo                                                                     | 27/01/2025      | 27/01/2025   | -               |
+| **Sprint 4** | Planejamento de Sprint     | Planejamento do histórico de compras                                         | **US11 (Histórico de pedidos)**<br> **US08 (Redirecionamento para WhatsApp)**<br> **US03 (Exclusão de conta)**                                                                                | 03/02/2025      | 10/02/2025   | -               |
+|              | Execução (Desenvolvimento) | Implementação do histórico de compras                                        | Página de histórico de pedidos (US11)                                                                             | 03/02/2025      | 10/02/2025   | -               |
+|              | Revisão da Sprint          | Testes do histórico de compras                                               | Validação da sincronização com o banco de dados                                                                   | 10/02/2025      | 10/02/2025   | -               |
+|              | Retrospectiva da Sprint    | Avaliação do desempenho e ajustes                                            | Melhorias na consulta de histórico                                                                                | 10/02/2025      | 10/02/2025   | -               |
+
+
+### Tabela de Acompanhamento de Sprints
+
+| **Sprint**   | **Planejado**                                                                                     | **Realizado**                                                                                 | **Motivos**                                                                 |
+|--------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| **Sprint 1** | - Planejamento inicial<br>- Definição de backlog e MVP                                           | - Planejamento concluído<br>- Backlog definido                                                | Sem atrasos ou desvios                                                      |
+| **Sprint 2** | - US01 (Cadastro)<br>- US04 (Login)<br>- US05 (CRUD produtos)<br>- US06 (Roles)<br>- US14 (Senha) | - US01, US04, US05, US06 implementadas                                                       | **Atrasos e mal planejamento**<br>- US14 não concluída                      |
+| **Sprint 3** | - US15 (Busca)<br>- US07 (Carrinho)<br>- US09 (Navegação)<br>- US02 (Perfil)<br> | - US15, US07, US09, US02 implementadas                                            | **Atrasos acumulados**<br>- Entregue junto com a Sprint 4                   |
+| **Sprint 4** | - US11 (Histórico de compras)<br>- US08(Whatsapp)<br>- US03(exclusão)                                                                    | - US11 não implementada<br> - US03 Não concluída<br> - US08 implementada                                                                       | **Falta de priorização**<br>- Recursos alocados para corrigir atrasos       |
+
+---
+
+### US Não Entregues no MVP
+| **US**  | **Status**            | **Motivo**                                                                 |
+|---------|-----------------------|---------------------------------------------------------------------------|
+| **US10**| Excluída do MVP       | Avaliação de produtos não considerada crítica para a primeira versão.     |
+| **US11**| Não implementada      | Atrasos acumulados e realocação de recursos para funcionalidades críticas.|
+| **US12**| Excluída do MVP       | Relatórios de vendas demandavam complexidade técnica adicional.           |
+| **US13**| Excluída do MVP       | Monitoramento de carrinhos não prioritário para o MVP.                    |
+| **US14**| Não implementada      | Falta de tempo devido a atrasos no planejamento inicial.                  |
+
+---
+
+### Legenda:
+- **Planejado**: Funcionalidades previstas para a sprint.
+- **Realizado**: Funcionalidades efetivamente entregues.
+- **Motivos**: Justificativas para divergências entre planejado e realizado.
+- **MVP**: Funcionalidades essenciais para a versão inicial do produto.
 
 
 ## Histórico de Versões
@@ -68,4 +61,5 @@ Com base nas estratégias apontadas pelos frameworks e decididas pelo grupo, a s
 | `1.2` | 05/12/2024 | Ajuste do cronograma e visualização | [Paulo Henrique](https://github.com/Nanashii76) |  [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
 | `1.3` | 12/12/2024 | Mudança da ordem das sprints e detalhamento | [Paulo Henrique](https://github.com/Nanashii76) e  [Johan](https://github.com/johan-rocha) |  [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
 | `1.4` | 12/12/2024 | Englobando fases do SrumXP ao cronograma | [Paulo Henrique](https://github.com/Nanashii76) |  [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
+| `2.0` | 10/02/2025 | Ajustando o Cronograma | [Paulo Henrique](https://github.com/Nanashii76) |  [Johan](https://github.com/johan-rocha), [Paulo Henrique](https://github.com/Nanashii76), [Mariana Letícia](https://github.com/Marianannn), [Mateus Cavalcante](https://github.com/mateuscavati) e [Diogo](https://github.com/Diogo-Barboza) |
 
