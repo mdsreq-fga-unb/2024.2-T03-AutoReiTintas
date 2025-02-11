@@ -8,7 +8,6 @@ import { getProdutos } from "../services/api";
 import "../styles/productpage.css";
 
 const ProductPage = () => {
-  const { addToCart } = useCart();
   const [categoryFilter, setCategoryFilter] = useState("");
   const [products, setProducts] = useState([]);
   const [totalProducts, setTotalProducts] = useState(0);

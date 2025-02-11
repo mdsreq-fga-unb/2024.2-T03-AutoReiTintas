@@ -2,5 +2,12 @@ docs/auto-rei-tintas/site/
 docs/auto-rei-tintas/venv
 docs/venv
 /venv
-
+/app/backend/venv
+app/backend/.env
+app/backend/app/__pycache__/
+app/backend/app/models/__pycache__/
+app/backend/app/routers/__pycache__/
+app/backend/app/schemas/__pycache__/
+app/frontend/package.json
 app/frontend/node_modules
+app/frontend/package-lock.json
