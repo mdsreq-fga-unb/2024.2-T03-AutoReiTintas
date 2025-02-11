@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/header";
 import Gallery from "../components/galeria";
 import Capa from "../components/capaHome";
+import Footer from '../components/footer';
 import { getProdutos } from "../services/api";
 
 const HomePage = () => {
@@ -29,6 +30,7 @@ const HomePage = () => {
       <Capa />
       <h1 style={{ margin: "30px" }}> Últimas Ofertas </h1>
       <Gallery products={randomProducts} />
+      <Footer />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Header from "../components/header";
 import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import { loginUsuario } from "../services/api";
+import Footer from '../components/footer';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -75,6 +76,7 @@ const LoginPage = () => {
           </span>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,48 @@
+.footer-container{
+    background-color: #08093C;
+    color: white;
+    padding: 20px;
+    font-size: small;
+}
+
+.info-container{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.info-container>div{
+    margin-right: 50px;
+    padding-bottom: 10px;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: space-around;
+}
+.social-icons .icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer
+}
+
+.social-icons .icon:hover{
+    width: 31px;
+    height: 31px;
+}
+
+.barra{
+    margin: 20px;
+}
+
+.esclarecimento{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.esclarecimento>p{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.esclarecimento>p:hover{
+    font-size: 14px;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useUser } from '../contexts/UserContext';
 import Header from '../components/header';
+import Footer from '../components/footer';
 import { getUsuarioAtual, atualizarUsuario } from '../services/api';
 import "../styles/accountStyle.css";
 
@@ -107,6 +108,7 @@ const AccountPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
