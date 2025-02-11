@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/header";
 import Gallery from "../components/galeria";
 import FilterBar from "../components/FilterBar";
-import Footer from '../components/footer';
-import { useCart } from "../contexts/CartContext";
 import { getProdutos } from "../services/api";
 import "../styles/productpage.css";
 
