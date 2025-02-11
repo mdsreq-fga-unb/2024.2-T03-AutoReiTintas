@@ -16,7 +16,7 @@ O estudo de caso se trata de um aplicativo ConnectCare, o qual tem o objetivo de
 
 <center>
 
-![diagrama de caso de uso](https://mdsreq-fga-unb.github.io/2024.2-T03-AutoReiTintas/assets/diagrama_UC.jpg)
+![diagrama de caso de uso](../../assets/diagrama_UC.jpg)
 
 </center>
 
