@@ -16,13 +16,13 @@ const Capa = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000); 

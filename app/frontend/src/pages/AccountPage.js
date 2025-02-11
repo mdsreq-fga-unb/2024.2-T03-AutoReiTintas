@@ -32,7 +32,7 @@ const AccountPage = () => {
     };
 
     fetchUserData();
-  }, []); 
+  }, [login]); 
 
   const handleChange = (e) => {
     setFormData({

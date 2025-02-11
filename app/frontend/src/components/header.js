@@ -13,7 +13,7 @@ const Header = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const { cartItems, removeFromCart, updateQuantity } = useCart();
-  const { user, isAuthenticated, logout } = useUser();
+  const { isAuthenticated, logout } = useUser();
   const navigate = useNavigate();
 
   const toggleCart = () => {
