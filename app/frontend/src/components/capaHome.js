@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import capa1 from "../utils/capa1.jpg"; 
 import capa2 from "../utils/capa2.jpg";
 import capa3 from "../utils/capa3.jpg";
@@ -27,7 +27,7 @@ const Capa = () => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000); 
     return () => clearInterval(interval);
-  }, []);
+  }, [nextSlide]);
 
   return (
     <div className="slider-container">

@@ -46,7 +46,7 @@ export const createUsuario = async (usuario) => {
 
 // function to make authentications
 export const loginUsuario = async (email, senha) => {
-  const response = await fetch("http://localhost:8000/auth/login", {
+  const response = await fetch("https://two024-2-t03-autoreitintas-5zzj.onrender.com/auth/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
