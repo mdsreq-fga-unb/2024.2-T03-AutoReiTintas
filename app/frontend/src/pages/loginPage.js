@@ -61,7 +61,7 @@ const LoginPage = () => {
               onChange={handleChange}
             />
             <span className="forgot-password">
-              <a href="#">Esqueceu a senha?</a>
+              <p>Esqueceu a senha?</p>
             </span>
             <input className="login-button" type="submit" value="Sign In" />
           </form>
@@ -71,7 +71,7 @@ const LoginPage = () => {
             <Link to="/cadastro" className="register-link">Cadastre-se</Link>
           </div>
           <span className="agreement">
-            <a href="#">Learn user licence agreement</a>
+            <p>Learn user licence agreement</p>
           </span>
         </div>
       </div>
