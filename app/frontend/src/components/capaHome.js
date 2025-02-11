@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
-import capaHome from "../utils/capaHome.png";
-import logo from "../utils/logo.png";
+import capa1 from "../utils/capa1.jpg"; 
+import capa2 from "../utils/capa2.jpg";
+import capa3 from "../utils/capa3.jpg";
+import capa4 from "../utils/capa4.jpg";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "../styles/capa.css";
 
 const Capa = () => {
   const images = [
-    capaHome,
-    logo,
+    capa1,
+    capa2,
+    capa3,
+    capa4,
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,7 +26,7 @@ const Capa = () => {
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000); 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -41,7 +45,7 @@ const Capa = () => {
               key={index}
               src={image}
               className="slider-image"
-              alt={`Slide ${index}`}
+              alt={`Slide ${index + 1}`}
             />
           ))}
         </div>
