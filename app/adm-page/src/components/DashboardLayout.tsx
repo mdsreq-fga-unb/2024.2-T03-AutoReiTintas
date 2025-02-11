@@ -27,7 +27,6 @@ const DashboardPage = () => {
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh' }}>
-      <SideBarState />
       
       <main style={{ 
         flex: 1, 
