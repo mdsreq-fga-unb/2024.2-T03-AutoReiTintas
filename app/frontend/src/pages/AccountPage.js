@@ -10,7 +10,8 @@ const AccountPage = () => {
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
-    telefone: ''
+    telefone: '',
+    senha: '' 
   });
   const [isEditing, setIsEditing] = useState(false);
   const [error, setError] = useState('');
@@ -19,20 +20,29 @@ const AccountPage = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const userData = await getUsuarioAtual();
+        const token = localStorage.getItem('token');
+        if (!token) {
+          throw new Error("Token não encontrado. Faça login novamente.");
+        }
+
+        const userData = await getUsuarioAtual(token);
         setFormData({
           nome: userData.nome,
           email: userData.email,
-          telefone: userData.telefone
+          telefone: userData.telefone,
+          senha: '' 
         });
-        login(userData);
+        login(userData); 
       } catch (err) {
-        setError('Erro ao carregar dados do usuário.');
+        console.error('Erro ao buscar dados do usuário:', err);
+        setError(err.message || 'Erro ao carregar dados do usuário.');
       }
     };
 
-    fetchUserData();
-  }, [login]); 
+    if (!user) {
+      fetchUserData();
+    }
+  }, [user, login]); 
 
   const handleChange = (e) => {
     setFormData({
@@ -46,7 +56,7 @@ const AccountPage = () => {
       const updatedUser = await atualizarUsuario(user.id, formData);
       setSuccess('Dados atualizados com sucesso!');
       setIsEditing(false);
-      login(updatedUser);
+      login(updatedUser); 
     } catch (err) {
       setError('Erro ao atualizar dados. Tente novamente.');
     }
@@ -98,6 +108,20 @@ const AccountPage = () => {
                 />
               ) : (
                 <p>{formData.telefone}</p>
+              )}
+            </div>
+            <div>
+              <label><strong>Senha:</strong></label>
+              {isEditing ? (
+                <input
+                  type="password"
+                  name="senha"
+                  value={formData.senha}
+                  onChange={handleChange}
+                  placeholder="Nova senha (deixe em branco para manter a atual)"
+                />
+              ) : (
+                <p>******</p> 
               )}
             </div>
             {isEditing ? (

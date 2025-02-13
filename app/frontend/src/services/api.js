@@ -2,7 +2,7 @@ import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
 const api = axios.create({
-  baseURL: 'https://two024-2-t03-autoreitintas-5zzj.onrender.com/', 
+  baseURL: 'http://127.0.0.1:8000/' || process.env.REACT_APP_API_BASE_URL, 
   withCredentials: false, 
   headers: {
     'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export const createUsuario = async (usuario) => {
 
 // function to make authentications
 export const loginUsuario = async (email, senha) => {
-  const response = await fetch("https://two024-2-t03-autoreitintas-5zzj.onrender.com/auth/login", {
+  const response = await fetch("http://127.0.0.1:8000/auth/login" || `${process.env.REACT_APP_API_BASE_URL}/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export const loginUsuario = async (email, senha) => {
   }
 
   const data = await response.json();
-  localStorage.setItem('token', data.access_token);
+  localStorage.setItem('token', data.access_token); 
   return data;
 };
 
@@ -133,7 +133,17 @@ export const getCategoriaProduto = async (produtoId) => {
 // function to update information form a user
 export const atualizarUsuario = async (id, usuario) => {
   try {
-    const response = await api.put(`/api/usuarios/${id}`, usuario);
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error("Token não encontrado. Faça login novamente.");
+    }
+
+    const response = await api.put(`/api/usuarios/${id}`, usuario, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
     return response.data;
   } catch (error) {
     console.error("Erro ao atualizar usuário:", error);
@@ -145,14 +155,20 @@ export const atualizarUsuario = async (id, usuario) => {
 export const getUsuarioAtual = async () => {
   try {
     const token = localStorage.getItem('token');
-    
+    console.log('Token no localStorage:', token);
+
     if (!token) {
-      throw new Error("Token não encontrado");
+      throw new Error("Token não encontrado. Faça login novamente.");
     }
 
-    const decodedToken = jwtDecode(token);
-    const usuarioId = decodedToken.sub;
+    let decodedToken;
+    try {
+      decodedToken = jwtDecode(token);
+    } catch (error) {
+      throw new Error("Token inválido. Faça login novamente.");
+    }
 
+    const usuarioId = decodedToken.sub;
     const response = await api.get(`/api/usuarios/${usuarioId}`, {
       headers: {
         Authorization: `Bearer ${token}`

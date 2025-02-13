@@ -33,7 +33,7 @@ const RegisterPage = () => {
   };
 
   const validatePhone = (phone) => {
-    const phoneRegex = /^\d{10,11}$/;
+    const phoneRegex = /^\(?\d{2}\)?[\s-]?\d{4,5}[\s-]?\d{4}$/;
     return phoneRegex.test(phone);
   };
 
@@ -48,7 +48,7 @@ const RegisterPage = () => {
       return;
     }
     if (!validatePhone(formData.telefone)) {
-      setError("Telefone inválido");
+      setError("Telefone inválido. Utilize o formato (DDD) 12345-6789 ou (DDD) 1234-5678");
       return;
     }
     try {
@@ -110,7 +110,7 @@ const RegisterPage = () => {
               className="input"
               type="text"
               name="telefone"
-              placeholder="Telefone"
+              placeholder="Celular"
               value={formData.telefone}
               onChange={handleChange}
             />
